@@ -1,0 +1,1711 @@
+fileFormatVersion: 2
+guid: a5ccecb6bdef2474fa117a247b1e91f7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2164f4247971764bacc9c7fa3df4b82
+      internalID: -87242137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0eb30ee841b4bb45a6b6e993e6a8486
+      internalID: -832173109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea88af47847eead41be4367b1f58e15a
+      internalID: -1401455302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b76a6536f6c5e428986b3af29edfbe
+      internalID: -359343700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cdf321f413340428ca89b4abcd817d
+      internalID: -30552668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b07a313ed9a2ce438a2081502387f71
+      internalID: -1346172726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b163b8290b12d74d81db9bcec6f776c
+      internalID: -1444785890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81dc34a0f9544b5449654ced4ac6e8b7
+      internalID: -970462329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477ccfdbb510520458a03ba126e44af6
+      internalID: 1432521052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea04f1193082104283eb9645d493a14
+      internalID: -1120868978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400c98f9bbc5df841abf12f48c8052bb
+      internalID: 1128846130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 464
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7761fd63a1100742a52d6083657ef4f
+      internalID: 1407030067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df329e84076b89b42a51603269950da6
+      internalID: -527741987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bd6e7a80ed1fd49b922c42f01818e6
+      internalID: -1378243681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e82a18e9fad6464a88e7bcceb5eabb4
+      internalID: -575634494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18db3d8492bcfc3418c1a09dbdad4da7
+      internalID: -48144886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b23484fe172724b9c7819a159b161a
+      internalID: 1621279686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2c5280612a3954485de8b3ecde514c
+      internalID: -521195078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74829cbe753621047a0013b65f293b54
+      internalID: 68066890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379cd280872ff0248b85c305229cb5ee
+      internalID: 318034749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404b9e7f781fb664f943166bcfd030c6
+      internalID: -423657068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b58c4295c620d47acf724ff577382d
+      internalID: 1156983501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee06f362e3f85684e9e146e73ac845b7
+      internalID: 1732982333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 400
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa278aee3bff1a4380c9450547023b9
+      internalID: 1776852852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf2f06d5541f46499af026feeaac99d
+      internalID: 102617493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539a4b953adb8d34baf3a5c6c881a34b
+      internalID: -361504063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d4ffef0e467e54a856a0f2d17b0b1f
+      internalID: 1012389016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4065c6ecc4d0846bc8e2eff37bc360
+      internalID: -1848011325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711c474c22ad49d4eaef0031686f4b49
+      internalID: -1438921447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401b4508e1b0f204c985764d32d8f78b
+      internalID: 62713477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f042abfc9ec247842ad6d3ee764f4e64
+      internalID: -1768097945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b741c1de49aeaf45bd71d4dc08b0329
+      internalID: 61628008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2efaa862f19d07438c843d0af77d1c7
+      internalID: -1816728431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6188b43cc045f046b011215216964e8
+      internalID: 348885958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407ba043964934c469843779c09f0818
+      internalID: 1756065135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 336
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606269f96580b444f9f5af9fb984ec7c
+      internalID: -276572832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15acfb77fbf1034bb3319b01269914f
+      internalID: 2065342984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48347bd77bb92bc458a3c2a5e467b498
+      internalID: 574981364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6fa32147af1224c8566b26175afb73
+      internalID: 1278572539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9a3c5c1f870814c81ed26dd1d4a805
+      internalID: 1114504203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a959ae453347a5246a8e3bd97550947d
+      internalID: 655891992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ce09711904e5c4494077e3c392eeb7
+      internalID: 1090241815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fbfeebce9563f4a84343da51ff626d
+      internalID: 989887724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174775fe5f02a014b9da3d671f1b8e61
+      internalID: 823215206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60138cc7da0358047915b8c7f682fa2d
+      internalID: -76592577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ba803c5101492429b12ed629276942
+      internalID: -1620977086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9304f724fe1737848a9314f902f4f455
+      internalID: 491896450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 272
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f02b62625128724a8bfeebc0506a0b0
+      internalID: 1915840569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f615b251dc2218444b5264c164d74a7e
+      internalID: -1284996740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d46bc6abbe581649aea33ff2ad3b8c0
+      internalID: 1638569057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58bf7d97b2a7b74d9218359c5dd72fe
+      internalID: 1371494288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf5b1b9db8cd324cafd896e09dce8dc
+      internalID: -895821468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423860e8df01ddf47b352471338eb6c3
+      internalID: 1642760841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71db47d492238f0408e5ff0c648e3e48
+      internalID: 126663956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166d38fb266df3a40a68797abc93f7c9
+      internalID: 2029122252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b31cc1bb486254f9979e7485cc04c8
+      internalID: 1151992215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43eda66001e40264285a555e7490afdd
+      internalID: -261510615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 208
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7daf813d3f605354a9e76d0b33e673a7
+      internalID: 456631433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111619266ddef1147b02dc3202f1cea1
+      internalID: 1775174904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f12f96d7d60f2419bdd7ff312cacda
+      internalID: 1723814848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32877604a773d044981bdfbc810e3cf0
+      internalID: -831864120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4b5e1c1d37beb4f9b6f4c4492ef16a
+      internalID: -1914291851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 144
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bdec81ddfb3594fa54bc46ecec04af
+      internalID: 2000096718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 144
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7dbf2a6b8d9ef4fbe4f79e686f2089
+      internalID: 1757869870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b31e32e5e635a24db0ac91490ec464d
+      internalID: 374105032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3228247a27ed9b34091cf23165a2a20a
+      internalID: 1039762683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6969aec152c6704286433e50ccd3ff6
+      internalID: -1784913521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fc07f400dea734b9714b138c1d766c
+      internalID: -822485763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b455bdde549caa042b6ea051bb11aa7d
+      internalID: 1578640075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3810cbc64aa100b4e8841d23eaddaf06
+      internalID: -2139303237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d29f64fa423aa46a1af687c297a769
+      internalID: 1105779782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruddy sheet-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cbc2a273cc09234f96d29cf2a300e32
+      internalID: -992861769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ruddy sheet-Sheet_0: -87242137
+      ruddy sheet-Sheet_1: -832173109
+      ruddy sheet-Sheet_10: 1128846130
+      ruddy sheet-Sheet_11: 1407030067
+      ruddy sheet-Sheet_12: -527741987
+      ruddy sheet-Sheet_13: -1378243681
+      ruddy sheet-Sheet_14: -575634494
+      ruddy sheet-Sheet_15: -48144886
+      ruddy sheet-Sheet_16: 1621279686
+      ruddy sheet-Sheet_17: -521195078
+      ruddy sheet-Sheet_18: 68066890
+      ruddy sheet-Sheet_19: 318034749
+      ruddy sheet-Sheet_2: -1401455302
+      ruddy sheet-Sheet_20: -423657068
+      ruddy sheet-Sheet_21: 1156983501
+      ruddy sheet-Sheet_22: 1732982333
+      ruddy sheet-Sheet_23: 1776852852
+      ruddy sheet-Sheet_24: 102617493
+      ruddy sheet-Sheet_25: -361504063
+      ruddy sheet-Sheet_26: 1012389016
+      ruddy sheet-Sheet_27: -1848011325
+      ruddy sheet-Sheet_28: -1438921447
+      ruddy sheet-Sheet_29: 62713477
+      ruddy sheet-Sheet_3: -359343700
+      ruddy sheet-Sheet_30: -1768097945
+      ruddy sheet-Sheet_31: 61628008
+      ruddy sheet-Sheet_32: -1816728431
+      ruddy sheet-Sheet_33: 348885958
+      ruddy sheet-Sheet_34: 1756065135
+      ruddy sheet-Sheet_35: -276572832
+      ruddy sheet-Sheet_36: 2065342984
+      ruddy sheet-Sheet_37: 574981364
+      ruddy sheet-Sheet_38: 1278572539
+      ruddy sheet-Sheet_39: 1114504203
+      ruddy sheet-Sheet_4: -30552668
+      ruddy sheet-Sheet_40: 655891992
+      ruddy sheet-Sheet_41: 1090241815
+      ruddy sheet-Sheet_42: 989887724
+      ruddy sheet-Sheet_43: 823215206
+      ruddy sheet-Sheet_44: -76592577
+      ruddy sheet-Sheet_45: -1620977086
+      ruddy sheet-Sheet_46: 491896450
+      ruddy sheet-Sheet_47: 1915840569
+      ruddy sheet-Sheet_48: -1284996740
+      ruddy sheet-Sheet_49: 1638569057
+      ruddy sheet-Sheet_5: -1346172726
+      ruddy sheet-Sheet_50: 1371494288
+      ruddy sheet-Sheet_51: -895821468
+      ruddy sheet-Sheet_52: 1642760841
+      ruddy sheet-Sheet_53: 126663956
+      ruddy sheet-Sheet_54: 2029122252
+      ruddy sheet-Sheet_55: 1151992215
+      ruddy sheet-Sheet_56: -261510615
+      ruddy sheet-Sheet_57: 456631433
+      ruddy sheet-Sheet_58: 1775174904
+      ruddy sheet-Sheet_59: 1723814848
+      ruddy sheet-Sheet_6: -1444785890
+      ruddy sheet-Sheet_60: -831864120
+      ruddy sheet-Sheet_61: -1914291851
+      ruddy sheet-Sheet_62: 2000096718
+      ruddy sheet-Sheet_63: 1757869870
+      ruddy sheet-Sheet_64: 374105032
+      ruddy sheet-Sheet_65: 1039762683
+      ruddy sheet-Sheet_66: -1784913521
+      ruddy sheet-Sheet_67: -822485763
+      ruddy sheet-Sheet_68: 1578640075
+      ruddy sheet-Sheet_69: -2139303237
+      ruddy sheet-Sheet_7: -970462329
+      ruddy sheet-Sheet_70: 1105779782
+      ruddy sheet-Sheet_71: -992861769
+      ruddy sheet-Sheet_8: 1432521052
+      ruddy sheet-Sheet_9: -1120868978
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
