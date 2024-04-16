@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -18,7 +18,8 @@ public class MenuInicial : MonoBehaviour
     }
     public void Jugar()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int EscenaActual=(SceneManager.GetActiveScene()).buildIndex;
+        SceneManager.LoadScene(EscenaActual+1);
     }
     public void Salir()
     {

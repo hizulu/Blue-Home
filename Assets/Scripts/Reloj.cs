@@ -11,7 +11,7 @@ public class Reloj : MonoBehaviour
     private bool colorCambiado = false;
 
     private float tiempoTranscurrido = 0f;
-    private float velocidadDelTiempo = 12f; //5 minutos en tiempo real
+    public float velocidadDelTiempo = 12f; //5 minutos en tiempo real
     //private float velocidadDelTiempo = 1440f;
 
     void Update()
