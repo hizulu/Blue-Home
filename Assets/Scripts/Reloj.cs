@@ -6,12 +6,13 @@ public class Reloj : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textoReloj;
 
-    private int horas = 6;
-    private int minutos = 0;
+    private float horas;
+    private float minutos;
     private bool colorCambiado = false;
 
     private float tiempoTranscurrido = 0f;
-    private float velocidadDelTiempo = 16f / 6f;
+    private float velocidadDelTiempo = 12f; //5 minutos en tiempo real
+    //private float velocidadDelTiempo = 1440f;
 
     void Update()
     {
@@ -24,9 +25,10 @@ public class Reloj : MonoBehaviour
 
     void ActualizarTiempo()
     {
-        horas = Mathf.FloorToInt(tiempoTranscurrido / 60) % 24;
+        horas = (Mathf.FloorToInt(tiempoTranscurrido / 60) % 24)+6;
         minutos = Mathf.FloorToInt(tiempoTranscurrido % 60);
         horas = Mathf.Clamp(horas, 6, 22);
+        
         if (horas == 22 && minutos == 0 && !colorCambiado)
         {
             velocidadDelTiempo = 0f;
@@ -44,7 +46,7 @@ public class Reloj : MonoBehaviour
     {
         textoReloj.color = Color.red;
         textoReloj.transform.localScale = new Vector3(1, 1, 1);
-        float vibracion = Mathf.PingPong(Time.time * 5, 0.3f) + 1;
+        float vibracion = Mathf.PingPong(Time.time * 2, 0.3f) + 1; //UNDONE Estoy igual hay que mirarlo más adelante
         textoReloj.transform.localScale = new Vector3(vibracion, vibracion, vibracion);
     }
 }
