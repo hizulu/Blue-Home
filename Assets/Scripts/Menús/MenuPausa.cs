@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class MenuPausa : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameObject.SetActive(!gameObject.activeSelf);
+            Time.timeScale = (gameObject.activeSelf) ? 0 : 1;
+        }
     }
+
+    
 }

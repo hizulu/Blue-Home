@@ -12,11 +12,11 @@ public class PausaManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menuPausa.SetActive(!menuPausa.activeSelf);
+            Time.timeScale = (gameObject.activeSelf) ? 0 : 1;
         }
     }
     public void Pausar()
