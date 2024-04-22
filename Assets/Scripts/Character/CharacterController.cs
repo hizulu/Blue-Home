@@ -69,4 +69,24 @@ public class CharacterController : MonoBehaviour
             _anim.SetBool("Camina", false);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Sombra"))
+        {
+            DetenerMovimiento();
+        }
+    }
+
+    private void DetenerMovimiento()
+    {
+        recoveryTime = 2f;
+        _rig.velocity = Vector2.zero;
+        GetComponent<SpriteRenderer>().color = Color.gray;
+        Invoke("ColorOriginal", 2f);
+    }
+    void ColorOriginal()    //por si queremos que el personaje se paralice vaya
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 }
