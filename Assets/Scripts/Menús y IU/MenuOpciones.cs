@@ -13,8 +13,7 @@ public class MenuOpciones : MonoBehaviour
     [SerializeField] Image nivelBrilloPanel;
 
     void Start()
-    {
-        // Suscribirse a los eventos de cambio de los sliders y el toggle
+    {       
         volumenGeneralSlider.onValueChanged.AddListener(ActualizarVolumenGeneral);
         volumenMusicaSlider.onValueChanged.AddListener(ActualizarVolumenMusica);
         brilloSlider.onValueChanged.AddListener(ActualizarBrillo);
@@ -36,12 +35,12 @@ public class MenuOpciones : MonoBehaviour
    
     void ActualizarBrillo(float value)
     {
-        nivelBrilloPanel.color = new Color(0, 0, 0, value);
+        nivelBrilloPanel.color = new Color(0, 0, 0, value / 255f);
     }
 
    
     void ActualizarModoVentana(bool value)
     {
-        Screen.fullScreen = value;
+        Screen.fullScreen = !value;
     }
 }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausaManager : MonoBehaviour
 {
     [SerializeField] GameObject menuPausa;
-    [SerializeField]  Reloj relojScript;
+    [SerializeField] Reloj relojScript;
     [SerializeField] GameObject relojGameObject;
 
     void Start()
@@ -13,25 +14,35 @@ public class PausaManager : MonoBehaviour
         relojScript = relojGameObject.GetComponent<Reloj>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pausar();
-            Time.timeScale = (gameObject.activeSelf) ? 0 : 1;            
+            Time.timeScale = (gameObject.activeSelf) ? 0 : 1;
         }
     }
+
     public void Pausar()
     {
         menuPausa.SetActive(true);
-        Time.timeScale=0;
+        Time.timeScale = 0;
         relojScript.velocidadDelTiempo = 0f;
     }
+
     public void Continuar()
     {
         menuPausa.SetActive(false);
-        Time.timeScale=1;
+        Time.timeScale = 1;
         relojScript.velocidadDelTiempo = 12f;
+    }
+
+    public void Opciones()
+    {
+        
+    }
+    public void Salir()
+    {
+        SceneManager.LoadScene(0);
     }
 }
