@@ -6,6 +6,7 @@ public class PausaManager : MonoBehaviour
 {
     [SerializeField] GameObject menuPausa;
     [SerializeField]  Reloj relojScript;
+
     void Start()
     {
         relojScript = GetComponent<Reloj>();
@@ -16,7 +17,8 @@ public class PausaManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = (gameObject.activeSelf) ? 0 : 1;
+            Pausar();
+            Time.timeScale = (gameObject.activeSelf) ? 0 : 1;            
         }
     }
     public void Pausar()
