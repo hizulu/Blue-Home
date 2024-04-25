@@ -6,10 +6,11 @@ public class PausaManager : MonoBehaviour
 {
     [SerializeField] GameObject menuPausa;
     [SerializeField]  Reloj relojScript;
+    [SerializeField] GameObject relojGameObject;
 
     void Start()
     {
-        relojScript = GetComponent<Reloj>();
+        relojScript = relojGameObject.GetComponent<Reloj>();
     }
 
     // Update is called once per frame
