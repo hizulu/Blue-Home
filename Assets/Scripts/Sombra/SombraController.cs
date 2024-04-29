@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SombraController : MonoBehaviour
 {
     [SerializeField] float velocidad = 2f;
+    private NavMeshAgent _navMeshAgent;
 
     [Header("Colision")]
     private Rigidbody2D rb;
@@ -12,14 +14,20 @@ public class SombraController : MonoBehaviour
 
     [Header("ataque")]
     [SerializeField] private GameObject _hitBox;
+    private GameObject _player;
     private bool canAtaque = true;
     [SerializeField, Range(0f, 3f)] private float disAtaque = 1f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _navMeshAgent.speed = velocidad;
+        _navMeshAgent.updateRotation = false;
+        _navMeshAgent.updateUpAxis = false;
         _anim = GetComponent<Animator>();
         _hitBox.SetActive(false);
+        _player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -28,20 +36,23 @@ public class SombraController : MonoBehaviour
         Mover();
         posicionLayer();
         Ataque();
-        
-
     }
     void Mover()
     {
         //Encuentre al personaje
         GameObject personaje = GameObject.FindWithTag("Player");
         //Obtenga la posición 
-        Vector3 posicionPersonaje = personaje.transform.position;
+        Vector2 posicionPersonaje = personaje.transform.position;
         //Obtenga la posición de la sombra
-        Vector3 posicionSombra = transform.position;
+        Vector2 posicionSombra = transform.position;
 
         //Vaya hacia el jugador
-        transform.position = Vector3.MoveTowards(posicionSombra, posicionPersonaje, velocidad * Time.deltaTime);
+
+        _navMeshAgent.SetDestination(posicionPersonaje);
+
+
+        //quiero movimiento usando los navmesh agent
+
         _anim.SetFloat("CaminaHorz", posicionSombra.x - posicionPersonaje.x);
         _anim.SetFloat("CaminaVert", posicionSombra.y - posicionPersonaje.y);
     }
