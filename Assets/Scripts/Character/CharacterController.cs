@@ -13,7 +13,9 @@ public class CharacterController : MonoBehaviour
     [Header("Colision")]
     private Rigidbody2D _rig;
     private Animator _anim;
-    [SerializeField] public GameObject uiSombra;
+
+    [Header("UI Sombra")]
+    [SerializeField] private uiSombra uiSombra;
 
     //llama al rig y lo guarda para realizar colisiones
     private void Awake()
@@ -76,13 +78,13 @@ public class CharacterController : MonoBehaviour
         if (collision.gameObject.CompareTag("Sombra"))
         {
             DetenerMovimiento();
-            uiSombra.SetActive(true);
+            uiSombra.PlayVideo();
         }
     }
 
     private void DetenerMovimiento()
     {
-        recoveryTime = 2f;
+        recoveryTime = 5f;
         _rig.velocity = Vector2.zero;
         GetComponent<SpriteRenderer>().color = Color.gray;
         Invoke("ColorOriginal", 2f);
