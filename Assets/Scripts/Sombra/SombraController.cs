@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Video;
 
 public class SombraController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class SombraController : MonoBehaviour
     private GameObject _player;
     private bool canAtaque = true;
     [SerializeField, Range(0f, 3f)] private float disAtaque = 1f;
+    //para llamar al uiSombra
+
 
     void Start()
     {

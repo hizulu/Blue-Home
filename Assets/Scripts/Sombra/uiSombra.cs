@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class uiSombra : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //La idea es que sombraController llame a este script para que se active el UI de la sombra
+    //Este script se encargará de activar el video y que desaparezca cuando termine
+
+    public VideoPlayer videoPlayer;
     void Start()
     {
-        
+        videoPlayer.loopPointReached += OnVideoFinished;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnVideoFinished(VideoPlayer player)
     {
-        
+        gameObject.SetActive(false); 
+    }
+    public void PlayVideo()
+    {
+        videoPlayer.Play(); // Inicia la reproducción del video
+    }
+
+    public void StopVideo()
+    {
+        videoPlayer.Stop(); // Detiene la reproducción del video
     }
 }

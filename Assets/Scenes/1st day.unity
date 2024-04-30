@@ -884,8 +884,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1747503436}
   - {fileID: 2001790762}
+  - {fileID: 1747503436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1344,6 +1344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 3
   recoveryTime: 0
+  uiSombra: {fileID: 2001790761}
 --- !u!70 &778403849
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4858,7 +4859,7 @@ GameObject:
   - component: {fileID: 1221214977}
   m_Layer: 0
   m_Name: _hitBox
-  m_TagString: Untagged
+  m_TagString: Sombra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6460,6 +6461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08312f3700b8234bbc774f4f0e9948a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 2001790763}
 --- !u!1 &2082000047
 GameObject:
   m_ObjectHideFlags: 0

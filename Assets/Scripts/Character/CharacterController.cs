@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.Video;
 
 public class CharacterController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CharacterController : MonoBehaviour
     [Header("Colision")]
     private Rigidbody2D _rig;
     private Animator _anim;
+    [SerializeField] public GameObject uiSombra;
 
     //llama al rig y lo guarda para realizar colisiones
     private void Awake()
@@ -74,6 +76,7 @@ public class CharacterController : MonoBehaviour
         if (collision.gameObject.CompareTag("Sombra"))
         {
             DetenerMovimiento();
+            uiSombra.SetActive(true);
         }
     }
 
