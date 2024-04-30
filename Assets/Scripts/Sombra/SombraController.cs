@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Video;
@@ -18,8 +19,6 @@ public class SombraController : MonoBehaviour
     private GameObject _player;
     private bool canAtaque = true;
     [SerializeField, Range(0f, 3f)] private float disAtaque = 1f;
-    //para llamar al uiSombra
-
 
     void Start()
     {
@@ -42,24 +41,59 @@ public class SombraController : MonoBehaviour
     }
     void Mover()
     {
-        //Encuentre al personaje
+        // Encuentra al jugador y obtiene sus posiciones
         GameObject personaje = GameObject.FindWithTag("Player");
-        //Obtenga la posición 
         Vector2 posicionPersonaje = personaje.transform.position;
-        //Obtenga la posición de la sombra
         Vector2 posicionSombra = transform.position;
 
-        //Vaya hacia el jugador
+        // Bandera para saber si el jugador ha sido visto alguna vez
+        bool haVistoJugador = false;
 
-        _navMeshAgent.SetDestination(posicionPersonaje);
+        // Distancia para atacar
+        float distanciaAtaque = disAtaque; 
 
+        // Distancia para seguir (mayor que la distancia de ataque)
+        float distanciaSeguir = 10f; 
 
-        //quiero movimiento usando los navmesh agent
+        // Determina si el jugador está dentro del rango de seguimiento
+        bool enRangoSeguir = Vector2.Distance(posicionSombra, posicionPersonaje) <= distanciaSeguir;
 
+        if (enRangoSeguir)
+        {
+            // Marcarlo como visto
+            haVistoJugador = true; 
+
+            // Si el jugador esta en rango ir por el
+            if (Vector2.Distance(posicionSombra, posicionPersonaje) <= distanciaAtaque)
+            {
+                _navMeshAgent.SetDestination(posicionPersonaje);
+            }
+            else
+            {
+                // El jugador no esta en rango, ir por el
+                _navMeshAgent.SetDestination(posicionPersonaje);
+            }
+        }
+        else
+        {
+            // El jugador no está en rango de seguimiento
+            if (haVistoJugador)
+            {
+                // El jugador fue visto antes, pero ahora está fuera de rango
+                // Sigue al jugador (hasta que se desvanezca o ataque)
+                _navMeshAgent.SetDestination(posicionPersonaje);
+            }
+            else
+            {
+                // El jugador no ha sido visto todavía
+                // Quédate quieto
+                _navMeshAgent.SetDestination(posicionSombra);
+            }
+        }
+        //animaciones
         _anim.SetFloat("CaminaHorz", posicionSombra.x - posicionPersonaje.x);
         _anim.SetFloat("CaminaVert", posicionSombra.y - posicionPersonaje.y);
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -148,5 +182,6 @@ public class SombraController : MonoBehaviour
             GetComponent<SpriteRenderer>().color = color;
             yield return new WaitForSeconds(1f);
         }
+        teletransportarSombra();
     }
 }
