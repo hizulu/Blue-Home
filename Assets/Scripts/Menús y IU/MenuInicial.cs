@@ -5,17 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
-    
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void Jugar()
     {
         int EscenaActual=(SceneManager.GetActiveScene()).buildIndex;
@@ -23,7 +12,7 @@ public class MenuInicial : MonoBehaviour
     }
     public void Salir()
     {
-        Debug.Log("Salir...");
+        Debug.Log("Saliendo del juego");
         Application.Quit();
     }
 }

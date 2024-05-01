@@ -9,6 +9,7 @@ public class PausaManager : MonoBehaviour
     [SerializeField] Reloj relojScript;
     [SerializeField] GameObject relojGameObject;
 
+
     void Start()
     {
         relojScript = relojGameObject.GetComponent<Reloj>();
@@ -39,7 +40,11 @@ public class PausaManager : MonoBehaviour
 
     public void Opciones()
     {
-        
+        int index = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("escenaAnterior", index);
+        SceneManager.LoadScene(0);
+        MenuOpciones.instance.gameObject.SetActive(true);
+
     }
     public void Salir()
     {

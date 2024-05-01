@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class MenuOpciones : MonoBehaviour
@@ -12,7 +13,21 @@ public class MenuOpciones : MonoBehaviour
     [SerializeField] Toggle modoVentanaToggle;
     [SerializeField] Image nivelBrilloPanel;
 
-    void Start()
+    public static MenuOpciones instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+    public void Start()
     {       
         volumenGeneralSlider.onValueChanged.AddListener(ActualizarVolumenGeneral);
         volumenMusicaSlider.onValueChanged.AddListener(ActualizarVolumenMusica);
@@ -21,26 +36,33 @@ public class MenuOpciones : MonoBehaviour
     }
 
   
-    void ActualizarVolumenGeneral(float value)
+    public void ActualizarVolumenGeneral(float value)
     {
         AudioListener.volume = value;
     }
 
-   
-    void ActualizarVolumenMusica(float value)
+
+    public void ActualizarVolumenMusica(float value)
     {
         // Aquí puedes ajustar el volumen de la música según sea necesario
     }
 
-   
-    void ActualizarBrillo(float value)
+
+    public void ActualizarBrillo(float value)
     {
         nivelBrilloPanel.color = new Color(0, 0, 0, value / 255f);
     }
 
-   
-    void ActualizarModoVentana(bool value)
+
+    public void ActualizarModoVentana(bool value)
     {
         Screen.fullScreen = !value;
+    }
+    public void Volver()
+    {
+        gameObject.SetActive(false);
+        int escenaAnterior = PlayerPrefs.GetInt("escenaAnterior", 0);
+        Debug.Log("Escena anterior guardada: " + escenaAnterior);
+        SceneManager.LoadScene(escenaAnterior);
     }
 }
