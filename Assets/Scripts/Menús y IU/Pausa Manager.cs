@@ -8,6 +8,7 @@ public class PausaManager : MonoBehaviour
     [SerializeField] GameObject menuPausa;
     [SerializeField] Reloj relojScript;
     [SerializeField] GameObject relojGameObject;
+    [SerializeField] MenuOpciones menuOpciones;
 
 
     void Start()
@@ -43,7 +44,7 @@ public class PausaManager : MonoBehaviour
         int index = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("escenaAnterior", index);
         SceneManager.LoadScene(0);
-        MenuOpciones.instance.gameObject.SetActive(true);
+        menuOpciones.MostrarMenuOpciones();
 
     }
     public void Salir()

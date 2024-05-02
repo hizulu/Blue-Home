@@ -427,7 +427,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 990ee7270da24bb48a0943b2a536bcbc, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -6514,7 +6514,7 @@ VideoPlayer:
   m_Enabled: 1
   m_VideoClip: {fileID: 32900000, guid: 52914ef43446ca44b990935f93145b1a, type: 3}
   m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 1
+  m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1557001663}
   m_TargetTexture: {fileID: 0}
   m_TimeReference: 0

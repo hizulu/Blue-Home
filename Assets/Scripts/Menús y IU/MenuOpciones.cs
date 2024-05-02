@@ -14,17 +14,15 @@ public class MenuOpciones : MonoBehaviour
     [SerializeField] Image nivelBrilloPanel;
 
     public static MenuOpciones instance { get; private set; }
-
-    private void Awake()
+    private void Awake()    // Singleton, evitar duplicados
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject); // Si ya hay una instancia, destruye esta para mantener solo una
         }
     }
     public void Start()
@@ -34,8 +32,12 @@ public class MenuOpciones : MonoBehaviour
         brilloSlider.onValueChanged.AddListener(ActualizarBrillo);
         modoVentanaToggle.onValueChanged.AddListener(ActualizarModoVentana);
     }
+    public void MostrarMenuOpciones()
+    {
+        transform.parent.gameObject.SetActive(true); // Activa el GameObject padre en la jerarquía
+        gameObject.SetActive(true);
+    }
 
-  
     public void ActualizarVolumenGeneral(float value)
     {
         AudioListener.volume = value;
@@ -60,6 +62,7 @@ public class MenuOpciones : MonoBehaviour
     }
     public void Volver()
     {
+        transform.parent.gameObject.SetActive(false);
         gameObject.SetActive(false);
         int escenaAnterior = PlayerPrefs.GetInt("escenaAnterior", 0);
         Debug.Log("Escena anterior guardada: " + escenaAnterior);
