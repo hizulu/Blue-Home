@@ -10,6 +10,10 @@ public class PausaManager : MonoBehaviour
     [SerializeField] GameObject relojGameObject;
     [SerializeField] MenuOpciones menuOpciones;
 
+    private void Awake()
+    {
+        menuPausa.SetActive(false);
+    }
 
     void Start()
     {
@@ -20,8 +24,14 @@ public class PausaManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pausar();
-            Time.timeScale = (gameObject.activeSelf) ? 0 : 1;
+            if (menuPausa.activeSelf)
+            {
+                Continuar(); // Si el menu de pausa está activo, al presionar Escape, continuamos en lugar de pausar
+            }
+            else
+            {
+                Pausar(); // Si el menu de pausa no está activo, al presionar Escape, lo pausamos
+            }
         }
     }
 
