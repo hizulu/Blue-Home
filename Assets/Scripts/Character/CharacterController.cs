@@ -34,7 +34,6 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()      //siempre irá a la misma velocidad
     {
-        Debug.Log("se mueve");
         Movimiento();
     }
 
@@ -76,6 +75,14 @@ public class CharacterController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Sombra"))
+        {
+            DetenerMovimiento();
+            uiSombra.PlayVideo();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Sombra"))
         {
             DetenerMovimiento();
             uiSombra.PlayVideo();

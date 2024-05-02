@@ -20,11 +20,14 @@ public class uiSombra : MonoBehaviour
     }
     public void PlayVideo()
     {
+        gameObject.SetActive(true);
         videoPlayer.Play(); // Inicia la reproducción del video
+        Debug.Log ("Reproduciendo video");
     }
 
     public void StopVideo()
     {
         videoPlayer.Stop(); // Detiene la reproducción del video
+        gameObject.SetActive(true);
     }
 }

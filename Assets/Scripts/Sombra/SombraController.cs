@@ -18,7 +18,16 @@ public class SombraController : MonoBehaviour
     [SerializeField] private GameObject _hitBox;
     private GameObject _player;
     private bool canAtaque = true;
-    [SerializeField, Range(0f, 3f)] private float disAtaque = 1f;
+    private bool estaAtacando = false;
+    [SerializeField, Range(0f, 3f)] private float disAtaque = 3f;
+    [SerializeField] float distanciaSeguir = 8f;
+
+    [Header("Audio")]
+    private AudioSource audioSource;
+    private float distanciaMinima = 6f;
+
+    [Header("UI Sombra")]
+    [SerializeField] private uiSombra uiSombra;
 
     void Start()
     {
@@ -30,6 +39,7 @@ public class SombraController : MonoBehaviour
         _anim = GetComponent<Animator>();
         _hitBox.SetActive(false);
         _player = GameObject.FindWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,7 +47,10 @@ public class SombraController : MonoBehaviour
     {
         Mover();
         posicionLayer();
-        Ataque();
+        if (!estaAtacando && Vector2.Distance(transform.position, _player.transform.position) < 2.5f)
+        {
+            Ataque();
+        }
     }
     void Mover()
     {
@@ -46,14 +59,9 @@ public class SombraController : MonoBehaviour
         Vector2 posicionPersonaje = personaje.transform.position;
         Vector2 posicionSombra = transform.position;
 
-        // Bandera para saber si el jugador ha sido visto alguna vez
         bool haVistoJugador = false;
-
-        // Distancia para atacar
         float distanciaAtaque = disAtaque; 
 
-        // Distancia para seguir (mayor que la distancia de ataque)
-        float distanciaSeguir = 10f; 
 
         // Determina si el jugador está dentro del rango de seguimiento
         bool enRangoSeguir = Vector2.Distance(posicionSombra, posicionPersonaje) <= distanciaSeguir;
@@ -61,12 +69,14 @@ public class SombraController : MonoBehaviour
         if (enRangoSeguir)
         {
             // Marcarlo como visto
-            haVistoJugador = true; 
+            haVistoJugador = true;
+            desaparecerAlosSegundos();
 
             // Si el jugador esta en rango ir por el
             if (Vector2.Distance(posicionSombra, posicionPersonaje) <= distanciaAtaque)
             {
                 _navMeshAgent.SetDestination(posicionPersonaje);
+                MusicaPersecucion(true);
             }
             else
             {
@@ -88,24 +98,26 @@ public class SombraController : MonoBehaviour
                 // El jugador no ha sido visto todavía
                 // Quédate quieto
                 _navMeshAgent.SetDestination(posicionSombra);
+                MusicaPersecucion(false);
             }
         }
         //animaciones
         _anim.SetFloat("CaminaHorz", posicionSombra.x - posicionPersonaje.x);
         _anim.SetFloat("CaminaVert", posicionSombra.y - posicionPersonaje.y);
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //si el jugador toca a la sombra, se desvanece
-            desaparecerAlosSegundos();
+            uiSombra.PlayVideo();
+            Invoke("teletransportarSombra", 1f);
         }
     }
     void posicionLayer()
     {
             //override a la capa del player con su sprite
-            if (transform.position.y-2 > GameObject.FindWithTag("Player").transform.position.y)
+            if (transform.position.y-1 > GameObject.FindWithTag("Player").transform.position.y)
             {
                 GetComponent<SpriteRenderer>().sortingOrder = 0;
             }
@@ -113,53 +125,81 @@ public class SombraController : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().sortingOrder = 2;
             }
-        }
+    }
+
     private void Ataque()
     {
-        //si puede atacar y está en rango
-        if (canAtaque && Vector2.Distance(transform.position, GameObject.FindWithTag("Player").transform.position) < 1.5f)
+        // Calcula la posicion del _hitBox basándote en la posicion del monstruo y la direccion hacia el jugador
+        Vector2 direccionAtaque = CalcularDireccionAtaque();
+        Vector2 posicionHitBox = (Vector2)transform.position + direccionAtaque * 1;
+
+        // Ajusta la posición del _hitBox
+        _hitBox.transform.position = posicionHitBox;
+
+        // Gira el _hitBox hacia el jugador
+        RotarHitBox(direccionAtaque);
+
+        //si puede atacar y esta en rango
+        if (canAtaque)
         {
-            //ataca
-            canAtaque = false;
+            // Ataca
             _anim.SetTrigger("Ataque");
-            _hitBox.SetActive(true);
-            DireccionAtaque();
-            Invoke("DesactivarAtaque", 1f);
+            
+
+            // Retraso antes de verificar el ataque exitoso, que así se anime que ataca
+            Invoke("VerificarAtaqueExitoso", 1.5f);
         }
     }
-    private void DireccionAtaque()
+    
+    private Vector2 CalcularDireccionAtaque()
     {
-        //haz que _hitbox gire respecto a la posición que esté el jugador 
-        //que haga la animación correspondiente
-        if (_anim.GetFloat("CaminaHorz") > 0)
-        {
-            _hitBox.transform.position = new Vector2(transform.position.x - disAtaque, transform.position.y);
-        }
-        else if (_anim.GetFloat("CaminaHorz") < 0)
-        {
-            _hitBox.transform.position = new Vector2(transform.position.x + disAtaque, transform.position.y);
-        }
-        else if (_anim.GetFloat("CaminaVert") > 0)
-        {
-            _hitBox.transform.position = new Vector2(transform.position.x, transform.position.y - disAtaque);
-        }
-        else if (_anim.GetFloat("CaminaVert") < 0)
-        {
-            _hitBox.transform.position = new Vector2(transform.position.x, transform.position.y + disAtaque);
-        }
-        else
-        {
-            _hitBox.transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y);
-        }   
+        // Calcular la direccion del jugador respecto a la sombra
+        Vector2 direccionJugador = _player.transform.position - transform.position;
+        return direccionJugador.normalized;
     }
+    private void RotarHitBox(Vector2 direccionAtaque)
+    {
+        // Calcular el angulo entre la dirección del jugador y los ejes principales
+        float angulo = Mathf.Atan2(direccionAtaque.y, direccionAtaque.x) * Mathf.Rad2Deg;
+        float anguloRedondeado = Mathf.Round(angulo / 45) * 45;
+
+        _hitBox.transform.rotation = Quaternion.AngleAxis(anguloRedondeado, Vector3.forward);
+    }
+    private bool realizarAtaqueExitoso()
+    {
+        _hitBox.SetActive(true);
+        // Determina si el jugador está en la direccion del ataque
+        Vector2 direccionAtaque = _hitBox.transform.position - transform.position;
+        Vector2 direccionJugador = GameObject.FindWithTag("Player").transform.position - transform.position;
+        float angulo = Vector2.Angle(direccionAtaque, direccionJugador);
+
+        if (angulo < 45)
+        {
+            return true;
+        }
+        return false;
+    }
+    void VerificarAtaqueExitoso()
+    {
+        // Verificar si el ataque es exitoso
+        if (realizarAtaqueExitoso())
+        {
+            // Teletransportar después de un ataque exitoso y saltar scream
+            Invoke("teletransportarSombra", 1f);
+            uiSombra.PlayVideo();
+            estaAtacando = true; // evita que pueda atacar al teletransportarse
+        }
+        Invoke("DesactivarAtaque", 0.5f);
+    }
+
     private void DesactivarAtaque()
     {
-        canAtaque = true;
+        estaAtacando = false;
         _hitBox.SetActive(false);
     }
     private void desaparecerAlosSegundos()
     {
-        //evita que pueda llamar más de una vez a este codigo hasta que se teletransporte, de tipo trigger
+        //evita que pueda llamar mas de una vez a este codigo hasta que se teletransporte, de tipo trigger
         GetComponent<BoxCollider2D>().enabled = false;
         //empezar la corrutina una vez
         StartCoroutine("desvanecer");
@@ -167,21 +207,70 @@ public class SombraController : MonoBehaviour
     }
     public void teletransportarSombra()
     {
+        //hacer la sombra visible en caso de que no lo esté
+        Color color = GetComponent<SpriteRenderer>().color;
+        color.a = 1;
+
+        //teletransporte
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnSombra");
         GameObject spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         transform.position = spawnPoint.transform.position;
         GetComponent<BoxCollider2D>().enabled = true;
+        //musica de persecucion
+        MusicaPersecucion(false);
+
+        //evitar el invoke de desaparecerAlosSegundos y que se repita de nuevo
+        StopCoroutine("desvanecer");
+        CancelInvoke("teletransportarSombra");
+
     }
     IEnumerable desvanecer()
     {
-        //bajar el alpha del sprite progresivamente en 10 segundos
-        for (float i = 1; i >= 0; i -= 0.1f)
+        // Obtener el color inicial
+        Color color = GetComponent<SpriteRenderer>().color;
+        float alphaDecrementStep = 0.1f / (10f / Time.deltaTime); // Decrementa en 0.1 durante 10 segundos
+
+        while (color.a > 0)
         {
-            Color color = GetComponent<SpriteRenderer>().color;
-            color.a = i;
+            // Decrementar el alpha
+            color.a -= alphaDecrementStep;
             GetComponent<SpriteRenderer>().color = color;
-            yield return new WaitForSeconds(1f);
+            yield return null;
         }
-        teletransportarSombra();
+        // Asegurarse de que el alpha sea exactamente 0
+        color.a = 0;
+        GetComponent<SpriteRenderer>().color = color;
+    }
+
+    public void MusicaPersecucion(bool iniciar)
+    {
+        // Si se indica iniciar la música
+        if (iniciar)
+        {
+            // Iniciar la corrutina de la music
+            StartCoroutine(sonidoSombra());
+            Debug.Log("Iniciando la musica");
+        }
+        else
+        {
+            // Detener la corrutina de la music
+            StopCoroutine(sonidoSombra());
+            Debug.Log("Quitando la musica");
+        }
+    }
+    private IEnumerator sonidoSombra()
+    {
+        // Bucle infinito para reproducir la música en bucle
+        while (true)
+        {
+            // Ajustar el volumen de la música en función de la distancia
+            float distanciaActualAlJugador = Vector2.Distance(transform.position, _player.transform.position);
+            float volumenMusica = 1.0f - Mathf.Clamp01(distanciaActualAlJugador / distanciaMinima);
+            audioSource.volume = volumenMusica;
+            Debug.Log("musica" + volumenMusica);
+             
+            // Esperar medio segundo para mejorar la optimización
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }
