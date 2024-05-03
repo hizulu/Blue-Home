@@ -11,12 +11,12 @@ public class Reloj : MonoBehaviour
     private bool colorCambiado = false;
 
     private float tiempoTranscurrido = 0f;
-    public float velocidadDelTiempo = 12f; //5 minutos en tiempo real
+    public float velocidadDelTiempo = 3.2f;
     //private float velocidadDelTiempo = 1440f;
 
     void Update()
     {
-        tiempoTranscurrido += velocidadDelTiempo * Time.deltaTime;
+        tiempoTranscurrido += velocidadDelTiempo *Time.deltaTime;
         ActualizarTiempo();
         MostrarTiempo();
         if (colorCambiado)

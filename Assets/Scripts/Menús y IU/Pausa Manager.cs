@@ -46,7 +46,7 @@ public class PausaManager : MonoBehaviour
     {
         menuPausa.SetActive(false);
         Time.timeScale = 1;
-        relojScript.velocidadDelTiempo = 12f;
+        relojScript.velocidadDelTiempo = 3.2f;
     }
 
     public void Opciones()
