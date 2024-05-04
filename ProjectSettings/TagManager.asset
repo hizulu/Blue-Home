@@ -53,3 +53,6 @@ TagManager:
   - name: Other
     uniqueID: 4218068979
     locked: 0
+  - name: Decoracion
+    uniqueID: 4287204869
+    locked: 0

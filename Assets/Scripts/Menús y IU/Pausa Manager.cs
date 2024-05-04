@@ -12,6 +12,7 @@ public class PausaManager : MonoBehaviour
 
     private void Awake()
     {
+        // Establecer el menú de pausa como inactivo al inicio
         menuPausa.SetActive(false);
     }
 
@@ -22,21 +23,23 @@ public class PausaManager : MonoBehaviour
 
     private void Update()
     {
+        // Manejar la pausa y continuidad al presionar Escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (menuPausa.activeSelf)
             {
-                Continuar(); // Si el menu de pausa está activo, al presionar Escape, continuamos en lugar de pausar
+                Continuar(); // Si el menú de pausa está activo, continuamos el juego
             }
             else
             {
-                Pausar(); // Si el menu de pausa no está activo, al presionar Escape, lo pausamos
+                Pausar(); // Si el menú de pausa no está activo, pausamos el juego
             }
         }
     }
 
     public void Pausar()
     {
+        // Activar el menú de pausa y pausar el juego
         menuPausa.SetActive(true);
         Time.timeScale = 0;
         relojScript.velocidadDelTiempo = 0f;
@@ -44,21 +47,26 @@ public class PausaManager : MonoBehaviour
 
     public void Continuar()
     {
+        // Desactivar el menú de pausa y continuar el juego
         menuPausa.SetActive(false);
         Time.timeScale = 1;
-        relojScript.velocidadDelTiempo = 3.2f;
+        relojScript.velocidadDelTiempo = 3.2f; // Ajusta la velocidad del tiempo según sea necesario
     }
 
     public void Opciones()
     {
+        // Guardar la escena actual y cargar la escena del menú de opciones
         int index = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("escenaAnterior", index);
         SceneManager.LoadScene(0);
-        menuOpciones.MostrarMenuOpciones();
 
+        // Mostrar el menú de opciones
+        menuOpciones.MostrarMenuOpciones();
     }
+
     public void Salir()
     {
+        // Cargar la escena principal
         SceneManager.LoadScene(0);
     }
 }
