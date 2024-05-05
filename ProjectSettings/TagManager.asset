@@ -56,3 +56,6 @@ TagManager:
   - name: Decoracion
     uniqueID: 4287204869
     locked: 0
+  - name: Pared
+    uniqueID: 3191349299
+    locked: 0
