@@ -6,7 +6,7 @@ public class Reloj : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textoReloj;
 
-    private float horas;
+    public float horas;
     private float minutos;
     private bool colorCambiado = false;
 
@@ -48,5 +48,11 @@ public class Reloj : MonoBehaviour
         textoReloj.transform.localScale = new Vector3(1, 1, 1);
         float vibracion = Mathf.PingPong(Time.time * 2, 0.3f) + 1; //UNDONE Estoy igual hay que mirarlo más adelante
         textoReloj.transform.localScale = new Vector3(vibracion, vibracion, vibracion);
+    }
+    public void AdelantarTiempo(float horasAdelantar)
+    {
+        tiempoTranscurrido += horasAdelantar * 3600f; // Convertir horas a segundos
+        ActualizarTiempo();
+        MostrarTiempo();
     }
 }
