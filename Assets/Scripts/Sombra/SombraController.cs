@@ -119,11 +119,11 @@ public class SombraController : MonoBehaviour
             //override a la capa del player con su sprite
             if (transform.position.y-1 > GameObject.FindWithTag("Player").transform.position.y)
             {
-                GetComponent<SpriteRenderer>().sortingOrder = 0;
+                GetComponent<SpriteRenderer>().sortingOrder = 3;
             }
             else
             {
-                GetComponent<SpriteRenderer>().sortingOrder = 2;
+                GetComponent<SpriteRenderer>().sortingOrder = 5;
             }
     }
 
