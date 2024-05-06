@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: Ventana2 2
+  m_Name: Patito animado 1
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 1187713160, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
-  - {fileID: 1187713160, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
-  - {fileID: 2037017389, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
-  - {fileID: 2037017389, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
-  m_MinSpeed: 1
+  - {fileID: 1919516024, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
+  - {fileID: 638946853, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
+  - {fileID: 726550282, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
+  m_MinSpeed: 0.5
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
-  m_AnimationStartFrame: 1
+  m_AnimationStartFrame: 0
   m_TileColliderType: 0
   m_TileAnimationFlags: 0

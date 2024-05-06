@@ -1,35 +1,80 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine;
 
 public class VentanasTiempo : MonoBehaviour
 {
-    public AnimatedTile ventanas;
+    public AnimatedTile[] ventanasFrames; // Array para almacenar los frames de las ventanas
     private Reloj reloj;
     private Tilemap tilemap;
+
+    private int frameActual; // Frame actual de la animacion
+    private float tiempoDesdeUltimoAvance; // Tiempo transcurrido desde el ultimo avance de la animacion
+    private float tiempoEntreAvances = 3f; // Tiempo entre cada avance de la animacion (en horas)
+
+    private Vector3Int offset; // Offset para calcular la posición del tilemap en relación con la posición del objeto
 
     private void Awake()
     {
         reloj = FindObjectOfType<Reloj>();
         tilemap = GetComponent<Tilemap>();
+
+        // Detener la animacion
+        tilemap.animationFrameRate = 0f;
+        tiempoDesdeUltimoAvance = 0f;
+
+        // Inicializar frameActual en 0
+        frameActual = 0;
+
+        // Calcular el offset entre la posición del objeto y la posición de las celdas del tilemap
+        offset = tilemap.WorldToCell(transform.position) - tilemap.cellBounds.min;
+
+        // Establecer el primer frame de la animacion en la posición del tilemap
+        tilemap.SetTile(tilemap.WorldToCell(transform.position), ventanasFrames[frameActual]);
     }
 
-    private void CambiarColorVentanas(int nuevaHora)
+    private void Update()
     {
-        int numeroTotalFrames = ventanas.m_AnimatedSprites.Length;
-
-        if (numeroTotalFrames == 0)
+        if (reloj != null)
         {
-            Debug.LogError("No hay frames");
-            return;
+            // Obtener la hora actual
+            float tiempoTranscurrido = reloj.tiempoTranscurrido;
+            CambiarColorVentanas(tiempoTranscurrido);
         }
-        Vector3Int tilePosition = new Vector3Int(0, 0, 0);
+    }
 
-        float porcentajeCompletado = nuevaHora / 24f; // progresion de 0 a 1
-        //esto es para interpolar entre los frames
-        int frameActual = Mathf.FloorToInt(Mathf.Lerp(0, numeroTotalFrames - 1, porcentajeCompletado));
+    private void CambiarColorVentanas(float tiempoTranscurrido)
+    {
+        // Calcular la hora actual en el juego
+        float horas = (tiempoTranscurrido / 60f) % 24f;
 
-        tilemap.SetTile(Vector3Int.zero, ventanas.GetTile(Vector3Int.zero).GetAnimatedTile(frameActual)); //TODO
+        // Calcular el frame actual basado en la hora actual
+        int numeroTotalFrames = ventanasFrames.Length;
+        frameActual = Mathf.FloorToInt(horas / 24f * numeroTotalFrames) % numeroTotalFrames;
+
+        // Obtener la posición actual del tilemap
+        Vector3Int tilePosition = tilemap.WorldToCell(transform.position) - offset;
+
+        // Establecer el frame actual en la posición del tilemap
+        tilemap.SetTile(tilePosition, ventanasFrames[frameActual]);
+
+        tiempoDesdeUltimoAvance += Time.deltaTime;
+
+        if (tiempoDesdeUltimoAvance >= tiempoEntreAvances)
+        {
+            tiempoDesdeUltimoAvance = 0f;
+            AvanzarAnimacion();
+        }
+    }
+
+    private void AvanzarAnimacion()
+    {
+        // Avanzar al siguiente frame
+        frameActual = (frameActual + 1) % ventanasFrames.Length;
+
+        // Obtener la posición actual del tilemap
+        Vector3Int tilePosition = tilemap.WorldToCell(transform.position) - offset;
+
+        // Establecer el frame actual en la posición del tilemap
+        tilemap.SetTile(tilePosition, ventanasFrames[frameActual]);
     }
 }
