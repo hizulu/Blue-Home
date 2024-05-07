@@ -29,6 +29,14 @@ public class SombraController : MonoBehaviour
     [Header("UI Sombra")]
     [SerializeField] private uiSombra uiSombra;
 
+    [Header("Patrullaje")]
+    [SerializeField] private bool patrullajeHabilitado = true;
+    [SerializeField] private float rangoPatrullaje = 5f;
+    [SerializeField] private float tiempoEsperaMinimo = 2f;
+    [SerializeField] private float tiempoEsperaMaximo = 5f;
+    private Vector3 puntoPatrullaje;
+    private bool esperando = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -82,6 +90,7 @@ public class SombraController : MonoBehaviour
             {
                 // El jugador no esta en rango, ir por el
                 _navMeshAgent.SetDestination(posicionPersonaje);
+                MusicaPersecucion(false);
             }
         }
         else
@@ -92,13 +101,26 @@ public class SombraController : MonoBehaviour
                 // El jugador fue visto antes, pero ahora está fuera de rango
                 // Sigue al jugador (hasta que se desvanezca o ataque)
                 _navMeshAgent.SetDestination(posicionPersonaje);
+                MusicaPersecucion(false);
+
             }
             else
             {
-                // El jugador no ha sido visto todavía
-                // Quédate quieto
-                _navMeshAgent.SetDestination(posicionSombra);
-                MusicaPersecucion(false);
+                //esto es para que patruye un poco y no se quede quieto
+                if (patrullajeHabilitado && !esperando)
+                {
+                    // Realizar patrullaje aleatorio cortito
+                    puntoPatrullaje = ObtenerPuntoPatrullajeAleatorio();
+                    StartCoroutine(Patrullaje());
+                }
+                else
+                {
+                    // El jugador no ha sido visto todavía y el patrullaje está deshabilitado 
+                    // Quédate quieto
+                    _navMeshAgent.SetDestination(posicionSombra);
+                    MusicaPersecucion(false);
+                }
+
             }
         }
         //animaciones
@@ -186,8 +208,8 @@ public class SombraController : MonoBehaviour
         {
             // Teletransportar después de un ataque exitoso y saltar scream
             Invoke("teletransportarSombra", 1f);
-            uiSombra.PlayVideo();
-            estaAtacando = true; // evita que pueda atacar al teletransportarse
+            //evitar que pueda atacar al teletransportarse
+            estaAtacando = true; 
         }
         Invoke("DesactivarAtaque", 0.5f);
     }
@@ -272,5 +294,26 @@ public class SombraController : MonoBehaviour
             // Esperar medio segundo para mejorar la optimización
             yield return new WaitForSeconds(0.5f);
         }
+    }
+    IEnumerator Patrullaje()
+    {
+        esperando = true;
+
+        // Obtener una dirección aleatoria para moverse
+        Vector3 direccionAleatoria = Random.insideUnitCircle.normalized;
+        Vector3 destino = transform.position + direccionAleatoria * rangoPatrullaje;
+        _navMeshAgent.SetDestination(destino);
+
+        // Esperar un tiempo aleatorio antes de cambiar de dirección
+        float tiempoMoverse = Random.Range(tiempoEsperaMinimo, tiempoEsperaMaximo);
+        yield return new WaitForSeconds(tiempoMoverse);
+
+        esperando = false;
+    }
+    Vector3 ObtenerPuntoPatrullajeAleatorio()
+    {
+        // Obtener un punto aleatorio dentro del rango de patrullaje
+        Vector3 puntoAleatorio = Random.insideUnitCircle * rangoPatrullaje;
+        return transform.position + puntoAleatorio;
     }
 }
