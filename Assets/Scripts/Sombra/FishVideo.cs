@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class uiSombra : MonoBehaviour
+public class FishVideo : MonoBehaviour
 {
     //La idea es que sombraController llame a este script para que se active el UI de la sombra
     //Este script se encargará de activar el video y que desaparezca cuando termine

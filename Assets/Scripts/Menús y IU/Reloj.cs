@@ -35,7 +35,6 @@ public class Reloj : MonoBehaviour
             colorCambiado = true;
         }
     }
-
     void MostrarTiempo()
     {
         string horaFormateada = horas.ToString("00") + ":" + minutos.ToString("00");
@@ -46,7 +45,7 @@ public class Reloj : MonoBehaviour
     {
         textoReloj.color = Color.red;
         textoReloj.transform.localScale = new Vector3(1, 1, 1);
-        float vibracion = Mathf.PingPong(Time.time * 2, 0.3f) + 1; //UNDONE Estoy igual hay que mirarlo más adelante
+        float vibracion = Mathf.PingPong(Time.time * 2, 0.3f) + 1; //UNDONE Estoy igual hay que mirarlo mas adelante
         textoReloj.transform.localScale = new Vector3(vibracion, vibracion, vibracion);
     }
     public void AdelantarTiempo(float horasAdelantar)

@@ -15,7 +15,7 @@ public class CharacterController : MonoBehaviour
     private Animator _anim;
 
     [Header("UI Sombra")]
-    [SerializeField] private uiSombra uiSombra;
+    [SerializeField] private FishVideo uiSombra;
 
     //llama al rig y lo guarda para realizar colisiones
     private void Awake()
@@ -72,25 +72,10 @@ public class CharacterController : MonoBehaviour
             _anim.SetBool("Camina", false);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Sombra"))
-        {
-            DetenerMovimiento();
-            uiSombra.PlayVideo();
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Sombra"))
-        {
-            DetenerMovimiento();
-            uiSombra.PlayVideo();
-        }
-    }
 
-    private void DetenerMovimiento()
+    public void DetenerMovimiento()
     {
+        _anim.SetBool("Camina", false);
         recoveryTime = 5f;
         _rig.velocity = Vector2.zero;
         GetComponent<SpriteRenderer>().color = Color.gray;
