@@ -8,6 +8,7 @@ TagManager:
   - SpawnSombra
   - "Obst\xE1culo"
   - Patrullaje
+  - Interactuable
   layers:
   - Default
   - TransparentFX

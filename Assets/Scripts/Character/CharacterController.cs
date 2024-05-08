@@ -6,6 +6,11 @@ using UnityEngine.Video;
 
 public class CharacterController : MonoBehaviour
 {
+    [Header("Interactibilidad")]
+    [SerializeField] private bool interactuable = false;
+    private IInteractuable[] objetoInteractuable;
+
+
     [Header("Configuracion de Movimiento")]
     [SerializeField]private float velocidad;
     [SerializeField] private float recoveryTime = 0f;
@@ -22,6 +27,7 @@ public class CharacterController : MonoBehaviour
     {
         _rig = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+
     }
 
     private void Start()
@@ -35,8 +41,30 @@ public class CharacterController : MonoBehaviour
     private void FixedUpdate()      //siempre irá a la misma velocidad
     {
         Movimiento();
-    }
 
+        if (interactuable && Input.GetKeyDown(KeyCode.E))
+        {
+            foreach (var interactuable in objetoInteractuable)
+            {
+                interactuable.Interactuar();
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Interactuable"))
+        {
+            interactuable = true;
+            objetoInteractuable = collision.GetComponents<IInteractuable>();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Interactuable"))
+        {
+            interactuable = false;
+        }
+    }
     private void Movimiento()
     {
         float horizontal = Input.GetAxis("Horizontal");

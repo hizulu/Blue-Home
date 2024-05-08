@@ -35,7 +35,6 @@ public class FishController : MonoBehaviour
     [Header("Sonido")]
     // Se deberia hacer con un solo audioSource y cambiar de clip de sonido 
     [SerializeField] AudioSource audioSourcePersecucion; 
-    [SerializeField] AudioSource audioSourceAtaque;
 
     // Variables internas
     NavMeshAgent navMeshAgent;
@@ -189,10 +188,6 @@ public class FishController : MonoBehaviour
     */
     private void Attack() 
     {
-
-        // se reproduce el sonido de ataque, como el sonido es corto y no esta en bucle no se hacen fades
-        audioSourceAtaque.Play();
-
         // Se hace que se reproduzca la animacion de attack
         anim.SetFloat("CaminaHorz", transform.position.x - player.transform.position.x);
         anim.SetFloat("CaminaVert", transform.position.y - player.transform.position.y);
@@ -269,9 +264,8 @@ public class FishController : MonoBehaviour
     }
 
     // TODO:
-    // Funciones para hacer fade in y fade out de los audios
-    // Se deberia de hacer en un script aparte pero da pereza 
-    //script llamado AudioUtils.cs quizás
+    // Funciones para hacer fade in y fade out de los audios 
+    //script llamado AudioUtils.cs quizás o un Manager de Sonidos
     IEnumerator FadeOut(AudioSource audioSource, float fadeTime)
     {
         float startVolume = audioSource.volume;
