@@ -3,15 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 public class MenuOpciones : MonoBehaviour
 {
+    [Header("Controles de UI")]
     [SerializeField] Slider volumenGeneralSlider;
     [SerializeField] Slider volumenMusicaSlider;
+    [SerializeField] Slider volumenRuidoSlider;
     [SerializeField] Slider brilloSlider;
     [SerializeField] Toggle modoVentanaToggle;
     [SerializeField] Image nivelBrilloPanel;
+
+    //TODO: mirar por qué no va del todo
+
+    [Header("Control de Musica")]
+    [SerializeField] AudioMixer mixer;
+    const string VOLUMEN_GENERAL = "MasterVolume";
+    const string VOLUMEN_MUSICA = "MusicaVolume";
+    const string VOLUMEN_RUIDO = "RuidoVolume";
 
     public static MenuOpciones instance { get; private set; }
     private void Awake()    // Singleton, evitar duplicados
@@ -29,6 +40,7 @@ public class MenuOpciones : MonoBehaviour
     {       
         volumenGeneralSlider.onValueChanged.AddListener(ActualizarVolumenGeneral);
         volumenMusicaSlider.onValueChanged.AddListener(ActualizarVolumenMusica);
+        //volumenRuidoSlider.onValueChanged.AddListener(ActualizarVolumenRuido);
         brilloSlider.onValueChanged.AddListener(ActualizarBrillo);
         modoVentanaToggle.onValueChanged.AddListener(ActualizarModoVentana);
     }
@@ -40,13 +52,15 @@ public class MenuOpciones : MonoBehaviour
 
     public void ActualizarVolumenGeneral(float value)
     {
-        AudioListener.volume = value;
+        mixer.SetFloat(VOLUMEN_GENERAL, Mathf.Log10(value) * 20);
     }
-
-
     public void ActualizarVolumenMusica(float value)
     {
-        // Aquí puedes ajustar el volumen de la música según sea necesario
+        mixer.SetFloat(VOLUMEN_MUSICA, Mathf.Log10(value)*20);
+    }
+    public void ActualizarVolumenRuido(float value)
+    {
+        mixer.SetFloat(VOLUMEN_RUIDO, Mathf.Log10(value) * 20);
     }
 
 
