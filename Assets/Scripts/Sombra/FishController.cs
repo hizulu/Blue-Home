@@ -33,8 +33,10 @@ public class FishController : MonoBehaviour
     [SerializeField] float teleportTime = 2f;
 
     [Header("Sonido")]
-    // Se deberia hacer con un solo audioSource y cambiar de clip de sonido 
-    [SerializeField] AudioSource audioSourcePersecucion; 
+    // TODO: Se deberia hacer con un solo audioSource y cambiar de clip de sonido 
+    //  hay que añadir aquí el controlador de sonidos y que llame al index suyo
+    //  public AudioSource audioSourcePersecucion;
+
 
     // Variables internas
     NavMeshAgent navMeshAgent;
@@ -58,7 +60,7 @@ public class FishController : MonoBehaviour
         puntosPatrullaje = GameObject.FindGameObjectsWithTag("Patrullaje");
         spriteRenderer = GetComponent<SpriteRenderer>();
         reloj = GameObject.Find("Reloj UI").GetComponent<Reloj>();
-        audioSourcePersecucion.loop = true;
+        //audioSourcePersecucion.loop = true;
 
         // Inicializamos las variables
         remainingIdleTime = Random.Range(minIdleTime, maxIdleTime);
@@ -146,11 +148,13 @@ public class FishController : MonoBehaviour
 
     private void Chase()
     {
-        if(!audioSourcePersecucion.isPlaying)
+        // TODO: añadir index poner sonido persecución
+        /*if(audioSourcePersecucion.isPlaying)
         {
             StartCoroutine(FadeIn(audioSourcePersecucion, 1f));
         }
-        
+        */
+
         // Se hace que se reproduzca la animacion de chase
         anim.SetFloat("CaminaHorz", transform.position.x - player.transform.position.x);
         anim.SetFloat("CaminaVert", transform.position.y - player.transform.position.y);
@@ -241,12 +245,12 @@ public class FishController : MonoBehaviour
             // Se detiene el navMeshAgent
             navMeshAgent.SetDestination(transform.position);
 
-            // Si esta sonando el audio de persecucion se hace un fade out
-            if(audioSourcePersecucion.isPlaying)
+            // TODO: añadir index quitar sonido de persecución y volver al otro.
+            /*if(audioSourcePersecucion.isPlaying)
             {
                 StartCoroutine(FadeOut(audioSourcePersecucion, 1f));
             }
-
+            */
             // Se desactiva el comportamiento un tiempo
             isTeleporting = true;
             StartCoroutine(Teleporting());
@@ -263,35 +267,5 @@ public class FishController : MonoBehaviour
         isTeleporting = false;
     }
 
-    // TODO:
-    // Funciones para hacer fade in y fade out de los audios 
-    //script llamado AudioUtils.cs quizás o un Manager de Sonidos
-    IEnumerator FadeOut(AudioSource audioSource, float fadeTime)
-    {
-        float startVolume = audioSource.volume;
-
-        while(audioSource.volume > 0)
-        {
-            audioSource.volume -= startVolume * Time.deltaTime / fadeTime;
-            yield return null;
-        }
-
-        audioSource.Stop();
-        audioSource.volume = startVolume;
-    }
-    
-    IEnumerator FadeIn(AudioSource audioSource, float fadeTime)
-    {
-        float startVolume = audioSource.volume;
-        audioSource.volume = 0;
-        audioSource.Play();
-
-        while(audioSource.volume < startVolume)
-        {
-            audioSource.volume += startVolume * Time.deltaTime / fadeTime;
-            yield return null;
-        }
-
-        audioSource.volume = startVolume;
-    }
+ 
 }

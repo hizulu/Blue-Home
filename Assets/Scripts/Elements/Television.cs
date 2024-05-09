@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Television : MonoBehaviour
+public class Television : MonoBehaviour, IInteractuable
 {
     [SerializeField] private GameObject[] objetos;
 

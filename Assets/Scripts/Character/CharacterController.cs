@@ -22,6 +22,10 @@ public class CharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         Movimiento();
+    }
+    private void Update()
+    {
+        //Esto en update que llame a los objetos en rango para interactuar
         if (interactuable && Input.GetKeyDown(KeyCode.E))
         {
             foreach (var interactuable in objetosInteractuables)
@@ -33,6 +37,7 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Esto en trigger para saber si el objeto es interactuable
         IInteractuable objetoInteractuable = collision.GetComponent<IInteractuable>();
         if (objetoInteractuable != null)
         {
@@ -43,6 +48,7 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        //Esto en trigger para saber si el objeto ya no es interactuable
         IInteractuable objetoInteractuable = collision.GetComponent<IInteractuable>();
         if (objetoInteractuable != null)
         {

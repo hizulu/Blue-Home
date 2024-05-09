@@ -8,14 +8,12 @@ public class MusicManager : MonoBehaviour
     public static MusicManager instance;
     public AudioSource audioSource;
     [SerializeField] public AudioClip[] musica;
-    [SerializeField] public AudioClip[] ruido;
     [SerializeField] private float fadeTimeMusica = 1f;
-    [SerializeField] private float fadeTimeRuido = 0f;
 
     //la musica que se esta reproduciendo
     private AudioClip musicaActual;
-    private AudioClip ruidoActual;
 
+    //diferentes salidas de audio para la musica
     private void Awake()
     {
         if (instance == null)
@@ -41,18 +39,7 @@ public class MusicManager : MonoBehaviour
         audioSource.Play();
         StartCoroutine(FadeIn(fadeTimeMusica));
     }
-    //ruido
-    public IEnumerator PlayRuido(int index)
-    {
-        if (audioSource.isPlaying)
-        {
-            yield return StartCoroutine(FadeOut(fadeTimeRuido));
-        }
-        ruidoActual = ruido[index];
-        audioSource.clip = ruidoActual;
-        audioSource.Play();
-        StartCoroutine(FadeIn(fadeTimeRuido));
-    }
+    //Estos son para fade out y fade in de sonido
     IEnumerator FadeOut(float fadeTime)
     {
         float startVolume = audioSource.volume;
@@ -82,4 +69,13 @@ public class MusicManager : MonoBehaviour
         audioSource.volume = startVolume;
     }
 
+    //parar ruido y sonido de forma manual
+    public void StopMusic()
+    {
+        audioSource.Stop();
+    }
+    public void StartMusic()
+    {
+        audioSource.Play();
+    }
 }
