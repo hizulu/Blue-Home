@@ -1,70 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.Video;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Interactibilidad")]
-    [SerializeField] private bool interactuable = false;
-    private IInteractuable[] objetoInteractuable;
+    private bool interactuable = false;
+    private List<IInteractuable> objetosInteractuables = new List<IInteractuable>();
 
-
-    [Header("Configuracion de Movimiento")]
-    [SerializeField]private float velocidad;
-    [SerializeField] private float recoveryTime = 0f;
-
-    [Header("Colision")]
     private Rigidbody2D _rig;
     private Animator _anim;
 
-    [Header("UI Sombra")]
-    [SerializeField] private FishVideo uiSombra;
+    [SerializeField] private float velocidad;
+    [SerializeField] private float recoveryTime = 0f;
 
-    //llama al rig y lo guarda para realizar colisiones
     private void Awake()
     {
         _rig = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-
     }
 
-    private void Start()
-    {
-        //esto es para cuando establezcamos un punto donde queramos que spawnee
-
-        //puntoInicial = GameObject.Find("PuntoInicial").transform.position;  
-        //gameObject.transform.position = puntoInicial;
-    }
-
-    private void FixedUpdate()      //siempre irá a la misma velocidad
+    private void FixedUpdate()
     {
         Movimiento();
-
         if (interactuable && Input.GetKeyDown(KeyCode.E))
         {
-            foreach (var interactuable in objetoInteractuable)
+            foreach (var interactuable in objetosInteractuables)
             {
                 interactuable.Interactuar();
             }
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Interactuable"))
+        IInteractuable objetoInteractuable = collision.GetComponent<IInteractuable>();
+        if (objetoInteractuable != null)
         {
             interactuable = true;
-            objetoInteractuable = collision.GetComponents<IInteractuable>();
+            objetosInteractuables.Add(objetoInteractuable);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Interactuable"))
+        IInteractuable objetoInteractuable = collision.GetComponent<IInteractuable>();
+        if (objetoInteractuable != null)
         {
             interactuable = false;
+            objetosInteractuables.Remove(objetoInteractuable);
         }
     }
+
     private void Movimiento()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -76,7 +62,7 @@ public class CharacterController : MonoBehaviour
             return;
         }
 
-        Vector2 direccion = new Vector2(horizontal, vertical); //Los personajes no deben moverse más rápido en diagonal
+        Vector2 direccion = new Vector2(horizontal, vertical);
 
         if (direccion.magnitude > 1)
         {
@@ -85,14 +71,10 @@ public class CharacterController : MonoBehaviour
 
         _rig.velocity = direccion * velocidad;
 
-        if (horizontal != 0 || vertical != 0) //esto cambia las animaciones
+        if (horizontal != 0 || vertical != 0)
         {
             _anim.SetFloat("CaminaHorz", horizontal);
             _anim.SetFloat("CaminaVert", vertical);
-
-            _anim.SetFloat("CaminaHorz", horizontal);
-            _anim.SetFloat("CaminaVert", vertical);
-
             _anim.SetBool("Camina", true);
         }
         else
@@ -109,9 +91,9 @@ public class CharacterController : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.gray;
         Invoke("ColorOriginal", 2f);
     }
-    void ColorOriginal()    //por si queremos que el personaje se paralice vaya
+
+    private void ColorOriginal()
     {
         GetComponent<SpriteRenderer>().color = Color.white;
     }
-
 }

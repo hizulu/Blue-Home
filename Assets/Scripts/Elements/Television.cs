@@ -3,7 +3,6 @@ using UnityEngine;
 public class Television : MonoBehaviour
 {
     [SerializeField] private GameObject[] objetos;
-    private BoxCollider2D boxCollider;
 
     [Header("Sombra")]
     [SerializeField] private GameObject sombra;
@@ -11,7 +10,6 @@ public class Television : MonoBehaviour
 
     private void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
         foreach (var objeto in objetos) //Lo inicializamos desactivado todo
         {
             objeto.SetActive(false);
@@ -29,7 +27,7 @@ public class Television : MonoBehaviour
             objetos[1].SetActive(false);
         }
     }
-    private void Interactuar()  //Esto siempre va a ser llamado desde el jugador
+    public void Interactuar()  
     {
         objetos[0].SetActive(!objetos[0].activeSelf);
     }
