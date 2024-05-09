@@ -83,6 +83,4 @@ public class Pared1 : MonoBehaviour
             isPlayerInRange = false;
         }
     }
-
-
 }
