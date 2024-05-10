@@ -11,7 +11,7 @@ public class Reloj : MonoBehaviour
     private bool colorCambiado = false;
 
     public float tiempoTranscurrido { get; private set; }
-    public float velocidadDelTiempo = 3.2f;
+    public float velocidadDelTiempo = 3.2f; //5 minutos en la vida real
     //private float velocidadDelTiempo = 1440f;
 
     void Update()
@@ -25,11 +25,11 @@ public class Reloj : MonoBehaviour
 
     void ActualizarTiempo()
     {
-        horas = (Mathf.FloorToInt(tiempoTranscurrido / 60) % 24)+6;
+        horas = (Mathf.FloorToInt(tiempoTranscurrido / 60) % 24)+6; 
         minutos = Mathf.FloorToInt(tiempoTranscurrido % 60);
-        horas = Mathf.Clamp(horas, 6, 22);
-        
-        if (horas == 22 && minutos == 0 && !colorCambiado)
+        horas = Mathf.Clamp(horas, 6, 22); // Limitar el tiempo de 6:00 a 22:00
+
+        if (horas == 22 && minutos == 0 && !colorCambiado) // Cambiar el color del reloj a las 22:00
         {
             velocidadDelTiempo = 0f;
             colorCambiado = true;
@@ -44,9 +44,9 @@ public class Reloj : MonoBehaviour
     void cambioApariencia()
     {
         textoReloj.color = Color.red;
-        textoReloj.transform.localScale = new Vector3(1, 1, 1);
+        textoReloj.transform.localScale = new Vector3(1, 1, 1); 
         float vibracion = Mathf.PingPong(Time.time * 2, 0.3f) + 1; //UNDONE Estoy igual hay que mirarlo mas adelante
-        textoReloj.transform.localScale = new Vector3(vibracion, vibracion, vibracion);
+        textoReloj.transform.localScale = new Vector3(vibracion, vibracion, vibracion); //Hace que los números del reloj vibren
     }
     public void AdelantarTiempo(float horasAdelantar)
     {

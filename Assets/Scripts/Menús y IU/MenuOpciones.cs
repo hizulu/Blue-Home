@@ -37,7 +37,7 @@ public class MenuOpciones : MonoBehaviour
             Destroy(gameObject); // Si ya hay una instancia, destruye esta para mantener solo una
         }
     }
-    public void Start()
+    public void Start() 
     {       
         volumenGeneralSlider.onValueChanged.AddListener(ActualizarVolumenGeneral);
         volumenMusicaSlider.onValueChanged.AddListener(ActualizarVolumenMusica);
@@ -50,7 +50,7 @@ public class MenuOpciones : MonoBehaviour
         transform.parent.gameObject.SetActive(true); // Activa el GameObject padre en la jerarquía
         gameObject.SetActive(true);
     }
-
+    //Volumenes de los audios del juego
     public void ActualizarVolumenGeneral(float value)
     {
         mixer.SetFloat(VOLUMEN_GENERAL, Mathf.Log10(value) * 20);
@@ -67,7 +67,7 @@ public class MenuOpciones : MonoBehaviour
 
     public void ActualizarBrillo(float value)
     {
-        luz.intensity = value;
+        luz.intensity = value;//Cambia la intensidad de la luz global usando el slider
     }
 
 
