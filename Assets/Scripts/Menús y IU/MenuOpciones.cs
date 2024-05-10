@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.Universal;
 
 
 public class MenuOpciones : MonoBehaviour
@@ -14,7 +15,7 @@ public class MenuOpciones : MonoBehaviour
     [SerializeField] Slider volumenRuidoSlider;
     [SerializeField] Slider brilloSlider;
     [SerializeField] Toggle modoVentanaToggle;
-    [SerializeField] Image nivelBrilloPanel;
+    [SerializeField] Light2D luz;
 
     //TODO: mirar por qué no va del todo
 
@@ -40,7 +41,7 @@ public class MenuOpciones : MonoBehaviour
     {       
         volumenGeneralSlider.onValueChanged.AddListener(ActualizarVolumenGeneral);
         volumenMusicaSlider.onValueChanged.AddListener(ActualizarVolumenMusica);
-        //volumenRuidoSlider.onValueChanged.AddListener(ActualizarVolumenRuido);
+        volumenRuidoSlider.onValueChanged.AddListener(ActualizarVolumenRuido);
         brilloSlider.onValueChanged.AddListener(ActualizarBrillo);
         modoVentanaToggle.onValueChanged.AddListener(ActualizarModoVentana);
     }
@@ -66,20 +67,22 @@ public class MenuOpciones : MonoBehaviour
 
     public void ActualizarBrillo(float value)
     {
-        nivelBrilloPanel.color = new Color(0, 0, 0, value / 255f);
+        luz.intensity = value;
     }
 
 
     public void ActualizarModoVentana(bool value)
     {
-        Screen.fullScreen = !value;
+        Screen.fullScreen = !value; //Si el toggle está desactivado, hay pantalla completa
+        Debug.Log("Modo ventana: " + value);
     }
     public void Volver()
     {
-        transform.parent.gameObject.SetActive(false);
+        //Desactiva el menú de opciones para que es vea el menú principal
+        transform.parent.gameObject.SetActive(false); 
         gameObject.SetActive(false);
-        int escenaAnterior = PlayerPrefs.GetInt("escenaAnterior", 0);
+        int escenaAnterior = PlayerPrefs.GetInt("escenaAnterior", 0); //Busca la escena anterior en la memoria
         Debug.Log("Escena anterior guardada: " + escenaAnterior);
-        SceneManager.LoadScene(escenaAnterior);
+        SceneManager.LoadScene(escenaAnterior); //Vuelve a la escena anterior
     }
 }
