@@ -5,33 +5,62 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    public int sceneIndex = 0;
+    public bool crearNuevaPartida = false;
+    private int defaultSceneIndex = 1;
+    //private int defaultSceneIndex = 2;
+
     public static GameManager instance { get; private set; }
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (CambioEscenaActiva())
-        SceneSaved.instance.GuardarEscena();
+        // Solo guarda la escena si no estamos en la escena del menú
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            GuardarEscena();
+        }
     }
 
-    private bool CambioEscenaActiva()
+    public void GuardarEscena()
     {
-        return SceneManager.GetActiveScene().buildIndex != SceneSaved.instance.sceneIndex;
+        // Guarda el índice de la escena actual si no es la escena del menú
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("SavedScene", sceneIndex);
+    }
 
+    public void CargarEscena()
+    {
+        if (PlayerPrefs.HasKey("SavedScene"))
+        {
+            // Carga la escena guardada
+            crearNuevaPartida = false;
+            sceneIndex = PlayerPrefs.GetInt("SavedScene");
+            SceneManager.LoadScene(sceneIndex);
+        }
+        else
+        {
+            // Si no hay una escena guardada, carga la escena predeterminada
+            CrearNuevaPartida();
+            crearNuevaPartida = false;
+        }
+    }
+
+    public void CrearNuevaPartida()
+    {
+        // Borra la clave de la escena guardada y carga la escena predeterminada
+        PlayerPrefs.DeleteKey("SavedScene");
+        crearNuevaPartida = true;
+        SceneManager.LoadScene(defaultSceneIndex);
     }
 }

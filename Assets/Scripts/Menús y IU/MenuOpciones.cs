@@ -19,11 +19,11 @@ public class MenuOpciones : MonoBehaviour
 
     //TODO: mirar por qué no va del todo
 
-    [Header("Control de Musica")]
+    /*[Header("Control de Musica")]
     [SerializeField] AudioMixer mixer;
     const string VOLUMEN_GENERAL = "MasterVolume";
     const string VOLUMEN_MUSICA = "MusicaVolume";
-    const string VOLUMEN_RUIDO = "RuidoVolume";
+    const string VOLUMEN_RUIDO = "RuidoVolume";*/
 
     public static MenuOpciones instance { get; private set; }
     private void Awake()    // Singleton, evitar duplicados
@@ -39,9 +39,11 @@ public class MenuOpciones : MonoBehaviour
     }
     public void Start() 
     {       
+        /*
         volumenGeneralSlider.onValueChanged.AddListener(ActualizarVolumenGeneral);
         volumenMusicaSlider.onValueChanged.AddListener(ActualizarVolumenMusica);
         volumenRuidoSlider.onValueChanged.AddListener(ActualizarVolumenRuido);
+        */
         brilloSlider.onValueChanged.AddListener(ActualizarBrillo);
         modoVentanaToggle.onValueChanged.AddListener(ActualizarModoVentana);
     }
@@ -51,7 +53,7 @@ public class MenuOpciones : MonoBehaviour
         gameObject.SetActive(true);
     }
     //Volumenes de los audios del juego
-    public void ActualizarVolumenGeneral(float value)
+    /*public void ActualizarVolumenGeneral(float value)
     {
         mixer.SetFloat(VOLUMEN_GENERAL, Mathf.Log10(value) * 20);
     }
@@ -63,7 +65,7 @@ public class MenuOpciones : MonoBehaviour
     {
         mixer.SetFloat(VOLUMEN_RUIDO, Mathf.Log10(value) * 20);
     }
-
+    */
 
     public void ActualizarBrillo(float value)
     {
@@ -81,7 +83,7 @@ public class MenuOpciones : MonoBehaviour
         //Desactiva el menú de opciones para que es vea el menú principal
         transform.parent.gameObject.SetActive(false); 
         gameObject.SetActive(false);
-        int escenaAnterior = PlayerPrefs.GetInt("escenaAnterior", 0); //Busca la escena anterior en la memoria
+        int escenaAnterior = PlayerPrefs.GetInt("SavedScene"); //Busca la escena anterior en la memoria
         Debug.Log("Escena anterior guardada: " + escenaAnterior);
         SceneManager.LoadScene(escenaAnterior); //Vuelve a la escena anterior
     }

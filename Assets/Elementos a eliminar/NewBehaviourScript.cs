@@ -13,7 +13,12 @@ public class NewBehaviourScript : MonoBehaviour
     {
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index+1);
-        SceneSaved.instance.GuardarEscena();
+        GameManager.instance.GuardarEscena();
+        /*if (GameManager.instance.sceneIndex >1)
+        {
+            gameObject.SetActive(false);
+        }*/
     }
+
 
 }
