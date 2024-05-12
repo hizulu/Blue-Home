@@ -3,70 +3,49 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class Telefono : MonoBehaviour
+public class Telefono : MonoBehaviour, IInteractuable
 {
+    [Header("Elementos del dialogo")]
     [SerializeField] public Collider2D colliderTelefono;
     [SerializeField] public GameObject marcaOpcionInteraccion;
     [SerializeField] GameObject panelDialogoTelefono;
     [SerializeField] TMP_Text textoDialogoTelefono;
-
-    [SerializeField, TextArea(4, 6)] public string[] lineasDialogoTelefono; // Array de lineas de dialogo, cada elemento es una linea
-
-    private float tiempoEntreLetras = 0.05f;
-    private bool jugadorCerca = false;
     private bool dialogoActivo;
     private int indexLinea;
 
+    [SerializeField] public float tiempoEntreLetras = 0.2f;
+    [SerializeField, TextArea(4, 6)] public string[] lineasDialogoTelefono; // Array de lineas de dialogo, cada elemento es una linea
+
+    [Header("Variables activas por telefono")]
+    [SerializeField] public GameObject[] objetosActivadosPorTelefono; // Array de objetos que se activan al interactuar con el telefono
+
+    //asegurar que no lea dos veces el mismo dialogo
     public bool dialogoTelefonoLeido = false;
-
-    public static Telefono instance { get; private set; }
-    private void Awake()    // Singleton, evitar duplicados
+    public void Interactuar()
     {
-        if (instance == null)
+        if (!dialogoActivo && !dialogoTelefonoLeido) // Si no hay dialogo activo y no se ha leido el dialogo
         {
-            instance = this;
+            ActivarDialogo();
         }
-        else
+        else if (dialogoActivo) // Si ya hay un dialogo activo
         {
-            Destroy(gameObject); // Si ya hay una instancia, destruye esta para mantener solo una
+            SiguienteLineaDialogo();
         }
     }
-
-    void Update()
-    {
-        if(jugadorCerca && Input.GetButtonDown("Fire1")) // Si el jugador esta cerca y presiona el boton de interaccion
-        {
-            if (!dialogoActivo)
-            {
-                ActivarDialogo();
-                
-            } else if(textoDialogoTelefono.text == lineasDialogoTelefono[indexLinea])
-            {
-                SiguienteLineaDialogo();
-            }
-            else // Si el dialogo esta en proceso de mostrarse, se muestra completo
-            {
-                StopAllCoroutines();
-                textoDialogoTelefono.text = lineasDialogoTelefono[indexLinea];
-            }
-        }
-    }
-
     private void ActivarDialogo() // Activa el dialogo, pone el tiempo en pausa y muestra las lineas de dialogo
     {
         dialogoActivo = true;
         panelDialogoTelefono.SetActive(true);
-        marcaOpcionInteraccion.SetActive(false);
         indexLinea = 0;
         Time.timeScale = 0f;
         StartCoroutine(MostrarLineasDialogo());
-
     }
     private void SiguienteLineaDialogo() // Muestra la siguiente linea de dialogo
     {
         indexLinea++;
         if (indexLinea < lineasDialogoTelefono.Length)
         {
+            StopAllCoroutines();
             StartCoroutine(MostrarLineasDialogo());
         }
         else // Si ya no hay mas lineas de dialogo, se desactiva el panel de dialogo y se reactiva la opcion de interaccion
@@ -75,6 +54,8 @@ public class Telefono : MonoBehaviour
             dialogoTelefonoLeido = true;
             marcaOpcionInteraccion.SetActive(true);
             dialogoActivo = false;
+            //Activar todos los objetos que nosotros queremos que se activen al interactuar con el telefono
+            ActivarObjetosActivadosPorTelefono();
             Time.timeScale = 1f;
         }
     }
@@ -87,21 +68,11 @@ public class Telefono : MonoBehaviour
             yield return new WaitForSecondsRealtime(tiempoEntreLetras); // Espera un tiempo antes de mostrar la siguiente letra
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D colliderTelefono) // Si el jugador esta cerca del telefono, se activa la opcion de interaccion
+    public void ActivarObjetosActivadosPorTelefono() // Activa los objetos que se activan al interactuar con el telefono
     {
-        if (colliderTelefono.gameObject.CompareTag("Player"))
+        foreach (var objeto in objetosActivadosPorTelefono)
         {
-            jugadorCerca = true;
-            marcaOpcionInteraccion.SetActive(true);
-        }
-    }
-    private void OnTriggerExit2D(Collider2D colliderTelefono) // Si el jugador se aleja del telefono, se desactiva la opcion de interaccion
-    {
-        if (colliderTelefono.gameObject.CompareTag("Player"))
-        {
-            jugadorCerca = false;
-            marcaOpcionInteraccion.SetActive(false);
+            objeto.SetActive(true);
         }
     }
 }

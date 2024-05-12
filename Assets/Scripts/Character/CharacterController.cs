@@ -12,6 +12,7 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField] private float velocidad;
     [SerializeField] private float recoveryTime = 0f;
+    [SerializeField] public GameObject marcaOpcionInteraccion;
 
     private void Awake()
     {
@@ -26,11 +27,15 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         //Esto en update que llame a los objetos en rango para interactuar
-        if (interactuable && Input.GetKeyDown(KeyCode.E))
+        if (interactuable)
         {
-            foreach (var interactuable in objetosInteractuables)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                interactuable.Interactuar();
+                foreach (var interactuable in objetosInteractuables)
+                {
+                    marcaOpcionInteraccion.SetActive(false);
+                    interactuable.Interactuar();
+                }
             }
         }
     }
@@ -41,6 +46,7 @@ public class CharacterController : MonoBehaviour
         IInteractuable objetoInteractuable = collision.GetComponent<IInteractuable>();
         if (objetoInteractuable != null)
         {
+            marcaOpcionInteraccion.SetActive(true);
             interactuable = true;
             objetosInteractuables.Add(objetoInteractuable);
         }
@@ -52,6 +58,7 @@ public class CharacterController : MonoBehaviour
         IInteractuable objetoInteractuable = collision.GetComponent<IInteractuable>();
         if (objetoInteractuable != null)
         {
+            marcaOpcionInteraccion.SetActive(false);
             interactuable = false;
             objetosInteractuables.Remove(objetoInteractuable);
         }

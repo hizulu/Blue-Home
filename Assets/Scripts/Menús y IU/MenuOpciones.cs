@@ -17,13 +17,11 @@ public class MenuOpciones : MonoBehaviour
     [SerializeField] Toggle modoVentanaToggle;
     [SerializeField] Light2D luz;
 
-    //TODO: mirar por qué no va del todo
-
-    /*[Header("Control de Musica")]
+    [Header("Control de Musica")]
     [SerializeField] AudioMixer mixer;
-    const string VOLUMEN_GENERAL = "MasterVolume";
-    const string VOLUMEN_MUSICA = "MusicaVolume";
-    const string VOLUMEN_RUIDO = "RuidoVolume";*/
+    const string VOLUMEN_GENERAL = "Master";
+    const string VOLUMEN_MUSICA = "Musica";
+    const string VOLUMEN_RUIDO = "Ruido";
 
     public static MenuOpciones instance { get; private set; }
     private void Awake()    // Singleton, evitar duplicados
@@ -39,11 +37,11 @@ public class MenuOpciones : MonoBehaviour
     }
     public void Start() 
     {       
-        /*
+        
         volumenGeneralSlider.onValueChanged.AddListener(ActualizarVolumenGeneral);
         volumenMusicaSlider.onValueChanged.AddListener(ActualizarVolumenMusica);
         volumenRuidoSlider.onValueChanged.AddListener(ActualizarVolumenRuido);
-        */
+        
         brilloSlider.onValueChanged.AddListener(ActualizarBrillo);
         modoVentanaToggle.onValueChanged.AddListener(ActualizarModoVentana);
     }
@@ -53,20 +51,19 @@ public class MenuOpciones : MonoBehaviour
         gameObject.SetActive(true);
     }
     //Volumenes de los audios del juego
-    /*public void ActualizarVolumenGeneral(float value)
+    public void ActualizarVolumenGeneral(float value)
     {
-        mixer.SetFloat(VOLUMEN_GENERAL, Mathf.Log10(value) * 20);
+        mixer.SetFloat(VOLUMEN_GENERAL, value);
     }
     public void ActualizarVolumenMusica(float value)
     {
-        mixer.SetFloat(VOLUMEN_MUSICA, Mathf.Log10(value)*20);
+        mixer.SetFloat(VOLUMEN_MUSICA, value);
     }
     public void ActualizarVolumenRuido(float value)
     {
-        mixer.SetFloat(VOLUMEN_RUIDO, Mathf.Log10(value) * 20);
+        mixer.SetFloat(VOLUMEN_RUIDO, value);
     }
-    */
-
+    
     public void ActualizarBrillo(float value)
     {
         luz.intensity = value;//Cambia la intensidad de la luz global usando el slider

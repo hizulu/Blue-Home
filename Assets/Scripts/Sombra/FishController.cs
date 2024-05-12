@@ -44,7 +44,6 @@ public class FishController : MonoBehaviour
     private GameObject player;
     private Vector3 destino;
     SpriteRenderer spriteRenderer;
-    Reloj reloj;
     bool isTeleporting = false;
     
 
@@ -59,7 +58,6 @@ public class FishController : MonoBehaviour
         navMeshAgent.updateUpAxis = false;
         puntosPatrullaje = GameObject.FindGameObjectsWithTag("Patrullaje");
         spriteRenderer = GetComponent<SpriteRenderer>();
-        reloj = GameObject.Find("Reloj UI").GetComponent<Reloj>();
         //audioSourcePersecucion.loop = true;
 
         // Inicializamos las variables
@@ -211,7 +209,6 @@ public class FishController : MonoBehaviour
             if(Vector2.Distance(transform.position, player.transform.position) < attackHitDistance)
             {
                 videoPez.PlayVideo();
-                reloj.AdelantarTiempo(horasAdelantar);
                 player.GetComponent<CharacterController>().DetenerMovimiento();
 
                 attackTime = 1.47f;

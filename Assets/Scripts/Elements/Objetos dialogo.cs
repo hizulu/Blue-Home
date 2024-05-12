@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class Objetosdialogo : MonoBehaviour
+public class Objetosdialogo : MonoBehaviour, IInteractuable
 {
     [SerializeField] public Collider2D colliderObjeto;
     [SerializeField] public GameObject marcaOpcionInteraccion;
@@ -10,31 +10,25 @@ public class Objetosdialogo : MonoBehaviour
     [SerializeField] TMP_Text textoDialogoObjeto;
     [SerializeField, TextArea(4,6)] public string[] lineasDialogoObjeto;
 
-    private float tiempoEntreLetras = 0.05f;
-    private bool jugadorCerca = false;
+    public float tiempoEntreLetras = 0.2f;
     private bool dialogoActivo;
     private int indexLinea;
-
-    void Update()
+    public void Interactuar()
     {
-        if (jugadorCerca && Input.GetButtonDown("Fire1")) // Si el jugador está cerca y presiona el botón de interacción
+        if (!dialogoActivo)
         {
-            if (!dialogoActivo)
+            ActivarDialogo();
+        }
+        else
+        {
+            StopAllCoroutines();
+            textoDialogoObjeto.text = lineasDialogoObjeto[indexLinea];
+            if (Input.GetButtonDown("Fire1"))
             {
-                ActivarDialogo();
-            }
-            else 
-            {               
-                 StopAllCoroutines();
-                 textoDialogoObjeto.text = lineasDialogoObjeto[indexLinea];          
-                if(Input.GetButtonDown("Fire1"))
-                {
-                    DesactivarDialogo();
-                }
+                DesactivarDialogo();
             }
         }
     }
-
     private void ActivarDialogo() // Activa el diálogo, pausa el tiempo y muestra las líneas de diálogo
     {
         dialogoActivo = true;
@@ -44,7 +38,6 @@ public class Objetosdialogo : MonoBehaviour
         Time.timeScale = 0f;
         StartCoroutine(MostrarLineasDialogo());
     }
-
     private void DesactivarDialogo() // Desactiva el diálogo y reanuda el tiempo
     {
         panelDialogoObjeto.SetActive(false);
@@ -52,8 +45,6 @@ public class Objetosdialogo : MonoBehaviour
         dialogoActivo = false;
         Time.timeScale = 1f;
     }
-
-
     private IEnumerator MostrarLineasDialogo()
     {
         textoDialogoObjeto.text = string.Empty;
@@ -64,21 +55,4 @@ public class Objetosdialogo : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D colliderObjeto)
-    {
-        if (colliderObjeto.gameObject.CompareTag("Player"))
-        {
-            jugadorCerca = true;
-            marcaOpcionInteraccion.SetActive(true);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D colliderObjeto)
-    {
-        if (colliderObjeto.gameObject.CompareTag("Player"))
-        {
-            jugadorCerca = false;
-            marcaOpcionInteraccion.SetActive(false);
-        }
-    }
 }
