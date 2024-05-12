@@ -17,6 +17,21 @@ public class Telefono : MonoBehaviour
     private bool dialogoActivo;
     private int indexLinea;
 
+    public bool dialogoTelefonoLeido = false;
+
+    public static Telefono instance { get; private set; }
+    private void Awake()    // Singleton, evitar duplicados
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Si ya hay una instancia, destruye esta para mantener solo una
+        }
+    }
+
     void Update()
     {
         if(jugadorCerca && Input.GetButtonDown("Fire1")) // Si el jugador esta cerca y presiona el boton de interaccion
@@ -24,6 +39,7 @@ public class Telefono : MonoBehaviour
             if (!dialogoActivo)
             {
                 ActivarDialogo();
+                
             } else if(textoDialogoTelefono.text == lineasDialogoTelefono[indexLinea])
             {
                 SiguienteLineaDialogo();
@@ -56,6 +72,7 @@ public class Telefono : MonoBehaviour
         else // Si ya no hay mas lineas de dialogo, se desactiva el panel de dialogo y se reactiva la opcion de interaccion
         {
             panelDialogoTelefono.SetActive(false);
+            dialogoTelefonoLeido = true;
             marcaOpcionInteraccion.SetActive(true);
             dialogoActivo = false;
             Time.timeScale = 1f;
