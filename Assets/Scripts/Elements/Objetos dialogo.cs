@@ -13,20 +13,21 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
     public float tiempoEntreLetras = 0.2f;
     private bool dialogoActivo;
     private int indexLinea;
+
     public void Interactuar()
     {
         if (!dialogoActivo)
         {
             ActivarDialogo();
         }
+        else if(textoDialogoObjeto.text == lineasDialogoObjeto[indexLinea])
+        {
+            DesactivarDialogo();
+        }
         else
         {
             StopAllCoroutines();
             textoDialogoObjeto.text = lineasDialogoObjeto[indexLinea];
-            if (Input.GetButtonDown("Fire1"))
-            {
-                DesactivarDialogo();
-            }
         }
     }
     private void ActivarDialogo() // Activa el diálogo, pausa el tiempo y muestra las líneas de diálogo
@@ -54,5 +55,4 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
             yield return new WaitForSecondsRealtime(tiempoEntreLetras);
         }
     }
-
 }

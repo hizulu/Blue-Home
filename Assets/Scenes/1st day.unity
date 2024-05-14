@@ -2294,7 +2294,7 @@ MonoBehaviour:
   panelDialogoObjeto: {fileID: 74307017}
   textoDialogoObjeto: {fileID: 104637645}
   lineasDialogoObjeto:
-  - 
+  - "\xA1Hola, Sushi!\n\xBFQu\xE9 te parece tu nueva pecera?"
   - 
   - 
   tiempoEntreLetras: 0.05
@@ -54161,7 +54161,7 @@ Tilemap:
       - {fileID: -914295488, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: 617135151, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: 1488324010, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
-      m_AnimationSpeed: 0.67808604
+      m_AnimationSpeed: 0.55414927
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -54171,7 +54171,7 @@ Tilemap:
       - {fileID: 1984579196, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: -1968351172, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: -848180929, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
-      m_AnimationSpeed: 0.6194514
+      m_AnimationSpeed: 0.9052817
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -54181,7 +54181,7 @@ Tilemap:
       - {fileID: -528618705, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: -1989982712, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: -1118388634, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
-      m_AnimationSpeed: 0.9652698
+      m_AnimationSpeed: 0.80591667
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -54191,7 +54191,7 @@ Tilemap:
       - {fileID: 1919516024, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: 638946853, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
       - {fileID: 726550282, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
-      m_AnimationSpeed: 0.7332448
+      m_AnimationSpeed: 0.5619881
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

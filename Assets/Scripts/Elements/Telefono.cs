@@ -27,9 +27,14 @@ public class Telefono : MonoBehaviour, IInteractuable
         {
             ActivarDialogo();
         }
-        else if (dialogoActivo) // Si ya hay un dialogo activo
+        else if (textoDialogoTelefono.text== lineasDialogoTelefono[indexLinea]) // Si ya hay un dialogo activo
         {
             SiguienteLineaDialogo();
+        }
+        else
+        {
+            StopAllCoroutines();
+            textoDialogoTelefono.text = lineasDialogoTelefono[indexLinea];
         }
     }
     private void ActivarDialogo() // Activa el dialogo, pone el tiempo en pausa y muestra las lineas de dialogo
