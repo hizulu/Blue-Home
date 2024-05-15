@@ -103,11 +103,3 @@ public class OpcionesGuardadas
     public bool modoVentana;
 }
 
-//solucioname el problema de menu de opciones
-//Para solucionar el problema del menú de opciones,
-//puedes guardar la escena anterior en PlayerPrefs antes de cargar la escena del menú de opciones.
-//Luego, puedes cargar la escena anterior en el método Volver() de la clase MenuOpciones.
-//Aquí está el código actualizado para la clase MenuOpciones:
-
-//Con estos cambios, el menú de opciones debería funcionar correctamente y volver a la escena anterior después de guardar las opciones.
-
