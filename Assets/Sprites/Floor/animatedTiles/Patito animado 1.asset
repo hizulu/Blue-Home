@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Patito animado 1
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 1919516024, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
-  - {fileID: 638946853, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
-  - {fileID: 726550282, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
+  - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
+  - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
+  - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
   m_MinSpeed: 0.5
   m_MaxSpeed: 1
   m_AnimationStartTime: 0

@@ -13,6 +13,8 @@ public class PausaManager : MonoBehaviour
     private void Awake()
     {
         // Establecer el menú de pausa como inactivo al inicio
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         menuPausa.SetActive(false);
     }
 
@@ -43,6 +45,8 @@ public class PausaManager : MonoBehaviour
         menuPausa.SetActive(true);
         Time.timeScale = 0;
         relojScript.velocidadDelTiempo = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Continuar()
@@ -51,6 +55,8 @@ public class PausaManager : MonoBehaviour
         menuPausa.SetActive(false);
         Time.timeScale = 1;
         relojScript.velocidadDelTiempo = 3.2f; // Ajusta la velocidad del tiempo según sea necesario
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Opciones()
