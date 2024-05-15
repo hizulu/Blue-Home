@@ -21,7 +21,6 @@ public class FishController : MonoBehaviour
     [SerializeField] float tryAttackDistance = 1.5f;
     [SerializeField] float attackHitDistance = 1f;
     [SerializeField] float velocidad = 2f;
-    [SerializeField] float horasAdelantar = 3f;
     float attackTime = 1.47f; // Esto es un numero magico, se deberia de cambiar
 
     [Header("Teleport")]
@@ -223,7 +222,6 @@ public class FishController : MonoBehaviour
             }
         }
     }
-
     private void Teleport()
     {
         // Se elige un punto aleatorio para teletransportarse
@@ -263,6 +261,4 @@ public class FishController : MonoBehaviour
         yield return new WaitForSeconds(teleportTime);
         isTeleporting = false;
     }
-
- 
 }

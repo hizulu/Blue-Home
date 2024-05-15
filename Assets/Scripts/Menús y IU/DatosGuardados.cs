@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class DatosGuardados : MonoBehaviour
 {
@@ -11,12 +12,13 @@ public class DatosGuardados : MonoBehaviour
     [SerializeField] private Slider brilloSlider;
     [SerializeField] private Toggle modoVentanaToggle;
 
-    [SerializeField] private float defaultVolumenGeneral=50f;
-    [SerializeField] private float defaultVolumenMusica=50f;
+    [SerializeField] private float defaultVolumenGeneral = 50f;
+    [SerializeField] private float defaultVolumenMusica = 50f;
     [SerializeField] private float defaultVolumenRuido = 50f;
     [SerializeField] private float defaultBrillo = 0.4f;
-    [SerializeField] private bool defaultModoVentana=false;
+    [SerializeField] private bool defaultModoVentana = false;
 
+    private string filePath;
     public static DatosGuardados instance { get; private set; }
     private void Awake()
     {
@@ -28,121 +30,75 @@ public class DatosGuardados : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Define la ruta del archivo de guardado
+        filePath = Application.persistentDataPath + "/datos.json";
     }
     void Start()
     {
-        if (SceneSaved.instance.crearNuevaPartida==true)
-        {
-            BorrarDatos();
-            SceneSaved.instance.crearNuevaPartida= false;
-        }
-        else
-        {
-            SceneSaved.instance.CargarEscena();
-        }
-        //Se cargan las opciones guardadas
+        // Carga las opciones guardadas
         CargarOpciones();
     }
-
     public void CargarOpciones()
     {
-        /*        
-        //Se asignan los valores guardados en playerprefs a los sliders y el toggle llamando a la clave asociada
-        volumenGeneralSlider.value = PlayerPrefs.GetFloat("VolumenGeneral");
-        volumenMusicaSlider.value = PlayerPrefs.GetFloat("VolumenMusica");
-        volumenRuidoSlider.value = PlayerPrefs.GetFloat("VolumenRuido");
-        brilloSlider.value = PlayerPrefs.GetFloat("Brillo");
-        if (PlayerPrefs.GetInt("ModoVentana") == 1)
+        // Comprueba si existe un archivo de guardado
+        if (File.Exists(filePath))
         {
-            modoVentanaToggle.isOn = true;
+            string dataAsJson = File.ReadAllText(filePath);
+            OpcionesGuardadas opcionesGuardadas = JsonUtility.FromJson<OpcionesGuardadas>(dataAsJson);
+
+            // Asigna los valores guardados a los sliders y el toggle
+            volumenGeneralSlider.value = opcionesGuardadas.volumenGeneral;
+            volumenMusicaSlider.value = opcionesGuardadas.volumenMusica;
+            volumenRuidoSlider.value = opcionesGuardadas.volumenRuido;
+            brilloSlider.value = opcionesGuardadas.brillo;
+            modoVentanaToggle.isOn = opcionesGuardadas.modoVentana;
         }
         else
         {
-            modoVentanaToggle.isOn = false;
-        }*/
-
-        //En caso de que no haya valores guardados en playerprefs, se asignan los valores por defecto
-        if (!PlayerPrefs.HasKey("VolumenGeneral"))
-        {
-            PlayerPrefs.SetFloat("VolumenGeneral", defaultVolumenGeneral);
+            // Asigna los valores por defecto
+            volumenGeneralSlider.value = defaultVolumenGeneral;
+            volumenMusicaSlider.value = defaultVolumenMusica;
+            volumenRuidoSlider.value = defaultVolumenRuido;
+            brilloSlider.value = defaultBrillo;
+            modoVentanaToggle.isOn = defaultModoVentana;
         }
-        else
-        {
-            volumenGeneralSlider.value = PlayerPrefs.GetFloat("VolumenGeneral");
-        }
-
-
-        if (!PlayerPrefs.HasKey("VolumenMusica"))
-        {
-            PlayerPrefs.SetFloat("VolumenMusica", defaultVolumenMusica);
-        }
-        else
-        {
-            volumenMusicaSlider.value = PlayerPrefs.GetFloat("VolumenMusica");
-        }
-
-
-        if (!PlayerPrefs.HasKey("VolumenRuido"))
-        {
-            PlayerPrefs.SetFloat("VolumenRuido", defaultVolumenRuido);
-        }
-        else
-        {
-            volumenRuidoSlider.value = PlayerPrefs.GetFloat("VolumenRuido");
-        }
-
-
-        if (!PlayerPrefs.HasKey("Brillo"))
-        {
-            PlayerPrefs.SetFloat("Brillo", defaultBrillo);
-        }
-        else
-        {
-            brilloSlider.value = PlayerPrefs.GetFloat("Brillo");
-        }
-
-
-        if (!PlayerPrefs.HasKey("ModoVentana"))
-        {
-            PlayerPrefs.SetInt("ModoVentana", defaultModoVentana ? 1 : 0);
-        }
-        else
-        {
-            modoVentanaToggle.isOn = PlayerPrefs.GetInt("ModoVentana") == 1;
-        }
-
     }
-    //Playerprefs guarda los datos del valor de los sliders y el toggle junto con una clave asociada
-
-    public void SetVolumenGeneralPrefs()
+    public void GuardarOpciones()
     {
-        PlayerPrefs.SetFloat("VolumenGeneral", volumenGeneralSlider.value);
-    }
-    public void SetVolumenMusicaPrefs()
-    {
-        PlayerPrefs.SetFloat("VolumenMusica", volumenMusicaSlider.value);
-    }
-    public void SetVolumenRuidoPrefs()
-    {
-        PlayerPrefs.SetFloat("VolumenRuido", volumenRuidoSlider.value);
-    }
-    public void SetBrilloPrefs()
-    {
-        PlayerPrefs.SetFloat("Brillo", brilloSlider.value);
-    }
-    public void SetModoVentanaPrefs()
-    {
-        if (modoVentanaToggle.isOn)
+        //guardamos los datos 
+        OpcionesGuardadas opcionesGuardadas = new OpcionesGuardadas
         {
-            PlayerPrefs.SetInt("ModoVentana", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("ModoVentana", 0);
-        }
+            volumenGeneral = volumenGeneralSlider.value,
+            volumenMusica = volumenMusicaSlider.value,
+            volumenRuido = volumenRuidoSlider.value,
+            brillo = brilloSlider.value,
+            modoVentana = modoVentanaToggle.isOn
+        };
+
+        // Convierte el objeto OpcionesGuardadas a JSON
+        string dataAsJson = JsonUtility.ToJson(opcionesGuardadas);
+
+        // Escribe el JSON en el archivo de guardado
+        File.WriteAllText(filePath, dataAsJson);
     }
+
     public void BorrarDatos()
     {
-        PlayerPrefs.DeleteAll();
+        // Elimina el archivo de guardado si existe, nos manejamos con un solo archivo de guardado
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
     }
+}
+
+[System.Serializable]
+public class OpcionesGuardadas
+{
+    public float volumenGeneral;
+    public float volumenMusica;
+    public float volumenRuido;
+    public float brillo;
+    public bool modoVentana;
 }
