@@ -12,19 +12,6 @@ public class SceneSaved : MonoBehaviour
     //private int defaultSceneIndex = 2;
 
     public static SceneSaved instance { get; private set; }
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     void Start()
     {
         // Solo guarda la escena si no estamos en la escena del menú

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class PausaManager : MonoBehaviour
     [SerializeField] Reloj relojScript;
     [SerializeField] GameObject relojGameObject;
     [SerializeField] MenuOpciones menuOpciones;
+    [SerializeField] GameObject menuOpciones0;
+    [SerializeField] GameObject menuOpciones1;
 
     private void Awake()
     {
@@ -67,7 +70,8 @@ public class PausaManager : MonoBehaviour
         SceneManager.LoadScene(0);
 
         // Mostrar el menú de opciones
-        menuOpciones.MostrarMenuOpciones();
+        menuOpciones0.SetActive(true);
+        menuOpciones1.SetActive(true);
     }
 
     public void Salir()

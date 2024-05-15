@@ -15253,6 +15253,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1436812177301505269, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: m_Name
+      value: Menu Opciones
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436812177301505269, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -15298,11 +15302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3870605114103044739, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0018310547
+      value: -0.001953125
       objectReference: {fileID: 0}
     - target: {fileID: 3870605114103044739, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4165741838407936151, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_IsActive
@@ -17149,7 +17153,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1424516710}
+      - m_Target: {fileID: 112916231}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -17158,7 +17162,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Opciones
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1424516710}
@@ -46141,6 +46145,8 @@ MonoBehaviour:
   relojScript: {fileID: 1747503439}
   relojGameObject: {fileID: 1747503435}
   menuOpciones: {fileID: 1424516713}
+  menuOpciones0: {fileID: 112916231}
+  menuOpciones1: {fileID: 1424516710}
 --- !u!4 &1659779093
 Transform:
   m_ObjectHideFlags: 0
@@ -55372,7 +55378,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5462235
+      m_AnimationSpeed: 0.67415345
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -55382,7 +55388,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.63402057
+      m_AnimationSpeed: 0.5887722
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -55392,7 +55398,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.69286823
+      m_AnimationSpeed: 0.64939725
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -55402,7 +55408,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.50037426
+      m_AnimationSpeed: 0.8062489
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
