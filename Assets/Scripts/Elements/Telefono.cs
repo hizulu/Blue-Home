@@ -23,6 +23,7 @@ public class Telefono : MonoBehaviour, IInteractuable
 
     //asegurar que no lea dos veces el mismo dialogo
     public bool dialogoTelefonoLeido = false;
+    
 
     private void Start()
     {
@@ -74,10 +75,11 @@ public class Telefono : MonoBehaviour, IInteractuable
             dialogoTelefonoLeido = true;
             marcaOpcionInteraccion.SetActive(true);
             dialogoActivo = false;
+            gameObject.SetActive(false);
             //Activar todos los objetos que nosotros queremos que se activen al interactuar con el telefono
             ActivarObjetosActivadosPorTelefono();
             Time.timeScale = 1f;
-            imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al finalizar el diálogo
+            imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al finalizar el diálogo            
         }
     }
 
@@ -100,4 +102,5 @@ public class Telefono : MonoBehaviour, IInteractuable
             objeto.SetActive(true);
         }
     }
+
 }

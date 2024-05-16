@@ -3,7 +3,7 @@ using System;
 using TMPro;
 
 public class Reloj : MonoBehaviour
-{
+{ 
     [SerializeField] private TextMeshProUGUI textoReloj;
 
     public float horas;
@@ -15,6 +15,13 @@ public class Reloj : MonoBehaviour
     //private float velocidadDelTiempo = 1440f;
 
     public static Reloj instance { get; private set; }
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
     void Update()
     {
         tiempoTranscurrido += velocidadDelTiempo *Time.deltaTime;
