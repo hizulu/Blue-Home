@@ -14,6 +14,7 @@ public class Reloj : MonoBehaviour
     public float velocidadDelTiempo = 3.2f; //5 minutos en la vida real
     //private float velocidadDelTiempo = 1440f;
 
+    public static Reloj instance { get; private set; }
     void Update()
     {
         tiempoTranscurrido += velocidadDelTiempo *Time.deltaTime;
@@ -54,4 +55,5 @@ public class Reloj : MonoBehaviour
         ActualizarTiempo();
         MostrarTiempo();
     }
+
 }
