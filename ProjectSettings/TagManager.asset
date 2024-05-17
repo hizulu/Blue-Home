@@ -55,12 +55,18 @@ TagManager:
   - name: Interactuable
     uniqueID: 3722191771
     locked: 0
+  - name: Decoracion2
+    uniqueID: 3937726731
+    locked: 0
   - name: Player
     uniqueID: 3443569017
+    locked: 0
+  - name: Decoracion3
+    uniqueID: 235218295
     locked: 0
   - name: Pared
     uniqueID: 3191349299
     locked: 0
-  - name: Decoracion2
-    uniqueID: 3937726731
+  - name: Decoracion4
+    uniqueID: 326461719
     locked: 0
