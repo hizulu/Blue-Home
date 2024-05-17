@@ -9,6 +9,7 @@ public class Telefono : MonoBehaviour, IInteractuable
     [SerializeField] public Collider2D colliderTelefono;
     [SerializeField] public GameObject marcaOpcionInteraccion;
     [SerializeField] GameObject panelDialogoTelefono;
+    [SerializeField] public Image[] imagenesDialogoObjeto;
     [SerializeField] public Image imagenIntermitente;
 
     [SerializeField] TMP_Text textoDialogoTelefono;
@@ -89,15 +90,38 @@ public class Telefono : MonoBehaviour, IInteractuable
         imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al finalizar el diálogo   
     }
 
-    private IEnumerator MostrarLineasDialogo() // Muestra las lineas de dialogo letra por letra usando corutinas
+    private IEnumerator MostrarLineasDialogo()
     {
-        textoDialogoTelefono.text = string.Empty;
+        // Variable para controlar el tiempo de cambio de imagen
+        float tiempoCambioImagen = Random.Range(0.5f, 1.5f);
+        int indexImagen = 0;
+
+        // Ciclo para mostrar las líneas de diálogo letra por letra
         foreach (char letra in lineasDialogoTelefono[indexLinea].ToCharArray())
         {
+            // Mostrar la letra actual
             textoDialogoTelefono.text += letra;
-            yield return new WaitForSecondsRealtime(tiempoEntreLetras); // Espera un tiempo antes de mostrar la siguiente letra
+            tiempoCambioImagen -= tiempoEntreLetras;
+
+            // Si es hora de cambiar de imagen
+            if (tiempoCambioImagen <= 0)
+            {
+                // Cambiar a la siguiente imagen de diálogo
+                imagenesDialogoObjeto[indexImagen].gameObject.SetActive(false);
+                indexImagen = (indexImagen + 1) % imagenesDialogoObjeto.Length;
+                imagenesDialogoObjeto[indexImagen].gameObject.SetActive(true);
+
+                tiempoCambioImagen = Random.Range(0.5f, 1.5f);
+            }
+            yield return new WaitForSecondsRealtime(tiempoEntreLetras);
         }
-        // Una vez que el diálogo ha terminado de escribirse, se activa la imagen intermitente
+
+        // Una vez que el diálogo ha terminado de escribirse, desactivar todas las imágenes de diálogo
+        foreach (var imagen in imagenesDialogoObjeto)
+        {
+            imagen.gameObject.SetActive(false);
+        }
+
         imagenIntermitente.gameObject.SetActive(true);
     }
 
