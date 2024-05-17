@@ -93,7 +93,7 @@ public class Telefono : MonoBehaviour, IInteractuable
     private IEnumerator MostrarLineasDialogo()
     {
         // Variable para controlar el tiempo de cambio de imagen
-        float tiempoCambioImagen = Random.Range(0.5f, 1.5f);
+        float tiempoCambioImagen = Random.Range(0.2f, 1f);
         int indexImagen = 0;
 
         // Ciclo para mostrar las líneas de diálogo letra por letra
@@ -111,7 +111,7 @@ public class Telefono : MonoBehaviour, IInteractuable
                 indexImagen = (indexImagen + 1) % imagenesDialogoObjeto.Length;
                 imagenesDialogoObjeto[indexImagen].gameObject.SetActive(true);
 
-                tiempoCambioImagen = Random.Range(0.5f, 1.5f);
+                tiempoCambioImagen = Random.Range(0.2f, 1f);
             }
             yield return new WaitForSecondsRealtime(tiempoEntreLetras);
         }

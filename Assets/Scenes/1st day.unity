@@ -755,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 179.45198, y: -387.55603}
-  m_SizeDelta: {x: -473.512, y: -841.463}
+  m_AnchoredPosition: {x: 197.40326, y: -387.55603}
+  m_SizeDelta: {x: -509.4146, y: -841.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42369417
 MonoBehaviour:
@@ -2479,8 +2479,10 @@ MonoBehaviour:
   imagenIntermitente: {fileID: 380986748}
   textoDialogoObjeto: {fileID: 0}
   imagenesDialogoObjeto:
-  - {fileID: 1597992349}
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
   - {fileID: 669322097}
+  - {fileID: 1597992349}
   lineasDialogoObjeto:
   - "\xA1Hola, Sushi!\n\xBFQu\xE9 te parece tu nueva pecera?"
   - 
@@ -17965,6 +17967,8 @@ MonoBehaviour:
   imagenesDialogoObjeto:
   - {fileID: 2063150341}
   - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
   lineasDialogoObjeto:
   - 1. 757138713875157715481555555555555555
   - 2. 687268876871687168781652222222
@@ -28220,6 +28224,8 @@ MonoBehaviour:
   imagenesDialogoObjeto:
   - {fileID: 2063150341}
   - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
   lineasDialogoObjeto:
   - 
   - 
@@ -28335,8 +28341,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0000500679, y: -0.00024986267, z: 0}
-    m_Extent: {x: 9.27055, y: 9.26925, z: 0}
+    m_Center: {x: 0.00049972534, y: 0.0000500679, z: 0}
+    m_Extent: {x: 9.2697, y: 9.2696495, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -37856,8 +37862,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00024986267, y: -0.00080013275, z: 0}
-    m_Extent: {x: 9.26885, y: 9.2695, z: 0}
+    m_Center: {x: -0.00029993057, y: -0.0001001358, z: 0}
+    m_Extent: {x: 9.269199, y: 9.2696, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -42591,8 +42597,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.0578, y: -3.3933, z: 0}
-    m_Extent: {x: 23.364101, y: 18.4502, z: 0}
+    m_Center: {x: -13.057751, y: -3.3927498, z: 0}
+    m_Extent: {x: 23.36425, y: 18.45085, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -57832,7 +57838,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.81996703
+      m_AnimationSpeed: 0.5435584
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -57842,7 +57848,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.7295978
+      m_AnimationSpeed: 0.51751626
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -57852,7 +57858,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.96030694
+      m_AnimationSpeed: 0.6080458
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -57862,7 +57868,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.58521235
+      m_AnimationSpeed: 0.91288996
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
