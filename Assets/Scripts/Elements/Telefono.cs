@@ -34,6 +34,8 @@ public class Telefono : MonoBehaviour, IInteractuable
 
     public void Interactuar()
     {
+        if (dialogoTelefonoLeido) return; // No hacer nada si el diálogo ya fue leído
+
         if (!dialogoActivo && !dialogoTelefonoLeido) // Si no hay dialogo activo y no se ha leido el dialogo
         {
             dialogoActivo = true; // Establecer dialogoActivo a true cuando se inicia el diálogo
@@ -71,16 +73,20 @@ public class Telefono : MonoBehaviour, IInteractuable
         }
         else // Si ya no hay mas lineas de dialogo, se desactiva el panel de dialogo y se reactiva la opcion de interaccion
         {
-            panelDialogoTelefono.SetActive(false);
-            dialogoTelefonoLeido = true;
-            marcaOpcionInteraccion.SetActive(true);
-            dialogoActivo = false;
-            gameObject.SetActive(false);
-            //Activar todos los objetos que nosotros queremos que se activen al interactuar con el telefono
-            ActivarObjetosActivadosPorTelefono();
-            Time.timeScale = 1f;
-            imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al finalizar el diálogo            
+            FinalizarDialogo();        
         }
+    }
+    void FinalizarDialogo()
+    {
+        panelDialogoTelefono.SetActive(false);
+        dialogoTelefonoLeido = true;
+        //marcaOpcionInteraccion.SetActive(true);
+        dialogoActivo = false;
+
+        //Activar todos los objetos que nosotros queremos que se activen al interactuar con el telefono
+        ActivarObjetosActivadosPorTelefono();
+        Time.timeScale = 1f;
+        imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al finalizar el diálogo   
     }
 
     private IEnumerator MostrarLineasDialogo() // Muestra las lineas de dialogo letra por letra usando corutinas
