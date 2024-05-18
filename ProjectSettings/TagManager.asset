@@ -9,6 +9,7 @@ TagManager:
   - "Obst\xE1culo"
   - Patrullaje
   - Interactuable
+  - Tarea1
   layers:
   - Default
   - TransparentFX
