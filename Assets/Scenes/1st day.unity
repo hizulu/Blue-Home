@@ -2485,8 +2485,6 @@ MonoBehaviour:
   - {fileID: 1597992349}
   lineasDialogoObjeto:
   - "\xA1Hola, Sushi!\n\xBFQu\xE9 te parece tu nueva pecera?"
-  - 
-  - 
   tiempoEntreLetras: 0.05
 --- !u!61 &224184210
 BoxCollider2D:
@@ -17970,9 +17968,9 @@ MonoBehaviour:
   - {fileID: 1597992349}
   - {fileID: 669322097}
   lineasDialogoObjeto:
-  - 1. 757138713875157715481555555555555555
-  - 2. 687268876871687168781652222222
-  - 3. 87976035468716817817777777777777777777777777777777777777777777777777777
+  - Text not implemented
+  - Text not implemented
+  - Text not implemented
   tiempoEntreLetras: 0.05
 --- !u!61 &628939093
 BoxCollider2D:
@@ -28227,8 +28225,7 @@ MonoBehaviour:
   - {fileID: 1597992349}
   - {fileID: 669322097}
   lineasDialogoObjeto:
-  - 
-  - 
+  - Text not implemented
   tiempoEntreLetras: 0.05
 --- !u!61 &879988596
 BoxCollider2D:
@@ -28341,8 +28338,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00049972534, y: 0.0000500679, z: 0}
-    m_Extent: {x: 9.2697, y: 9.2696495, z: 0}
+    m_Center: {x: -0.00069999695, y: 0.00040006638, z: 0}
+    m_Extent: {x: 9.2692, y: 9.27, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -37862,8 +37859,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00029993057, y: -0.0001001358, z: 0}
-    m_Extent: {x: 9.269199, y: 9.2696, z: 0}
+    m_Center: {x: 0, y: -0.00080013275, z: 0}
+    m_Extent: {x: 9.2694, y: 9.2695, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -42597,8 +42594,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.057751, y: -3.3927498, z: 0}
-    m_Extent: {x: 23.36425, y: 18.45085, z: 0}
+    m_Center: {x: -13.057301, y: -3.3933997, z: 0}
+    m_Extent: {x: 23.3648, y: 18.4504, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -57838,7 +57835,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5435584
+      m_AnimationSpeed: 0.91597
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -57848,7 +57845,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.51751626
+      m_AnimationSpeed: 0.84425646
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -57858,7 +57855,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.6080458
+      m_AnimationSpeed: 0.6060903
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -57868,7 +57865,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.91288996
+      m_AnimationSpeed: 0.6632614
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
