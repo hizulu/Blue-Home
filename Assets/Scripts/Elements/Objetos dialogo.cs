@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class Objetosdialogo : MonoBehaviour, IInteractuable
 {
     [Header("Elementos del dialogo")]
-    [SerializeField]
-    public Collider2D colliderObjeto;
 
     [SerializeField] public GameObject marcaOpcionInteraccion;
     [SerializeField] GameObject panelDialogoObjeto;
@@ -22,8 +20,12 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
     public float tiempoEntreLetras = 0.2f;
     private bool dialogoActivo;
     private int indexLinea;
+    private BoxCollider2D BoxCollider2D;
 
-
+    private void Start()
+    {
+        BoxCollider2D = GetComponent<BoxCollider2D>();
+    }
     public void Interactuar()
     {
         if (!dialogoActivo) // Si no hay dialogo activo y no se ha leido el dialogo
@@ -55,12 +57,11 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
     private void ActivarDialogo() // Activa el dialogo, pone el tiempo en pausa y muestra las lineas de dialogo
     {
         panelDialogoObjeto.SetActive(true);
-        imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al iniciar el di logo
+        imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al iniciar el dialogo
         indexLinea = 0;
         Time.timeScale = 0f;
         StartCoroutine(MostrarLineasDialogo());
     }
-
 
     private void SiguienteLineaDialogo() // Muestra la siguiente linea de dialogo
     {
@@ -95,7 +96,7 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
         float tiempoCambioImagen = Random.Range(0.2f, 1f);
         int indexImagen = 0;
 
-        // Ciclo para mostrar las l neas de di logo letra por letra
+        // Ciclo para mostrar las lineas de dialogo letra por letra
         foreach (char letra in lineasDialogoObjeto[indexLinea])
         {
             // Mostrar la letra actual
@@ -115,8 +116,6 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
 
             yield return new WaitForSecondsRealtime(tiempoEntreLetras);
         }
-
-
         imagenIntermitente.gameObject.SetActive(true);
     }
 }

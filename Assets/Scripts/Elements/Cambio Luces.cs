@@ -61,9 +61,5 @@ public class CambioLuces : MonoBehaviour
                     break;
             }
         }
-        else // Si Reloj.instance es nulo
-        {
-            Debug.LogWarning("Reloj.instance es nulo. Asegúrate de inicializarlo correctamente.");
-        }
     }
 }

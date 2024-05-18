@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Telefono : MonoBehaviour, IInteractuable
 {
     [Header("Elementos del dialogo")]
-    [SerializeField]
     public Collider2D colliderTelefono;
 
     [SerializeField] public GameObject marcaOpcionInteraccion;
@@ -34,6 +33,7 @@ public class Telefono : MonoBehaviour, IInteractuable
     private void Start()
     {
         // Desactivar el panel de di logo y la imagen intermitente al iniciar
+        colliderTelefono = GetComponent<Collider2D>();
         panelDialogoTelefono.SetActive(false);
         imagenIntermitente.gameObject.SetActive(false);
     }

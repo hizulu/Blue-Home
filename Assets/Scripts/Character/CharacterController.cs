@@ -6,13 +6,16 @@ public class CharacterController : MonoBehaviour
 {
     private bool interactuable = false;
     private List<IInteractuable> objetosInteractuables = new List<IInteractuable>();
-
+    private List<GameObject> objetosADesactivar = new List<GameObject>();
+    
     private Rigidbody2D _rig;
     private Animator _anim;
 
     [SerializeField] private float velocidad;
     [SerializeField] private float recoveryTime = 0f;
     [SerializeField] public GameObject marcaOpcionInteraccion;
+
+    public List<GameObject> ObjetosADesactivar { get => objetosADesactivar; set => objetosADesactivar = value; }
 
     private void Awake()
     {
@@ -35,6 +38,10 @@ public class CharacterController : MonoBehaviour
                 {
                     marcaOpcionInteraccion.SetActive(false);
                     interactuable.Interactuar();
+                }
+                foreach(var objeto in objetosADesactivar)
+                {
+                    objeto.SetActive(false);
                 }
             }
         }

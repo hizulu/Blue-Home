@@ -1,36 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class CogerObjetos : MonoBehaviour, IInteractuable
+public class CogerObjetos : MonoBehaviour
 {
-    [SerializeField] GameObject ComidaPez;
-    [SerializeField] GameObject Pecera;
+    //pudiera hacer un prefab de comidas donde solo se inicialice con una lista de posiciones, pero esto es mas sencillo
+
+    //Variables de comida del pez
+    GameObject[] ComidaPezVaria;
+    GameObject ComidaPez;
+
+    //variables de referencia
     [SerializeField] GameObject textoMision;
-    bool recogido = false;
-    public bool completado = false;
+    [SerializeField] GameObject ImagenInventario;
 
-    public static CogerObjetos instance { get; private set; }
-    public void Interactuar()
+    private void Start()
     {
-        if (gameObject.CompareTag("Tarea1") && !recogido) // Solo interactuar si no ha sido recogido
+        ComidaPezVaria = GameObject.FindGameObjectsWithTag("ComidaPez");
+        foreach (GameObject comida in ComidaPezVaria)
         {
-            Debug.Log("Has recogido un objeto");
-            ComidaPez.SetActive(true);
-            recogido = true;
+            comida.SetActive(false);
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject == Pecera && recogido) // Solo si el otro objeto es la pecera y ha sido recogido
-        {
-            Debug.Log("Comida de pez usada");
-            completado = true;
-            ComidaPez.SetActive(false);
-            textoMision.SetActive(false);
-            recogido = false;
-            gameObject.SetActive(false);
-        }
+        ComidaPez = ComidaPezVaria[Random.Range(0, ComidaPezVaria.Length)];
+        ComidaPez.SetActive(true);
+        textoMision.SetActive(true);
     }
 }
