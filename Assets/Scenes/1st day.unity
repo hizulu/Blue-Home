@@ -721,6 +721,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26627742}
   m_CullTransparentMesh: 1
+--- !u!1 &31392212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31392213}
+  - component: {fileID: 31392215}
+  - component: {fileID: 31392214}
+  m_Layer: 0
+  m_Name: Horno trigger
+  m_TagString: Interactuable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &31392213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31392212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.98, y: 5.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 94120888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31392214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31392212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c21f3de671b7848a18697858ed9ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marcaOpcionInteraccion: {fileID: 604537023}
+  panelDialogoObjeto: {fileID: 74307017}
+  imagenIntermitente: {fileID: 380986748}
+  textoDialogoObjeto: {fileID: 698456152}
+  imagenesDialogoObjeto:
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
+  lineasDialogoObjeto:
+  - "Creo que desde que me mud\xE9 no he usado el horno."
+  tiempoEntreLetras: 0.05
+--- !u!61 &31392215
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31392212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0060186386, y: -0.011771679}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0962887, y: 2.6045523}
+  m_EdgeRadius: 0
 --- !u!1 &42369415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,6 +1653,13 @@ Transform:
   - {fileID: 1468460106}
   - {fileID: 537129124}
   - {fileID: 628939091}
+  - {fileID: 955780566}
+  - {fileID: 31392213}
+  - {fileID: 1613128830}
+  - {fileID: 1248681783}
+  - {fileID: 1192215097}
+  - {fileID: 1435931101}
+  - {fileID: 1975253846}
   - {fileID: 2115378167}
   - {fileID: 879988594}
   - {fileID: 1634112513}
@@ -2557,6 +2666,8 @@ MonoBehaviour:
   - {fileID: 1597992349}
   lineasDialogoObjeto:
   - "\xA1Hola, Sushi!\n\xBFQu\xE9 te parece tu nueva pecera?"
+  - "\xBFNo te aburres de estar todo el d\xEDa dando vueltas, Sushi?"
+  - "A veces quisiera ser como t\xFA y no hacer nada en todo el d\xEDa."
   tiempoEntreLetras: 0.05
 --- !u!61 &224184210
 BoxCollider2D:
@@ -18235,9 +18346,9 @@ MonoBehaviour:
   - {fileID: 1597992349}
   - {fileID: 669322097}
   lineasDialogoObjeto:
-  - Text not implemented
-  - Text not implemented
-  - Text not implemented
+  - "Parece que est\xE1n bien, no necesito regarlas hoy."
+  - Mis plantas no suelen necesitar agua a menudo.
+  - "\xA1Vaya! Parece que tengo que comprar macetas m\xE1s grandes."
   tiempoEntreLetras: 0.05
 --- !u!61 &628939093
 BoxCollider2D:
@@ -28488,7 +28599,9 @@ MonoBehaviour:
   - {fileID: 1597992349}
   - {fileID: 669322097}
   lineasDialogoObjeto:
-  - Text not implemented
+  - "\xBFPor qu\xE9 seguir\xE9 teniendo esta foto?"
+  - "\xA1Ja! Parecemos una familia y todo."
+  - "\xBFQu\xE9 ser\xE1 de mis padres y mi hermano?"
   tiempoEntreLetras: 0.05
 --- !u!61 &879988596
 BoxCollider2D:
@@ -28601,8 +28714,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0005502701, y: -0.00034999847, z: 0}
-    m_Extent: {x: 9.26945, y: 9.26975, z: 0}
+    m_Center: {x: 0.00054979324, y: -0.00075006485, z: 0}
+    m_Extent: {x: 9.269751, y: 9.2696495, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -29333,6 +29446,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &955780565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 955780566}
+  - component: {fileID: 955780568}
+  - component: {fileID: 955780567}
+  m_Layer: 0
+  m_Name: Nevera trigger
+  m_TagString: Interactuable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &955780566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955780565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.14, y: 5.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 94120888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955780567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955780565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c21f3de671b7848a18697858ed9ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marcaOpcionInteraccion: {fileID: 604537023}
+  panelDialogoObjeto: {fileID: 74307017}
+  imagenIntermitente: {fileID: 380986748}
+  textoDialogoObjeto: {fileID: 698456152}
+  imagenesDialogoObjeto:
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
+  lineasDialogoObjeto:
+  - Tengo que ir a comprar...
+  - Que buena pinta tiene esa tarta.
+  tiempoEntreLetras: 0.05
+--- !u!61 &955780568
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955780565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.018979073, y: 0.19559622}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6037884, y: 2.1898165}
+  m_EdgeRadius: 0
 --- !u!1 &966521545
 GameObject:
   m_ObjectHideFlags: 0
@@ -38127,8 +38343,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00024986267, y: 0, z: 0}
-    m_Extent: {x: 9.26945, y: 9.2695, z: 0}
+    m_Center: {x: -0.00045013428, y: 0.000600338, z: 0}
+    m_Extent: {x: 9.26995, y: 9.2693, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38171,6 +38387,108 @@ MonoBehaviour:
   - {x: 0.4157348, y: -0.27778515, z: 0}
   - {x: 0.46193978, y: -0.19134171, z: 0}
   - {x: 0.49039266, y: -0.09754512, z: 0}
+--- !u!1 &1192215096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1192215097}
+  - component: {fileID: 1192215099}
+  - component: {fileID: 1192215098}
+  m_Layer: 0
+  m_Name: Reloj antiguo trigger
+  m_TagString: Interactuable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1192215097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192215096}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.23, y: 16.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 94120888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192215098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192215096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c21f3de671b7848a18697858ed9ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marcaOpcionInteraccion: {fileID: 604537023}
+  panelDialogoObjeto: {fileID: 74307017}
+  imagenIntermitente: {fileID: 380986748}
+  textoDialogoObjeto: {fileID: 698456152}
+  imagenesDialogoObjeto:
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
+  lineasDialogoObjeto:
+  - "Es un reloj muy antiguo, ya estaba en la casa cuando me mud\xE9."
+  tiempoEntreLetras: 0.05
+--- !u!61 &1192215099
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192215096}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15478623, y: 0.85597515}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2047017, y: 1.4409733}
+  m_EdgeRadius: 0
 --- !u!1 &1207289293
 GameObject:
   m_ObjectHideFlags: 0
@@ -41865,6 +42183,109 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1248681782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248681783}
+  - component: {fileID: 1248681785}
+  - component: {fileID: 1248681784}
+  m_Layer: 0
+  m_Name: Tocadiscos trigger
+  m_TagString: Interactuable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1248681783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248681782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.98, y: 13.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 94120888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248681784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248681782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c21f3de671b7848a18697858ed9ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marcaOpcionInteraccion: {fileID: 604537023}
+  panelDialogoObjeto: {fileID: 74307017}
+  imagenIntermitente: {fileID: 380986748}
+  textoDialogoObjeto: {fileID: 698456152}
+  imagenesDialogoObjeto:
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
+  lineasDialogoObjeto:
+  - "Tengo algunos vinilos guardados, me gusta c\xF3mo suenan."
+  - "Me relaja escuchar mientras estoy en el sof\xE1."
+  tiempoEntreLetras: 0.05
+--- !u!61 &1248681785
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248681782}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.4511328, y: -1.9723644}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1617222, y: 1.7656746}
+  m_EdgeRadius: 0
 --- !u!1 &1253198919
 GameObject:
   m_ObjectHideFlags: 0
@@ -42862,8 +43283,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.0567, y: -3.3938003, z: 0}
-    m_Extent: {x: 23.364199, y: 18.451, z: 0}
+    m_Center: {x: -13.05735, y: -3.3933005, z: 0}
+    m_Extent: {x: 23.36345, y: 18.4515, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43258,6 +43679,109 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425458260}
   m_CullTransparentMesh: 1
+--- !u!1 &1435931100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435931101}
+  - component: {fileID: 1435931103}
+  - component: {fileID: 1435931102}
+  m_Layer: 0
+  m_Name: Estanteria trigger
+  m_TagString: Interactuable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1435931101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435931100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.13, y: 3.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 94120888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1435931102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435931100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c21f3de671b7848a18697858ed9ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marcaOpcionInteraccion: {fileID: 604537023}
+  panelDialogoObjeto: {fileID: 74307017}
+  imagenIntermitente: {fileID: 380986748}
+  textoDialogoObjeto: {fileID: 698456152}
+  imagenesDialogoObjeto:
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
+  lineasDialogoObjeto:
+  - Tengo algunos libros antiguos.
+  - Ahora no me apetece leer.
+  tiempoEntreLetras: 0.05
+--- !u!61 &1435931103
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435931100}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5288006, y: 0.85597515}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5718753, y: 1.4409733}
+  m_EdgeRadius: 0
 --- !u!1 &1462813423
 GameObject:
   m_ObjectHideFlags: 0
@@ -43918,6 +44442,13 @@ MonoBehaviour:
   - {fileID: 628939090}
   - {fileID: 2115378164}
   - {fileID: 879988593}
+  - {fileID: 955780565}
+  - {fileID: 31392212}
+  - {fileID: 1613128829}
+  - {fileID: 1248681782}
+  - {fileID: 1192215096}
+  - {fileID: 1435931100}
+  - {fileID: 1975253845}
   - {fileID: 1551244042}
   - {fileID: 1747503435}
   - {fileID: 1773862029}
@@ -48673,6 +49204,109 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1613128829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1613128830}
+  - component: {fileID: 1613128832}
+  - component: {fileID: 1613128831}
+  m_Layer: 0
+  m_Name: Bateria trigger
+  m_TagString: Interactuable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1613128830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613128829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.98, y: 13.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 94120888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613128831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613128829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c21f3de671b7848a18697858ed9ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marcaOpcionInteraccion: {fileID: 604537023}
+  panelDialogoObjeto: {fileID: 74307017}
+  imagenIntermitente: {fileID: 380986748}
+  textoDialogoObjeto: {fileID: 698456152}
+  imagenesDialogoObjeto:
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
+  lineasDialogoObjeto:
+  - A veces los vecinos se quejan cuando toco.
+  - "Me gusta tocar la bater\xEDa, aunque creo que no soy muy bueno."
+  tiempoEntreLetras: 0.05
+--- !u!61 &1613128832
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613128829}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.3060036, y: 0.57262564}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6467285, y: 2.1036406}
+  m_EdgeRadius: 0
 --- !u!1 &1615969392
 GameObject:
   m_ObjectHideFlags: 0
@@ -56567,6 +57201,108 @@ Transform:
   - {fileID: 1383286469}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1975253845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975253846}
+  - component: {fileID: 1975253848}
+  - component: {fileID: 1975253847}
+  m_Layer: 0
+  m_Name: Banera trigger
+  m_TagString: Interactuable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1975253846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975253845}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.13, y: 16.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 94120888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1975253847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975253845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c21f3de671b7848a18697858ed9ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marcaOpcionInteraccion: {fileID: 604537023}
+  panelDialogoObjeto: {fileID: 74307017}
+  imagenIntermitente: {fileID: 380986748}
+  textoDialogoObjeto: {fileID: 698456152}
+  imagenesDialogoObjeto:
+  - {fileID: 2063150341}
+  - {fileID: 1074280683}
+  - {fileID: 1597992349}
+  - {fileID: 669322097}
+  lineasDialogoObjeto:
+  - "Me gusta tener un patito de goma en la ba\xF1era..."
+  tiempoEntreLetras: 0.05
+--- !u!61 &1975253848
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975253845}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.72817945, y: 0.85597515}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.584258, y: 1.4409733}
+  m_EdgeRadius: 0
 --- !u!1 &2000156138
 GameObject:
   m_ObjectHideFlags: 0
@@ -58551,7 +59287,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.6125415
+      m_AnimationSpeed: 0.64282227
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -58561,7 +59297,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.7646121
+      m_AnimationSpeed: 0.8852221
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -58571,7 +59307,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.90168095
+      m_AnimationSpeed: 0.72836864
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -58581,7 +59317,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.66722786
+      m_AnimationSpeed: 0.8702287
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
