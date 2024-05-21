@@ -43,7 +43,7 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
             }
             else
             {
-                SiguienteLineaDialogo();
+                FinalizarDialogo();
             }
         }
         else
@@ -58,25 +58,9 @@ public class Objetosdialogo : MonoBehaviour, IInteractuable
     {
         panelDialogoObjeto.SetActive(true);
         imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al iniciar el dialogo
-        indexLinea = 0;
+        indexLinea = UnityEngine.Random.Range(0, lineasDialogoObjeto.Length); 
         Time.timeScale = 0f;
         StartCoroutine(MostrarLineasDialogo());
-    }
-
-    private void SiguienteLineaDialogo() // Muestra la siguiente linea de dialogo
-    {
-        textoDialogoObjeto.text = ""; // Coco es un juego de palabras (Lo hace ver mas pro los dialogos)
-        indexLinea++;
-        if (indexLinea < lineasDialogoObjeto.Length)
-        {
-            StopCoroutine(MostrarLineasDialogo());
-            imagenIntermitente.gameObject.SetActive(false);
-            StartCoroutine(MostrarLineasDialogo());
-        }
-        else // Si ya no hay mas lineas de dialogo, se desactiva el panel de dialogo y se reactiva la opcion de interaccion
-        {
-            FinalizarDialogo();
-        }
     }
 
     void FinalizarDialogo()
