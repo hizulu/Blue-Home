@@ -8,7 +8,7 @@ public class FishVideo : MonoBehaviour
     //La idea es que sombraController llame a este script para que se active el UI de la sombra
     //Este script se encargará de activar el video y que desaparezca cuando termine
 
-    [SerializeField] GameObject reloj;
+    [SerializeField] GameObject[] desactivarObjetos;
     public VideoPlayer videoPlayer;
     void Start()
     {
@@ -19,14 +19,22 @@ public class FishVideo : MonoBehaviour
     void OnVideoFinished(VideoPlayer player)
     {
         gameObject.SetActive(false);
-        reloj.SetActive(true);
+        foreach (GameObject objeto in desactivarObjetos)
+        {
+            objeto.SetActive(true);
+        }
+        Time.timeScale = 1;
     }
     public void PlayVideo()
     {
         gameObject.SetActive(true);
-        reloj.SetActive(false);
+        foreach (GameObject objeto in desactivarObjetos)
+        {
+            objeto.SetActive(false);
+        }
         videoPlayer.Play(); // Inicia la reproducción del video
         Debug.Log ("Reproduciendo video");
+        Time.timeScale = 0;
     }
 
     public void StopVideo()

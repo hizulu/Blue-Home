@@ -15,6 +15,7 @@ public class CogerObjetos : MonoBehaviour
     [SerializeField] GameObject textoMision;
     [SerializeField] GameObject ImagenInventario;
 
+
     private void Start()
     {
         ComidaPezVaria = GameObject.FindGameObjectsWithTag("ComidaPez");

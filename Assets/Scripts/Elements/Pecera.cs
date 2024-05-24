@@ -12,7 +12,7 @@ public class Pecera : MonoBehaviour, IInteractuable
     {
         if (VariablesEstaticas.recogidolv1)
         {
-            //sencillo, asi desde el GameMaager se puede saber si se ha completado el nivel
+            //sencillo, asi desde el GameManager se puede saber si se ha completado el nivel
             Debug.Log("Completado el 1er nivel");
             textoMision.SetActive(false);
             ImagenInventario.SetActive(false);
