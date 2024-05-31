@@ -11,7 +11,7 @@ public class ShaderControlerGlitch : MonoBehaviour
     [SerializeField] private GameObject post;
     [SerializeField]private GameObject enemigo;
     [SerializeField]private GameObject sombra;
-    [SerializeField] private Volume volume;
+    private Volume volume;
 
     [Header("Variables de efectos de glitch")]
     [SerializeField]private float maxIntensity = 0.05f; // Valor maximo de intensidad para los efectos de glitch
@@ -61,12 +61,14 @@ public class ShaderControlerGlitch : MonoBehaviour
             analogGlitch.horizontalShake.value = intensity;
             analogGlitch.colorDrift.value = intensity;
             digitalGlitch.intensity.value = intensity;
+            
             if(!audioSourcePersecucion.isPlaying)
             {
                 audioSourcePersecucion.Play();
                 audioSourcePersecucion.loop = true;
                 audioSourcePersecucion.volume = intensity;
             }
+            
         }
     }
 }
