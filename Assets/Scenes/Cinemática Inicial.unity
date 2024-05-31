@@ -533,7 +533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819620570}
         m_TargetAssemblyTypeName: CinematicaManager, Assembly-CSharp
-        m_MethodName: PausarVideo
+        m_MethodName: ReanudarVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1051,7 +1051,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819620570}
         m_TargetAssemblyTypeName: CinematicaManager, Assembly-CSharp
-        m_MethodName: ReanudarVideo
+        m_MethodName: PausarVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
