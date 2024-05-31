@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool crearNuevaPartida = false;
     private int defaultSceneIndex = 1;
     //private int defaultSceneIndex = 2;
+    int totalEscenas;
 
     public static GameManager instance { get; private set; }
     private void Awake()
@@ -22,6 +23,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        totalEscenas = SceneManager.sceneCountInBuildSettings;
     }
     void Update()
     {
@@ -41,19 +46,24 @@ public class GameManager : MonoBehaviour
 
     public void CargarEscena()
     {
-        if (PlayerPrefs.HasKey("SavedScene"))
+        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+        if (escenaActual != totalEscenas - 1)
         {
-            // Carga la escena guardada
-            crearNuevaPartida = false;
-            sceneIndex = PlayerPrefs.GetInt("SavedScene");
-            SceneManager.LoadScene(sceneIndex);
-        }
-        else
-        {
-            // Si no hay una escena guardada, carga la escena predeterminada
-            CrearNuevaPartida();
-            crearNuevaPartida = false;
-        }
+            CargarNivel.NivelCarga(escenaActual + 1);
+            if (PlayerPrefs.HasKey("SavedScene"))
+            {
+                // Carga la escena guardada
+                crearNuevaPartida = false;
+                sceneIndex = PlayerPrefs.GetInt("SavedScene");
+                SceneManager.LoadScene(sceneIndex);
+            }
+            else
+            {
+                // Si no hay una escena guardada, carga la escena predeterminada
+                CrearNuevaPartida();
+                crearNuevaPartida = false;
+            }
+        }        
     }
 
     public void CrearNuevaPartida()
