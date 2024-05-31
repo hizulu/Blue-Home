@@ -30,8 +30,6 @@ public class FishVideo : MonoBehaviour
             desactivarObjetos[i].SetActive(estadosOriginales[i]);
         }
         Time.timeScale = 1;
-
-        // Reanuda la música de fondo
         musicaFondo.UnPause();
     }
     public void PlayVideo()
@@ -47,8 +45,6 @@ public class FishVideo : MonoBehaviour
         videoPlayer.Play();
         Debug.Log("Reproduciendo video");
         Time.timeScale = 0;
-
-        // Pausa la música de fondo
         musicaFondo.Pause();
     }
 
@@ -56,8 +52,6 @@ public class FishVideo : MonoBehaviour
     {
         videoPlayer.Stop();
         gameObject.SetActive(true);
-
-        // Reanuda la música de fondo
         musicaFondo.UnPause();
     }
 }
