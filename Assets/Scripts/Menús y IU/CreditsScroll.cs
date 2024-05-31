@@ -58,6 +58,6 @@ public class CreditsScrollTMP : MonoBehaviour
 
     private void ChangeScene()
     {
-        SceneManager.LoadScene("0");
+        SceneManager.LoadScene(0);
     }
 }
