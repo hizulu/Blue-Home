@@ -24,8 +24,6 @@ public class ActiveVideoAdquirido : MonoBehaviour
             objeto.SetActive(true);
         }
         Time.timeScale = 1;
-
-        // Reanuda la música de fondo
         musicaFondo.UnPause();
     }
     public void PlayVideo()
@@ -39,15 +37,12 @@ public class ActiveVideoAdquirido : MonoBehaviour
         }
         Time.timeScale = 0;
 
-        // Pausa la música de fondo
         musicaFondo.Pause();
     }
     public void StopVideo()
     {
         videoPlayer.Stop(); // Detiene la reproducción del video
         gameObject.SetActive(true);
-
-        // Reanuda la música de fondo
         musicaFondo.UnPause();
     }
 }

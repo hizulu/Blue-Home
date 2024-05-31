@@ -7,11 +7,17 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: "Assets/Scenes/Men\xFAs.unity"
-    guid: ec841192e3855ba42bbfbb4ca7655fb1
+    guid: 10222a44953f04d4080280e8c6002a22
   - enabled: 1
     path: "Assets/Scenes/Cinem\xE1tica Inicial.unity"
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/1st day.unity
     guid: 998fe6dbcf2cfb447a83343547ca5326
+  - enabled: 1
+    path: Assets/Scenes/Cinematica2.unity
+    guid: 10f08dc0c6a398743918b3d728839dbb
+  - enabled: 1
+    path: Assets/Scenes/CreditosFinales.unity
+    guid: 917c3807cc2eaa246b8762c7c2fc62e3
   m_configObjects: {}
