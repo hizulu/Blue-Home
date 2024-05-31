@@ -41,7 +41,7 @@ public class ShaderControlerGlitch : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, enemigo.transform.position);
 
-        if (sombra.active || enemigo.active == false)
+        if (sombra.active || enemigo.active == false || distance > maxDistance)
         {
             analogGlitch.scanLineJitter.value = 0f;
             analogGlitch.verticalJump.value = 0f;
@@ -50,6 +50,7 @@ public class ShaderControlerGlitch : MonoBehaviour
             digitalGlitch.intensity.value = 0f;
             if (audioSourcePersecucion.isPlaying)
             {
+                audioSourcePersecucion.loop = false;
                 audioSourcePersecucion.Stop();
             }
         }
@@ -60,15 +61,14 @@ public class ShaderControlerGlitch : MonoBehaviour
             analogGlitch.verticalJump.value = intensity;
             analogGlitch.horizontalShake.value = intensity;
             analogGlitch.colorDrift.value = intensity;
-            digitalGlitch.intensity.value = intensity;
-            
-            if(!audioSourcePersecucion.isPlaying)
+            digitalGlitch.intensity.value = intensity*5;
+
+            audioSourcePersecucion.volume = intensity;
+            if (!audioSourcePersecucion.isPlaying)
             {
-                audioSourcePersecucion.Play();
                 audioSourcePersecucion.loop = true;
-                audioSourcePersecucion.volume = intensity;
+                audioSourcePersecucion.Play();
             }
-            
-        }
+        } 
     }
 }

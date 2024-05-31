@@ -224,13 +224,25 @@ public class FishController : MonoBehaviour
     }
     private void Teleport()
     {
-        // Se elige un punto aleatorio para teletransportarse, fuera del rango del jugador
+
+        // El tp se hace a un punto de spawn que este fuera del rango del jugador
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnSombra");
-        GameObject spawnPoint;
-        do
+        GameObject spawnPoint = null;
+
+        foreach (GameObject point in spawnPoints)
+        {
+            if (Vector2.Distance(point.transform.position, player.transform.position) > chaseDistance*3)
+            {
+                spawnPoint = point;
+                break;
+            }
+        }
+
+        // Evitar un error del codigo
+        if (spawnPoint == null)
         {
             spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        } while (Vector2.Distance(destino, player.transform.position) < chaseDistance*3);
+        }
 
         // Hace un fade out
         spriteRenderer.color = Color.Lerp(spriteRenderer.color, new Color(1, 1, 1, 0), fadeOutTime * Time.deltaTime);
