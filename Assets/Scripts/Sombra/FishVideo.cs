@@ -12,6 +12,9 @@ public class FishVideo : MonoBehaviour
     // Evitar que se activen ciertos objetos al terminar el video
     private List<bool> estadosOriginales;
 
+    // La musica de fondo se puede parar durante estos momentos
+    public AudioSource musicaFondo;
+
     void Start()
     {
         videoPlayer.loopPointReached += OnVideoFinished;
@@ -27,8 +30,10 @@ public class FishVideo : MonoBehaviour
             desactivarObjetos[i].SetActive(estadosOriginales[i]);
         }
         Time.timeScale = 1;
-    }
 
+        // Reanuda la música de fondo
+        musicaFondo.UnPause();
+    }
     public void PlayVideo()
     {
         gameObject.SetActive(true);
@@ -39,13 +44,20 @@ public class FishVideo : MonoBehaviour
             objeto.SetActive(false);
         }
 
-        videoPlayer.Play(); 
+        videoPlayer.Play();
         Debug.Log("Reproduciendo video");
         Time.timeScale = 0;
-    }   
+
+        // Pausa la música de fondo
+        musicaFondo.Pause();
+    }
+
     public void StopVideo()
     {
-        videoPlayer.Stop(); 
+        videoPlayer.Stop();
         gameObject.SetActive(true);
+
+        // Reanuda la música de fondo
+        musicaFondo.UnPause();
     }
 }

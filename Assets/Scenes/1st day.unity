@@ -4799,8 +4799,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00019979477, z: 0}
-    m_Extent: {x: 9.2701, y: 9.269199, z: 0}
+    m_Center: {x: -0.0009999275, y: 0.0000500679, z: 0}
+    m_Extent: {x: 9.269501, y: 9.27025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17368,7 +17368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &464444208
 Transform:
   m_ObjectHideFlags: 0
@@ -17378,7 +17378,7 @@ Transform:
   m_GameObject: {fileID: 464444207}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17981,7 +17981,7 @@ Transform:
   m_GameObject: {fileID: 537129123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21820,7 +21820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoMision: {fileID: 1773862029}
-  ImagenInventario: {fileID: 0}
+  ImagenInventario: {fileID: 456144216}
 --- !u!95 &818540602
 Animator:
   serializedVersion: 5
@@ -29684,8 +29684,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00029993057, y: 0.00040006638, z: 0}
-    m_Extent: {x: 9.2694, y: 9.270201, z: 0}
+    m_Center: {x: -0.00045013428, y: 0.00024986267, z: 0}
+    m_Extent: {x: 9.26955, y: 9.26985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39434,8 +39434,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00045013428, y: -0.00034999847, z: 0}
-    m_Extent: {x: 9.26985, y: 9.26955, z: 0}
+    m_Center: {x: 0.000099658966, y: 0.000099658966, z: 0}
+    m_Extent: {x: 9.2694, y: 9.2694, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -44409,8 +44409,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.05665, y: -3.3937497, z: 0}
-    m_Extent: {x: 23.364351, y: 18.45055, z: 0}
+    m_Center: {x: -13.05685, y: -3.3930993, z: 0}
+    m_Extent: {x: 23.36475, y: 18.4503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -50406,7 +50406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1615969393
 Transform:
   m_ObjectHideFlags: 0
@@ -50416,7 +50416,7 @@ Transform:
   m_GameObject: {fileID: 1615969392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60347,6 +60347,7 @@ MonoBehaviour:
   - {fileID: 1747503435}
   - {fileID: 456144216}
   - {fileID: 1773862029}
+  musicaFondo: {fileID: 1371860572}
 --- !u!328 &1968835341
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -60820,6 +60821,7 @@ MonoBehaviour:
   - {fileID: 1773862029}
   - {fileID: 456144216}
   videoPlayer: {fileID: 2001790763}
+  musicaFondo: {fileID: 1371860572}
 --- !u!1 &2002763444
 GameObject:
   m_ObjectHideFlags: 0
@@ -62529,7 +62531,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.7633139
+      m_AnimationSpeed: 0.69249046
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -62539,7 +62541,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.72524786
+      m_AnimationSpeed: 0.6581658
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -62549,7 +62551,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.6032416
+      m_AnimationSpeed: 0.62352264
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -62559,7 +62561,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.80845606
+      m_AnimationSpeed: 0.70232975
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
