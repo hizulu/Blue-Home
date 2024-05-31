@@ -224,9 +224,13 @@ public class FishController : MonoBehaviour
     }
     private void Teleport()
     {
-        // Se elige un punto aleatorio para teletransportarse
+        // Se elige un punto aleatorio para teletransportarse, fuera del rango del jugador
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnSombra");
-        GameObject spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        GameObject spawnPoint;
+        do
+        {
+            spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        } while (Vector2.Distance(destino, player.transform.position) < chaseDistance*3);
 
         // Hace un fade out
         spriteRenderer.color = Color.Lerp(spriteRenderer.color, new Color(1, 1, 1, 0), fadeOutTime * Time.deltaTime);
@@ -240,12 +244,6 @@ public class FishController : MonoBehaviour
             // Se detiene el navMeshAgent
             navMeshAgent.SetDestination(transform.position);
 
-            // TODO: añadir index quitar sonido de persecución y volver al otro.
-            /*if(audioSourcePersecucion.isPlaying)
-            {
-                StartCoroutine(FadeOut(audioSourcePersecucion, 1f));
-            }
-            */
             // Se desactiva el comportamiento un tiempo
             isTeleporting = true;
             StartCoroutine(Teleporting());
