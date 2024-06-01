@@ -11,6 +11,8 @@ TagManager:
   - Interactuable
   - Tarea1
   - ComidaPez
+  - Calcetines
+  - Basura
   layers:
   - Default
   - TransparentFX
