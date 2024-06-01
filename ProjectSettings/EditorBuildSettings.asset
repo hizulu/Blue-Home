@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cinematica2.unity
     guid: 10f08dc0c6a398743918b3d728839dbb
   - enabled: 1
+    path: Assets/Scenes/3rd day.unity
+    guid: 7462b1ad35c4ceb42b5fde7f8bafa78e
+  - enabled: 1
+    path: Assets/Scenes/Puzle.unity
+    guid: 48c3a57f3a1d3694a8f50137373cc39b
+  - enabled: 1
     path: Assets/Scenes/CreditosFinales.unity
     guid: 917c3807cc2eaa246b8762c7c2fc62e3
   - enabled: 1
