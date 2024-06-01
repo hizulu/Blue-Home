@@ -22,7 +22,6 @@ public class MenuOpciones : MonoBehaviour
     const string VOLUMEN_RUIDO = "Ruido";
 
     private string filePath;
-    public static MenuOpciones instance { get; private set; }
     //desactiva el objeto al inicio
     private void Start()
     {
@@ -32,15 +31,6 @@ public class MenuOpciones : MonoBehaviour
     }
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         // Ruta de guardado
         filePath = Application.persistentDataPath + "/datos.json";
     }
@@ -70,9 +60,11 @@ public class MenuOpciones : MonoBehaviour
     {
         Screen.fullScreen = value;
     }
+
     public void GuardarOpciones()
     {
         //guardamos los datos
+        Debug.Log("Guardando opciones");
         OpcionesGuardadas opcionesGuardadas = new OpcionesGuardadas
         {
             volumenGeneral = volumenGeneralSlider.value,
@@ -91,11 +83,14 @@ public class MenuOpciones : MonoBehaviour
 
     public void CargarOpciones()
     {
+        Debug.Log("Cargando opciones");
         // Comprueba si existe un archivo de guardado
         if (File.Exists(filePath))
         {
+            Debug.Log("Existe el archivo");
             string dataAsJson = File.ReadAllText(filePath);
             OpcionesGuardadas opcionesGuardadas = JsonUtility.FromJson<OpcionesGuardadas>(dataAsJson);
+            Debug.Log(opcionesGuardadas.brillo);
 
             // Asigna los valores guardados a los sliders y el toggle
             volumenGeneralSlider.value = opcionesGuardadas.volumenGeneral;

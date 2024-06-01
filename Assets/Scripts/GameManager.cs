@@ -1,17 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int sceneIndex = 0;
     public bool crearNuevaPartida = false;
-    private int defaultSceneIndex = 1;
-    //private int defaultSceneIndex = 2;
+    private int escenaPartidaNueva = 1;
     int totalEscenas;
-
     public static GameManager instance { get; private set; }
+
+    //Para la partida guardada
+    TipoGuardado partidaGuardada = null;
+    string partidaPath;
     private void Awake()
     {
         if (instance == null)
@@ -23,10 +26,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        partidaPath = Application.persistentDataPath + "/partida.json";
     }
     private void Start()
     {
         totalEscenas = SceneManager.sceneCountInBuildSettings;
+        CargarPartida();
     }
     void Update()
     {
@@ -39,38 +44,29 @@ public class GameManager : MonoBehaviour
 
     public void GuardarEscena()
     {
-        // Guarda el índice de la escena actual si no es la escena del menú
+        // Guarda el indice de la escena actual si no es la escena del menu
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        PlayerPrefs.SetInt("SavedScene", sceneIndex);
+
+        partidaGuardada = new TipoGuardado (scene:sceneIndex);
+
+        JsonUtils.SaveToJson(partidaGuardada, partidaPath);
+        // PlayerPrefs.SetInt("SavedScene", sceneIndex);
     }
 
     public void CargarEscena()
     {
-        int escenaActual = SceneManager.GetActiveScene().buildIndex;
-        if (escenaActual != totalEscenas - 2)
-        {
-            CargarNivel.NivelCarga(escenaActual + 1);
-            if (PlayerPrefs.HasKey("SavedScene"))
-            {
-                // Carga la escena guardada
-                crearNuevaPartida = false;
-                sceneIndex = PlayerPrefs.GetInt("SavedScene");
-                SceneManager.LoadScene(sceneIndex);
-            }
-            else
-            {
-                // Si no hay una escena guardada, carga la escena predeterminada
-                CrearNuevaPartida();
-                crearNuevaPartida = false;
-            }
-        }        
+        if(partidaGuardada != null) SceneManager.LoadScene(partidaGuardada.scene);   
+    }
+    void CargarPartida()
+    {
+        partidaGuardada = JsonUtils.LoadFromJson<TipoGuardado>(partidaPath);
     }
 
     public void CrearNuevaPartida()
     {
         // Borra la clave de la escena guardada y carga la escena predeterminada
-        PlayerPrefs.DeleteKey("SavedScene");
         crearNuevaPartida = true;
-        SceneManager.LoadScene(defaultSceneIndex);
+        SceneManager.LoadScene(escenaPartidaNueva);
     }
+
 }

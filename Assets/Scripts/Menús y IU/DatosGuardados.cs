@@ -93,8 +93,7 @@ public class DatosGuardados : MonoBehaviour
     }
 }
 
-[System.Serializable]
-public class OpcionesGuardadas
+[System.Serializable] public class OpcionesGuardadas
 {
     public float volumenGeneral;
     public float volumenMusica;

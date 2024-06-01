@@ -8,20 +8,7 @@ public class Basura : MonoBehaviour, IInteractuable
     private GameObject Jugador;
     [SerializeField] GameObject[] basuraDesactivar;
     public bool inventarioLleno = false;
-
     public static Basura instance { get; private set; }
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     void Start()
     {
@@ -40,8 +27,6 @@ public class Basura : MonoBehaviour, IInteractuable
                 DesactivarBasura();
                 inventarioLleno = true;
             }
-            
-
             if (VariablesEstaticas.basuraRecolectada >= VariablesEstaticas.basuraTotal)
             {
                 VariablesEstaticas.completadolv1 = true;

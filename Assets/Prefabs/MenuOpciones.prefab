@@ -560,6 +560,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8172679856663878790}
+        m_TargetAssemblyTypeName: DatosGuardados, Assembly-CSharp
+        m_MethodName: GuardarOpciones
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1436812177301505269
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +681,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436812177301505269}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57fb57ce5f142524a96495fa808b7572, type: 3}
   m_Name: 
@@ -679,6 +691,11 @@ MonoBehaviour:
   volumenRuidoSlider: {fileID: 7655298923612108099}
   brilloSlider: {fileID: 5103903719008208939}
   modoVentanaToggle: {fileID: 5551181225240513468}
+  defaultVolumenGeneral: 50
+  defaultVolumenMusica: 50
+  defaultVolumenRuido: 50
+  defaultBrillo: 0.4
+  defaultModoVentana: 0
 --- !u!1 &1700330908756333552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,10 +1305,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 8278119826404501037}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -20
+  m_MaxValue: 40
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1402,10 +1419,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 3459916583824732781}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -20
+  m_MaxValue: 40
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2293,10 +2310,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 4765615643514908518}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -20
+  m_MaxValue: 40
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
