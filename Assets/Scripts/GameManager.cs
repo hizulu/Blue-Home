@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public void CargarEscena()
     {
         int escenaActual = SceneManager.GetActiveScene().buildIndex;
-        if (escenaActual != totalEscenas - 1)
+        if (escenaActual != totalEscenas - 2)
         {
             CargarNivel.NivelCarga(escenaActual + 1);
             if (PlayerPrefs.HasKey("SavedScene"))

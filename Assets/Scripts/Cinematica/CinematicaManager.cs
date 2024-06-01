@@ -110,7 +110,8 @@ public class CinematicaManager : MonoBehaviour
     public void SkipVideo()
     {
         // Cargar la siguiente escena inmediatamente
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        CargarNivel.NivelCarga(SceneManager.GetActiveScene().buildIndex + 1); // Cargar la siguiente escena con la pantalla de carga
     }
 
     private IEnumerator DesaparecerBotones()
