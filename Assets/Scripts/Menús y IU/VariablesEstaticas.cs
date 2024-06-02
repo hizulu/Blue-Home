@@ -16,4 +16,10 @@ public class VariablesEstaticas
     public static bool inventarioLleno = false;
     public static int CalcetinBasura = 0; //Si es 1 es basura, si es -1 es calcetin
     public static int basuraTotal = 9; // La cantidad de basura necesaria para llenar un cubo
+
+    //Esto es del cuarto nivel
+
+    public static bool recogidolv4 = false;
+    public static bool completadolvl4 = false;
+
 }

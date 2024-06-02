@@ -33,10 +33,6 @@ public class Reloj : MonoBehaviour
         MostrarTiempo();
         if (colorCambiado)
             cambioApariencia();
-        if (horas >= 22)
-        {
-            Invoke("FinTiempo", 5f);
-        }
     }
 
     void ActualizarTiempo()
@@ -45,7 +41,7 @@ public class Reloj : MonoBehaviour
         minutos = Mathf.FloorToInt(tiempoTranscurrido % 60);
         horas = Mathf.Clamp(horas, 6, 22); // Limitar el tiempo de 6:00 a 22:00
 
-        if (horas == 22 && minutos == 0 && !colorCambiado) // Cambiar el color del reloj a las 22:00
+        if (horas >= 22 && minutos == 0 && !colorCambiado) // Cambiar el color del reloj a las 22:00
         {
             velocidadDelTiempo = 0f;
             colorCambiado = true;
@@ -63,6 +59,7 @@ public class Reloj : MonoBehaviour
         textoReloj.transform.localScale = new Vector3(1, 1, 1); 
         float vibracion = Mathf.PingPong(Time.time * 2, 0.3f) + 1; //UNDONE Estoy igual hay que mirarlo mas adelante
         textoReloj.transform.localScale = new Vector3(vibracion, vibracion, vibracion); //Hace que los números del reloj vibren
+        Invoke("FinTiempo", 5f);
     }
     public void AdelantarTiempo(float horasAdelantar)
     {
@@ -86,5 +83,4 @@ public class Reloj : MonoBehaviour
         ImagenInventario.SetActive(false);
         GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex);
     }
-
 }
