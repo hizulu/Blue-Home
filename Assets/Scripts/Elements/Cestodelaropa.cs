@@ -28,6 +28,7 @@ public class Cestodelaropa : MonoBehaviour, IInteractuable
             VariablesEstaticas.completadolv2 = true;
             textoMision.SetActive(false);
             ImagenInventario.SetActive(false);
+            GameManager.instance.CargarNivel(4);
         }
     }
 }
