@@ -7,6 +7,9 @@ using System.IO;
 
 public class MenuOpciones : MonoBehaviour
 {
+    [SerializeField] GameObject canvas;
+    [SerializeField] GameObject panel;
+
     [Header("Controles de UI")]
     [SerializeField] Slider volumenGeneralSlider;
     [SerializeField] Slider volumenMusicaSlider;
@@ -23,6 +26,7 @@ public class MenuOpciones : MonoBehaviour
 
     private string filePath;
     //desactiva el objeto al inicio
+
     private void Start()
     {
         CargarOpciones();
@@ -33,6 +37,9 @@ public class MenuOpciones : MonoBehaviour
     {
         // Ruta de guardado
         filePath = Application.persistentDataPath + "/datos.json";
+
+        canvas.SetActive(true);
+        panel.SetActive(true);
     }
     public void MostrarMenuOpciones()
     {
