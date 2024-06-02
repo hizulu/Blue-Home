@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -67,11 +67,13 @@ public class GameManager : MonoBehaviour
     IEnumerator IniciarCarga(int nivel)
     {
         Debug.Log("Iniciando carga de la escena " + nivel);
-
-        // Iniciar la carga as?ncrona de la escena
+        // Iniciar la carga asincrona de la escena principal
         AsyncOperation cargaAsincrona = SceneManager.LoadSceneAsync(nivel);
 
-        // Evitar la activaci?n autom?tica de la escena
+        // Cargar la escena de "carga falsa" de forma aditiva
+        SceneManager.LoadScene(11, LoadSceneMode.Additive);
+
+        // Evitar la activacion automotica de la escena
         cargaAsincrona.allowSceneActivation = false;
 
         // Esperar a que la carga alcance el 90% antes de activar la escena
@@ -79,7 +81,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log($"Progreso de carga: {cargaAsincrona.progress * 100}%");
 
-            // Si la carga ha alcanzado el 90%, permitir la activaci?n de la escena
+            // Si la carga ha alcanzado el 90%, permitir la activacion de la escena
             if (cargaAsincrona.progress >= 0.9f)
             {
                 Debug.Log("Carga completada al 90%, activando escena...");
@@ -89,6 +91,11 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log($"Escena {nivel} cargada con ?xito.");
+        yield return new WaitForSeconds(1);
+
+        // Descargar la escena de "carga falsa"
+        SceneManager.UnloadSceneAsync(11);
+
+        Debug.Log($"Escena {nivel} cargada con exito.");
     }
 }
