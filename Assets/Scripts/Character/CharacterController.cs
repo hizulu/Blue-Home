@@ -17,6 +17,7 @@ public class CharacterController : MonoBehaviour
 
     public List<GameObject> ObjetosADesactivar { get => objetosADesactivar; set => objetosADesactivar = value; }
 
+
     private void Awake()
     {
         _rig = GetComponent<Rigidbody2D>();

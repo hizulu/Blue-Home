@@ -2,31 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Basura : MonoBehaviour, IInteractuable
+public class Calcetines : MonoBehaviour, IInteractuable
 {
-    [SerializeField] private GameObject ImagenBasuraAdquirida;
+    [SerializeField] private GameObject ImageRopaAdquirida;
     [SerializeField] private GameObject Jugador;
-    
-
-    public static Basura instance { get; private set; }
+    public static Calcetines instance { get; private set; }
     public void Interactuar()
     {
         if (!VariablesEstaticas.inventarioLleno)
         {
             Debug.Log("Se ha tomado la basura");
             VariablesEstaticas.basuraRecolectada++;
-            ImagenBasuraAdquirida.SetActive(true);
-            VariablesEstaticas.CalcetinBasura = 1;
+            ImageRopaAdquirida.SetActive(true);
+
+            VariablesEstaticas.CalcetinBasura = -1;
             VariablesEstaticas.inventarioLleno = true;
-            DesactivarBasura();
+            DesactivarCalcetines();
         }
         if (VariablesEstaticas.basuraRecolectada >= VariablesEstaticas.basuraTotal)
         {
             VariablesEstaticas.completadolv2 = true;
         }
-
     }
-    public void DesactivarBasura()
+    public void DesactivarCalcetines()
     {
         gameObject.SetActive(false);
     }
