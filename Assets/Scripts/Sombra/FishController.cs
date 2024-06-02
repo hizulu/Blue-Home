@@ -209,7 +209,7 @@ public class FishController : MonoBehaviour
             {
                 videoPez.PlayVideo();
                 player.GetComponent<CharacterController>().DetenerMovimiento();
-
+                Reloj.instance.AdelantarTiempo(1f);
                 attackTime = 1.47f;
                 currentState = "Teleport";
             }

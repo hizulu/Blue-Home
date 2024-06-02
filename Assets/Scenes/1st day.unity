@@ -19548,8 +19548,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 179.4519, y: -387.19983}
-  m_SizeDelta: {x: -473.51196, y: -841.463}
+  m_AnchoredPosition: {x: 192.88916, y: -387.19983}
+  m_SizeDelta: {x: -500.3865, y: -841.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698456152
 MonoBehaviour:
@@ -29712,8 +29712,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00059986115, y: 0, z: 0}
-    m_Extent: {x: 9.2699, y: 9.2687, z: 0}
+    m_Center: {x: 0.00014972687, y: -0.00040006638, z: 0}
+    m_Extent: {x: 9.27015, y: 9.2698, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39462,8 +39462,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00045013428, y: 0.00034999847, z: 0}
-    m_Extent: {x: 9.26875, y: 9.26965, z: 0}
+    m_Center: {x: 0.00014972687, y: 0.0005002022, z: 0}
+    m_Extent: {x: 9.26945, y: 9.269501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -44437,8 +44437,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.057201, y: -3.3927498, z: 0}
-    m_Extent: {x: 23.3647, y: 18.45055, z: 0}
+    m_Center: {x: -13.05715, y: -3.3927002, z: 0}
+    m_Extent: {x: 23.36405, y: 18.4508, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -46165,11 +46165,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3727945036945305497, guid: af3b1365ad3e5e342b321f6ebb81c6a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.417
+      value: -3.91
       objectReference: {fileID: 0}
     - target: {fileID: 3727945036945305497, guid: af3b1365ad3e5e342b321f6ebb81c6a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.92
+      value: 19.02
       objectReference: {fileID: 0}
     - target: {fileID: 3727945036945305497, guid: af3b1365ad3e5e342b321f6ebb81c6a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -46204,8 +46204,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4201730400669922387, guid: af3b1365ad3e5e342b321f6ebb81c6a3, type: 3}
+      propertyPath: m_Size.x
+      value: 2.0839694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201730400669922387, guid: af3b1365ad3e5e342b321f6ebb81c6a3, type: 3}
       propertyPath: m_Size.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201730400669922387, guid: af3b1365ad3e5e342b321f6ebb81c6a3, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1701225
       objectReference: {fileID: 0}
     - target: {fileID: 4201730400669922387, guid: af3b1365ad3e5e342b321f6ebb81c6a3, type: 3}
       propertyPath: m_Offset.y
@@ -51168,7 +51176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoMision: {fileID: 1773862029}
-  ImagenInventario: {fileID: 0}
+  ImagenInventario: {fileID: 923991935}
 --- !u!1 &1641324745
 GameObject:
   m_ObjectHideFlags: 0
@@ -54526,6 +54534,8 @@ MonoBehaviour:
   textoReloj: {fileID: 1888865989}
   horas: 0
   velocidadDelTiempo: 3.2
+  textoMision: {fileID: 1773862029}
+  ImagenInventario: {fileID: 456144216}
 --- !u!114 &1747503440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55266,7 +55276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1839153818
 Transform:
   m_ObjectHideFlags: 0
@@ -56229,7 +56239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1901384293
 Transform:
   m_ObjectHideFlags: 0
@@ -56733,7 +56743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1932125750
 Transform:
   m_ObjectHideFlags: 0
@@ -62570,7 +62580,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.54683715
+      m_AnimationSpeed: 0.7420262
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -62580,7 +62590,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.6900667
+      m_AnimationSpeed: 0.58594555
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -62590,7 +62600,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.7176353
+      m_AnimationSpeed: 0.7164053
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -62600,7 +62610,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.612808
+      m_AnimationSpeed: 0.5663103
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

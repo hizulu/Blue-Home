@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Reloj : MonoBehaviour
 { 
@@ -13,6 +14,9 @@ public class Reloj : MonoBehaviour
     public float tiempoTranscurrido { get; private set; }
     public float velocidadDelTiempo = 3.2f; //5 minutos en la vida real
     //private float velocidadDelTiempo = 1440f;
+
+    [SerializeField] GameObject textoMision;
+    [SerializeField] GameObject ImagenInventario;
 
     public static Reloj instance { get; private set; }
     private void Awake()
@@ -29,6 +33,10 @@ public class Reloj : MonoBehaviour
         MostrarTiempo();
         if (colorCambiado)
             cambioApariencia();
+        if (horas == 22 && minutos == 0)
+        {
+            Invoke("FinTiempo", 5f);
+        }
     }
 
     void ActualizarTiempo()
@@ -58,9 +66,25 @@ public class Reloj : MonoBehaviour
     }
     public void AdelantarTiempo(float horasAdelantar)
     {
-        tiempoTranscurrido += horasAdelantar * 3600f; // Convertir horas a segundos
-        ActualizarTiempo();
-        MostrarTiempo();
+        if (horas == 22 && minutos == 0) return; // No adelantar el tiempo si ya es 22:00
+        else if(horas ==21 && minutos > 0) // Si es 21:00 y hay minutos, adelantar a 22:00
+        {
+            tiempoTranscurrido = 22 * 60f; // Convertir horas a segundos
+            ActualizarTiempo();
+            MostrarTiempo();
+            return;
+        } else
+        {
+            tiempoTranscurrido += horasAdelantar * 60f; // Convertir horas a segundos
+            ActualizarTiempo();
+            MostrarTiempo();
+        }        
+    }
+    void FinTiempo()
+    {
+        textoMision.SetActive(false);
+        ImagenInventario.SetActive(false);
+        CargarNivel.NivelCarga(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

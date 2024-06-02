@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void CargarEscena()
     {
-        if (partidaGuardada != null) SceneManager.LoadScene(partidaGuardada.scene);
+        if (partidaGuardada != null) CargarNivel.NivelCarga(partidaGuardada.scene); // Cargar la siguiente escena con la pantalla de carga
     }
 
     void CargarPartida()
@@ -61,7 +61,9 @@ public class GameManager : MonoBehaviour
         if (crearNuevaPartida)
         {
             PlayerPrefs.DeleteAll();
-            SceneManager.LoadScene(escenaPartidaNueva);
+            //SceneManager.LoadScene(escenaPartidaNueva);
+            CargarNivel.NivelCarga(escenaPartidaNueva); // Cargar la escena de la partida nueva con la pantalla de carga
+
         }
     }
 }

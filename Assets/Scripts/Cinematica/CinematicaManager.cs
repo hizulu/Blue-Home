@@ -128,6 +128,7 @@ public class CinematicaManager : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         // Cargar la siguiente escena cuando el video termine
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        CargarNivel.NivelCarga(SceneManager.GetActiveScene().buildIndex + 1); // Cargar la siguiente escena con la pantalla de carga
     }
 }
