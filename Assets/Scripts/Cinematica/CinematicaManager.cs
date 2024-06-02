@@ -110,8 +110,7 @@ public class CinematicaManager : MonoBehaviour
     public void SkipVideo()
     {
         // Cargar la siguiente escena inmediatamente
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        CargarNivel.NivelCarga(SceneManager.GetActiveScene().buildIndex + 1); // Cargar la siguiente escena con la pantalla de carga
+        GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex + 1); // Cargar la siguiente escena con la pantalla de carga
     }
 
     private IEnumerator DesaparecerBotones()
@@ -128,7 +127,6 @@ public class CinematicaManager : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         // Cargar la siguiente escena cuando el video termine
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        CargarNivel.NivelCarga(SceneManager.GetActiveScene().buildIndex + 1); // Cargar la siguiente escena con la pantalla de carga
+        GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex + 1); // Cargar la siguiente escena con la pantalla de carga
     }
 }

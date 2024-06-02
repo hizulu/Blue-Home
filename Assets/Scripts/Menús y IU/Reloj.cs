@@ -33,7 +33,7 @@ public class Reloj : MonoBehaviour
         MostrarTiempo();
         if (colorCambiado)
             cambioApariencia();
-        if (horas == 22 && minutos == 0)
+        if (horas >= 22)
         {
             Invoke("FinTiempo", 5f);
         }
@@ -84,7 +84,7 @@ public class Reloj : MonoBehaviour
     {
         textoMision.SetActive(false);
         ImagenInventario.SetActive(false);
-        CargarNivel.NivelCarga(SceneManager.GetActiveScene().buildIndex);
+        GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzleManager : MonoBehaviour
 {
@@ -15,12 +16,12 @@ public class PuzleManager : MonoBehaviour
 
     [SerializeField] GameObject Puzle;
     [SerializeField] GameObject PuzleCompleto;
-
     void Start()
     {
         Spawn();
+        Cursor.lockState = CursorLockMode.None; // Desbloquea el cursor
+        Cursor.visible = true; // Hace el cursor visible
     }
-
     void Update()
     {
         PiezasColocadas();
@@ -62,7 +63,7 @@ public class PuzleManager : MonoBehaviour
         {
             Puzle.SetActive(false);
             PuzleCompleto.SetActive(true);
+            GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
-

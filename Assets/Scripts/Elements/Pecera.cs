@@ -22,8 +22,7 @@ public class Pecera : MonoBehaviour, IInteractuable
         {
             textoMision.SetActive(false);
             ImagenInventario.SetActive(false);
-            if (VariablesEstaticas.completadolv1 == true)
-                CargarNivel.NivelCarga(2); // Cargar la siguiente escena con la pantalla de carga
+            GameManager.instance.CargarNivel(2);
         }
     }
 }

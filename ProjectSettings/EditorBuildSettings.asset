@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/3rd day.unity
     guid: 7462b1ad35c4ceb42b5fde7f8bafa78e
   - enabled: 1
+    path: Assets/Scenes/Puzle.unity
+    guid: 48c3a57f3a1d3694a8f50137373cc39b
+  - enabled: 1
     path: Assets/Scenes/Cinematica3.unity
     guid: f348f7cf7e08e5248aeac26864dfd403
   - enabled: 1
@@ -32,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cinematica4.unity
     guid: 06f26a6f425da434e9d7629cf23d7d1c
-  - enabled: 1
-    path: Assets/Scenes/Puzle.unity
-    guid: 48c3a57f3a1d3694a8f50137373cc39b
   - enabled: 1
     path: Assets/Scenes/CreditosFinales.unity
     guid: 917c3807cc2eaa246b8762c7c2fc62e3

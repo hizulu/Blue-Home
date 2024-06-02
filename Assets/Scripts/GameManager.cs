@@ -1,13 +1,14 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public int sceneIndex = 0;
-    public bool crearNuevaPartida = false;
     private int escenaPartidaNueva = 1;
     int totalEscenas;
     public static GameManager instance { get; private set; }
+
     TipoGuardado partidaGuardada = null;
     string partidaPath;
 
@@ -29,14 +30,8 @@ public class GameManager : MonoBehaviour
     {
         totalEscenas = SceneManager.sceneCountInBuildSettings;
         CargarPartida();
-    }
-
-    void Update()
-    {
         if (SceneManager.GetActiveScene().buildIndex != 0)
-        {
             GuardarEscena();
-        }
     }
 
     public void GuardarEscena()
@@ -48,7 +43,9 @@ public class GameManager : MonoBehaviour
 
     public void CargarEscena()
     {
-        if (partidaGuardada != null) CargarNivel.NivelCarga(partidaGuardada.scene); // Cargar la siguiente escena con la pantalla de carga
+        if (partidaGuardada != null)
+            CargarNivel(partidaGuardada.scene);
+        Debug.Log("Cargando escena guardada");
     }
 
     void CargarPartida()
@@ -58,12 +55,40 @@ public class GameManager : MonoBehaviour
 
     public void CrearNuevaPartida()
     {
-        if (crearNuevaPartida)
-        {
-            PlayerPrefs.DeleteAll();
-            //SceneManager.LoadScene(escenaPartidaNueva);
-            CargarNivel.NivelCarga(escenaPartidaNueva); // Cargar la escena de la partida nueva con la pantalla de carga
+        PlayerPrefs.DeleteAll();
+        CargarNivel(escenaPartidaNueva);
+    }
 
+    public void CargarNivel(int nivelACargar)
+    {
+        StartCoroutine(IniciarCarga(nivelACargar));
+    }
+
+    IEnumerator IniciarCarga(int nivel)
+    {
+        Debug.Log("Iniciando carga de la escena " + nivel);
+
+        // Iniciar la carga as?ncrona de la escena
+        AsyncOperation cargaAsincrona = SceneManager.LoadSceneAsync(nivel);
+
+        // Evitar la activaci?n autom?tica de la escena
+        cargaAsincrona.allowSceneActivation = false;
+
+        // Esperar a que la carga alcance el 90% antes de activar la escena
+        while (!cargaAsincrona.isDone)
+        {
+            Debug.Log($"Progreso de carga: {cargaAsincrona.progress * 100}%");
+
+            // Si la carga ha alcanzado el 90%, permitir la activaci?n de la escena
+            if (cargaAsincrona.progress >= 0.9f)
+            {
+                Debug.Log("Carga completada al 90%, activando escena...");
+                cargaAsincrona.allowSceneActivation = true;
+            }
+
+            yield return null;
         }
+
+        Debug.Log($"Escena {nivel} cargada con ?xito.");
     }
 }
