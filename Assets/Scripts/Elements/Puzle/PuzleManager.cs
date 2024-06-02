@@ -5,25 +5,64 @@ using UnityEngine;
 
 public class PuzleManager : MonoBehaviour
 {
-    [SerializeField] private List<PuzleSlot> slotPrefabs;
-    [SerializeField] private PiezaPuzle piezasPrefabs;
-    [SerializeField] private Transform piezasPadre, slotPadre;
-    
+    [SerializeField] private List<PuzleSlot> slotPrefabs;  // Lista de slots del puzzle
+    [SerializeField] private List<PiezaPuzle> piezasPrefabs;  // Lista de slots del puzzle
+    [SerializeField] private PiezaPuzle piezaPrefab;       // Prefab base de las piezas del puzzle
+    [SerializeField] private Transform piezasPadre;        // Padre de las piezas del puzzle
+    [SerializeField] private List<Sprite> piezasSprites;   // Lista de sprites para las piezas del puzzle
+
+    private List<PiezaPuzle> piezas = new List<PiezaPuzle>(); // Lista de piezas del puzzle
+
+    [SerializeField] GameObject Puzle;
+    [SerializeField] GameObject PuzleCompleto;
+
     void Start()
     {
         Spawn();
     }
 
+    void Update()
+    {
+        PiezasColocadas();
+    }
+
     void Spawn()
     {
-        var LugaresRandom = slotPrefabs.OrderBy(s=>Random.value).Take(3).ToList();
-
-        for(int i=0; i< LugaresRandom.Count; i++)
+        // Asegurarse de que haya suficientes sprites para los slots
+        if (piezasSprites.Count < slotPrefabs.Count)
         {
-            var spawnedSlot = Instantiate(LugaresRandom[i], slotPadre.GetChild(i).position, Quaternion.identity);
+            Debug.LogError("No hay suficientes sprites para los slots del puzzle.");
+            return;
+        }
 
-            var spawnedPieza = Instantiate(piezasPrefabs, piezasPadre.GetChild(i).position, Quaternion.identity);
-            spawnedPieza.Init(spawnedSlot);
+        // Ordenar y tomar una cantidad de slots aleatoria
+        var lugaresRandom = slotPrefabs.OrderBy(s => Random.value).Take(piezasSprites.Count).ToList();
+
+        for (int i = 0; i < lugaresRandom.Count; i++)
+        {
+            // Instanciar las piezas del puzzle            
+            var spawnedPieza = Instantiate(piezasPrefabs[i], piezasPadre.GetChild(i).position, Quaternion.identity, piezasPadre);
+            spawnedPieza.Init(lugaresRandom[i]);
+            piezas.Add(spawnedPieza); // Agrega la pieza a la lista de piezas
+        }
+    }
+
+    void PiezasColocadas()
+    {
+        int piezasColocadas = 0;
+        foreach (var pieza in piezas)
+        {
+            if (pieza.colocado)
+            {
+                piezasColocadas++;
+            }
+        }
+
+        if (piezasColocadas == slotPrefabs.Count)
+        {
+            Puzle.SetActive(false);
+            PuzleCompleto.SetActive(true);
         }
     }
 }
+

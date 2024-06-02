@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 134236491038221064, guid: df94be013301f1c4d8a7240cd972b7b0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7099b09aafe32c843a44d2eb4a00faaa, type: 3}
+      objectReference: {fileID: 21300000, guid: 06a06e891f06a1240a1d23dce9c82796, type: 3}
     - target: {fileID: 211214337405558059, guid: df94be013301f1c4d8a7240cd972b7b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356907476421349180, guid: df94be013301f1c4d8a7240cd972b7b0, type: 3}
       propertyPath: m_Name
-      value: Slot 2
+      value: Slot 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
