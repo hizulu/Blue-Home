@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         AsyncOperation cargaAsincrona = SceneManager.LoadSceneAsync(nivel);
 
         // Cargar la escena de "carga falsa" de forma aditiva
-        SceneManager.LoadScene(11, LoadSceneMode.Additive);
+        SceneManager.LoadScene(12, LoadSceneMode.Additive);
 
         // Evitar la activacion automotica de la escena
         cargaAsincrona.allowSceneActivation = false;

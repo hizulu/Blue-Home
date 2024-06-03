@@ -19,9 +19,10 @@ public class Calcetines : MonoBehaviour, IInteractuable
             VariablesEstaticas.inventarioLleno = true;
             DesactivarCalcetines();
         }
-        if (VariablesEstaticas.basuraRecolectada >= VariablesEstaticas.basuraTotal)
+        if (Cestodelaropa.ropaTotal + CubosBasura.basuraTotal >= VariablesEstaticas.basuraTotal)
         {
             VariablesEstaticas.completadolv2 = true;
+            GameManager.instance.CargarNivel(4);
         }
     }
     public void DesactivarCalcetines()

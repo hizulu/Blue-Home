@@ -6,8 +6,6 @@ public class Basura : MonoBehaviour, IInteractuable
 {
     [SerializeField] private GameObject ImagenBasuraAdquirida;
     [SerializeField] private GameObject Jugador;
-    
-
     public static Basura instance { get; private set; }
     public void Interactuar()
     {
@@ -20,9 +18,10 @@ public class Basura : MonoBehaviour, IInteractuable
             VariablesEstaticas.inventarioLleno = true;
             DesactivarBasura();
         }
-        if (VariablesEstaticas.basuraRecolectada >= VariablesEstaticas.basuraTotal)
+        if (Cestodelaropa.ropaTotal + CubosBasura.basuraTotal >= VariablesEstaticas.basuraTotal)
         {
             VariablesEstaticas.completadolv2 = true;
+            GameManager.instance.CargarNivel(4);
         }
 
     }
