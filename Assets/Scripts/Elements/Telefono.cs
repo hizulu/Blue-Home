@@ -29,6 +29,8 @@ public class Telefono : MonoBehaviour, IInteractuable
     //asegurar que no lea dos veces el mismo dialogo
     public bool dialogoTelefonoLeido = false;
 
+    [SerializeField] AudioSource audioSource;
+
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class Telefono : MonoBehaviour, IInteractuable
         colliderTelefono = GetComponent<Collider2D>();
         panelDialogoTelefono.SetActive(false);
         imagenIntermitente.gameObject.SetActive(false);
+        audioSource.Play();
     }
 
     public void Interactuar()
@@ -68,6 +71,7 @@ public class Telefono : MonoBehaviour, IInteractuable
         indexLinea = 0;
         Time.timeScale = 0f;
         StartCoroutine(MostrarLineasDialogo());
+        audioSource.Stop();
     }
 
 
