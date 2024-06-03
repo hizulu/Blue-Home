@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cinematica4.unity
     guid: 06f26a6f425da434e9d7629cf23d7d1c
   - enabled: 1
+    path: Assets/Scenes/EscFinalSombra.unity
+    guid: 6f020ba054e09c04aab3c51654ea4060
+  - enabled: 1
     path: Assets/Scenes/CreditosFinales.unity
     guid: 917c3807cc2eaa246b8762c7c2fc62e3
   - enabled: 1

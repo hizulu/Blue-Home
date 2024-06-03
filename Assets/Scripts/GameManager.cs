@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         // Descargar la escena de "carga falsa"
-        SceneManager.UnloadSceneAsync(11);
+        SceneManager.UnloadSceneAsync(12);
 
         Debug.Log($"Escena {nivel} cargada con exito.");
     }

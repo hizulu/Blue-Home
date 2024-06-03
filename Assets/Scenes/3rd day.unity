@@ -15759,7 +15759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988419649886461534, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_MaxValue
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 988419649886461534, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_MinValue
@@ -15983,7 +15983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7655298923612108099, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_MaxValue
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7655298923612108099, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_MinValue
@@ -15995,7 +15995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755023744309710614, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_MaxValue
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7755023744309710614, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_MinValue
@@ -16397,6 +16397,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &423141076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 423141077}
+  m_Layer: 5
+  m_Name: Inventario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &423141077
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423141076}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1838378005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -653.00714, y: 440}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &448011496
 GameObject:
   m_ObjectHideFlags: 0
@@ -28858,8 +28893,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00049972534, y: 0, z: 0}
-    m_Extent: {x: 9.2698, y: 9.2699, z: 0}
+    m_Center: {x: -0.00014972687, y: 0.0005002022, z: 0}
+    m_Extent: {x: 9.26925, y: 9.269199, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38517,8 +38552,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00045013428, y: -0.0001001358, z: 0}
-    m_Extent: {x: 9.26925, y: 9.2698, z: 0}
+    m_Center: {x: -0.00034999847, y: -0.00080013275, z: 0}
+    m_Extent: {x: 9.26935, y: 9.2697, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43549,8 +43584,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.05755, y: -3.3933997, z: 0}
-    m_Extent: {x: 23.36405, y: 18.4509, z: 0}
+    m_Center: {x: -13.05725, y: -3.3934999, z: 0}
+    m_Extent: {x: 23.363949, y: 18.451, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -44619,11 +44654,13 @@ MonoBehaviour:
   textoDialogoTelefono: {fileID: 698456152}
   tiempoEntreLetras: 0.05
   lineasDialogoTelefono:
-  - "\xA1Buenos d\xEDas, Ruddy! \xBFC\xF3mo te sientes estos d\xEDas? Tu tarea de
-    hoy consistir\xE1 en practicar el perd\xF3n y aprender a arreglar nuestros problemas. "
+  - "\xA1Buenos d\xEDas, Ruddy! \xBFC\xF3mo te sientes estos d\xEDas? "
+  - "Tu tarea de hoy consistir\xE1 en practicar el perd\xF3n y aprender a arreglar
+    nuestros problemas. "
   - "No est\xE1 bien ocultar las cosas que a\xFAn no hemos arreglado por miedo a
-    enfrentarnos a ellas. \xA1Mucho \xE1nimo, s\xE9 que puedes hacerlo! Ya me contar\xE1s
-    c\xF3mo te est\xE1 yendo. "
+    enfrentarnos a ellas. "
+  - "\xA1Mucho \xE1nimo, s\xE9 que puedes hacerlo! Ya me contar\xE1s c\xF3mo te est\xE1
+    yendo. "
   objetosActivadosPorTelefono:
   - {fileID: 224184207}
   - {fileID: 537129123}
@@ -45305,7 +45342,7 @@ Transform:
   m_GameObject: {fileID: 1551244042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.79, y: 3.42, z: 0}
+  m_LocalPosition: {x: -1.58, y: -10.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53591,6 +53628,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 423141077}
   - {fileID: 1773862032}
   m_Father: {fileID: 298158826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59090,7 +59128,7 @@ MonoBehaviour:
   desactivarObjetos:
   - {fileID: 1747503435}
   - {fileID: 1773862029}
-  - {fileID: 0}
+  - {fileID: 423141076}
   videoPlayer: {fileID: 2001790763}
   musicaFondo: {fileID: 1371860572}
 --- !u!1 &2002763444
@@ -60802,7 +60840,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.8075317
+      m_AnimationSpeed: 0.5223675
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -60812,7 +60850,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.72903156
+      m_AnimationSpeed: 0.7232915
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -60822,7 +60860,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.56795585
+      m_AnimationSpeed: 0.96977186
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -60832,7 +60870,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.7734889
+      m_AnimationSpeed: 0.5659067
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
