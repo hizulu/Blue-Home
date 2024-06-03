@@ -128,6 +128,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6974036789205941751, guid: d9a2d43c15f3e3d47975bbd5f26431cd, type: 3}
   m_PrefabInstance: {fileID: 6732496826400530283}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &119813179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7520473325541920244, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+  m_PrefabInstance: {fileID: 1668365504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521064896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1a59b673178bf44ab830fbc411bc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167778993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1639,58 @@ PrefabInstance:
     - target: {fileID: 5139976741393167927, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 119813179}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ActualizarModoVentana
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetModoVentanaPrefs
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuOpciones, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DatosGuardados, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551181225240513468, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5582973311974270606, guid: 7aa29b0cb024e0d42999f0644686f26d, type: 3}
       propertyPath: m_Pivot.x
