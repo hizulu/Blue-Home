@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TartaEnMesa : MonoBehaviour, IInteractuable
 {
@@ -25,7 +26,7 @@ public class TartaEnMesa : MonoBehaviour, IInteractuable
     IEnumerator Esperar()
     {
         yield return new WaitForSeconds(5);
-        GameManager.instance.CargarNivel(9);
+        GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
 

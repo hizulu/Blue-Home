@@ -12,6 +12,6 @@ public class ArmarioJuguete : MonoBehaviour, IInteractuable
     }
     void CargarPuzle()
     {
-        GameManager.instance.CargarNivel(7);
+        GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

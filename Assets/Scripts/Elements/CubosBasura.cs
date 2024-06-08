@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CubosBasura : MonoBehaviour, IInteractuable
 {
@@ -18,7 +19,7 @@ public class CubosBasura : MonoBehaviour, IInteractuable
         if (basuraTotal + Cestodelaropa.ropaTotal >= VariablesEstaticas.basuraTotal)
         {
             Debug.Log(("Cubo de basura lleno"));
-            GameManager.instance.CargarNivel(4);
+            GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex+1);
             VariablesEstaticas.completadolv2 = true;
             textoMision.SetActive(false);
             ImagenInventario.SetActive(false);

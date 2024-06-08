@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Calcetines : MonoBehaviour, IInteractuable
 {
@@ -22,7 +23,7 @@ public class Calcetines : MonoBehaviour, IInteractuable
         if (Cestodelaropa.ropaTotal + CubosBasura.basuraTotal >= VariablesEstaticas.basuraTotal)
         {
             VariablesEstaticas.completadolv2 = true;
-            GameManager.instance.CargarNivel(4);
+            GameManager.instance.CargarNivel(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     public void DesactivarCalcetines()

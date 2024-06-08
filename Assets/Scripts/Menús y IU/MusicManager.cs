@@ -16,16 +16,7 @@ public class MusicManager : MonoBehaviour
     //diferentes salidas de audio para la musica
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-            audioSource = GetComponent<AudioSource>();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        audioSource = GetComponent<AudioSource>();
     }
     //musica
     public IEnumerator PlayMusic(int index)
