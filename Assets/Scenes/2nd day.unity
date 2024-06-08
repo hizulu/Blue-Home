@@ -18008,6 +18008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604537025}
   - component: {fileID: 604537024}
+  - component: {fileID: 604537026}
   m_Layer: 0
   m_Name: Marca Opcion Interaccion
   m_TagString: Untagged
@@ -18056,7 +18057,7 @@ SpriteRenderer:
   m_SortingLayerID: 326461719
   m_SortingLayer: 8
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1238960070, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a4df5c6a00da0d4bb3abce475d8bf55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18077,11 +18078,32 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.009, y: 1.015, z: 0}
-  m_LocalScale: {x: 0.68887, y: 0.68887, z: 0.68887}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 778403844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &604537026
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604537023}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5d7edabd40258c40b88469016cf537c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &610791433
 GameObject:
   m_ObjectHideFlags: 0
@@ -29457,8 +29479,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00034999847, y: 0, z: 0}
-    m_Extent: {x: 9.26975, y: 9.2695, z: 0}
+    m_Center: {x: 0.0002002716, y: -0.0001502037, z: 0}
+    m_Extent: {x: 9.2691, y: 9.26915, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39393,8 +39415,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00014972687, y: 0.00024986267, z: 0}
-    m_Extent: {x: 9.26935, y: 9.27005, z: 0}
+    m_Center: {x: -0.00054979324, y: -0.00024986267, z: 0}
+    m_Extent: {x: 9.269051, y: 9.26855, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -44448,8 +44470,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.057301, y: -3.3931499, z: 0}
-    m_Extent: {x: 23.3639, y: 18.45155, z: 0}
+    m_Center: {x: -13.057549, y: -3.39325, z: 0}
+    m_Extent: {x: 23.36425, y: 18.45145, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -62604,7 +62626,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.7741811
+      m_AnimationSpeed: 0.5393426
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -62614,7 +62636,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.702772
+      m_AnimationSpeed: 0.68899703
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -62624,7 +62646,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.722389
+      m_AnimationSpeed: 0.8667251
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -62634,7 +62656,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5638465
+      m_AnimationSpeed: 0.5940936
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
