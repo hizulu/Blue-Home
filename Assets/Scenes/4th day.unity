@@ -17313,7 +17313,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.21, y: 3.93}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -28960,7 +28960,7 @@ MonoBehaviour:
   - {fileID: 669322097}
   lineasDialogoObjeto:
   - "\xBFPor qu\xE9 seguir\xE9 teniendo esta foto?"
-  - "\xA1Ja! Parecemos una familia y todo."
+  - "Mam\xE1 hac\xEDa un rebozado muy bueno."
   - "\xBFQu\xE9 ser\xE1 de mis padres y mi hermano?"
   tiempoEntreLetras: 0.05
 --- !u!61 &879988596
@@ -29074,8 +29074,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: 0.00024986267, z: 0}
-    m_Extent: {x: 9.2702, y: 9.26915, z: 0}
+    m_Center: {x: -0.00029993057, y: -0.0001001358, z: 0}
+    m_Extent: {x: 9.2694, y: 9.2698, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -30247,8 +30247,8 @@ MonoBehaviour:
   - {fileID: 1597992349}
   - {fileID: 669322097}
   lineasDialogoObjeto:
-  - "Ay, ya pill\xE9 la tarta."
-  - Que buena pinta tiene esa tarta.
+  - "Me pregunto si la sombra querr\xE1 un poco."
+  - "Solo me queda esperar a ma\xF1ana."
   tiempoEntreLetras: 0.05
 --- !u!61 &955780568
 BoxCollider2D:
@@ -39107,8 +39107,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: 0.00040006638, z: 0}
-    m_Extent: {x: 9.269, y: 9.269899, z: 0}
+    m_Center: {x: -0.0001502037, y: 0.000099658966, z: 0}
+    m_Extent: {x: 9.2689495, y: 9.2694, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43777,7 +43777,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4603381051391243373, guid: c7bb2fcc872d8734f9df1cdf5768a6e9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 66fdba8d9a3ed0b44a47fda3741b5c11, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3e352cb5fb31d848a77283b42b2706d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.794
   m_Pitch: 1
@@ -44363,8 +44363,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.056299, y: -3.3932004, z: 0}
-    m_Extent: {x: 23.3641, y: 18.450901, z: 0}
+    m_Center: {x: -13.056901, y: -3.3937502, z: 0}
+    m_Extent: {x: 23.363602, y: 18.45065, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -50151,8 +50151,8 @@ MonoBehaviour:
   - {fileID: 1597992349}
   - {fileID: 669322097}
   lineasDialogoObjeto:
-  - A veces los vecinos se quejan cuando toco.
-  - "Me gusta tocar la bater\xEDa, aunque creo que no soy muy bueno."
+  - "La bateria hace ruidos extra\xF1os por la noche."
+  - "S\xE9 que mejorar\xE9 con m\xE1s clases."
   tiempoEntreLetras: 0.05
 --- !u!61 &1613128832
 BoxCollider2D:
@@ -59911,6 +59911,7 @@ MonoBehaviour:
   - {fileID: 669322097}
   lineasDialogoObjeto:
   - "Me gusta tener un patito de goma en la ba\xF1era..."
+  - Hace Cuak Cuak.
   tiempoEntreLetras: 0.05
 --- !u!61 &1975253848
 BoxCollider2D:
@@ -61945,7 +61946,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.55669755
+      m_AnimationSpeed: 0.5728008
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -61955,7 +61956,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.75193834
+      m_AnimationSpeed: 0.5317458
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -61965,7 +61966,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.94483024
+      m_AnimationSpeed: 0.5031429
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -61975,7 +61976,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.84259933
+      m_AnimationSpeed: 0.98004687
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

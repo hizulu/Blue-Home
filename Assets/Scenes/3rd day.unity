@@ -16939,7 +16939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474243090}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.000000015718449, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.140206, y: 14.360137, z: -10.053371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17304,7 +17304,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.21, y: 3.93}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -28706,7 +28706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1371860572}
   musica:
-  - {fileID: 8300000, guid: 990ee7270da24bb48a0943b2a536bcbc, type: 3}
+  - {fileID: 8300000, guid: bc5985abe31ff2c4792615af496ea78f, type: 3}
   fadeTimeMusica: 1
 --- !u!4 &878320534
 Transform:
@@ -28893,8 +28893,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0001001358, y: -0.0005002022, z: 0}
-    m_Extent: {x: 9.2698, y: 9.2701, z: 0}
+    m_Center: {x: 0.0001001358, y: 0.00024986267, z: 0}
+    m_Extent: {x: 9.2696, y: 9.26915, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38570,8 +38570,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00019979477, y: 0.00019979477, z: 0}
-    m_Extent: {x: 9.270201, y: 9.269501, z: 0}
+    m_Center: {x: 0.00069999695, y: -0.0002503395, z: 0}
+    m_Extent: {x: 9.27, y: 9.270451, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43016,7 +43016,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4603381051391243373, guid: c7bb2fcc872d8734f9df1cdf5768a6e9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 66fdba8d9a3ed0b44a47fda3741b5c11, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bc5985abe31ff2c4792615af496ea78f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.794
   m_Pitch: 1
@@ -43602,8 +43602,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.0564, y: -3.3941998, z: 0}
-    m_Extent: {x: 23.3643, y: 18.4508, z: 0}
+    m_Center: {x: -13.0569, y: -3.3938498, z: 0}
+    m_Extent: {x: 23.3637, y: 18.450449, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -44053,8 +44053,8 @@ MonoBehaviour:
   - {fileID: 1597992349}
   - {fileID: 669322097}
   lineasDialogoObjeto:
-  - Tengo algunos libros antiguos.
-  - Ahora no me apetece leer.
+  - "No s\xE9 si puedo sacar buenas notas ahora."
+  - Hace mucho que no estudio.
   tiempoEntreLetras: 0.05
 --- !u!61 &1435931103
 BoxCollider2D:
@@ -44088,7 +44088,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7497215, y: 0.85597515}
+  m_Offset: {x: 3.85, y: 1.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -45638,7 +45638,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.67
+  orthographic size: 2.6999998
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -45662,7 +45662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557001661}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.000000015718449, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.140206, y: 14.360137, z: -10.053371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -60927,7 +60927,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.65083313
+      m_AnimationSpeed: 0.788656
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -60937,7 +60937,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.9396236
+      m_AnimationSpeed: 0.8448053
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -60947,7 +60947,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.51534116
+      m_AnimationSpeed: 0.55275005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -60957,7 +60957,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.6662948
+      m_AnimationSpeed: 0.52141845
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

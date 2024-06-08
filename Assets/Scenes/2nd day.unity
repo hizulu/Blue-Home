@@ -777,6 +777,7 @@ MonoBehaviour:
   - {fileID: 669322097}
   lineasDialogoObjeto:
   - "Creo que desde que me mud\xE9 no he usado el horno."
+  - "Recuerdo haberme quemado de ni\xF1o con uno de estos."
   tiempoEntreLetras: 0.05
 --- !u!61 &31392215
 BoxCollider2D:
@@ -17363,7 +17364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474243090}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.000000015718449, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.140206, y: 14.360137, z: -10.053371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17783,7 +17784,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.21, y: 3.93}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18867,7 +18868,7 @@ MonoBehaviour:
   - {fileID: 669322097}
   lineasDialogoObjeto:
   - "Parece que est\xE1n bien, no necesito regarlas hoy."
-  - Mis plantas no suelen necesitar agua a menudo.
+  - "Me pregunto si son de pl\xE1stico."
   - "\xA1Vaya! Parece que tengo que comprar macetas m\xE1s grandes."
   tiempoEntreLetras: 0.05
 --- !u!61 &628939093
@@ -29269,7 +29270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1371860572}
   musica:
-  - {fileID: 8300000, guid: f8a3a780819b4414b8389dc43199fa1f, type: 3}
+  - {fileID: 8300000, guid: 0e7a6c2ebf9db8441bd96814af5f06dc, type: 3}
   fadeTimeMusica: 1
 --- !u!4 &878320534
 Transform:
@@ -29456,8 +29457,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0001001358, y: 0.00024986267, z: 0}
-    m_Extent: {x: 9.2692, y: 9.26995, z: 0}
+    m_Center: {x: -0.00019979477, y: 0, z: 0}
+    m_Extent: {x: 9.2693, y: 9.2689, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39392,8 +39393,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00034999847, y: 0.0001001358, z: 0}
-    m_Extent: {x: 9.26985, y: 9.2697, z: 0}
+    m_Center: {x: -0.0005502701, y: 0.0000500679, z: 0}
+    m_Extent: {x: 9.26945, y: 9.269449, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39492,6 +39493,7 @@ MonoBehaviour:
   - {fileID: 669322097}
   lineasDialogoObjeto:
   - "Es un reloj muy antiguo, ya estaba en la casa cuando me mud\xE9."
+  - 'Tic Tac Tic Tac Tic Tac Tic Tac Tic Tac Tic Tac Tic Tac Tic Tac... '
   tiempoEntreLetras: 0.05
 --- !u!61 &1192215099
 BoxCollider2D:
@@ -43855,7 +43857,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4603381051391243373, guid: c7bb2fcc872d8734f9df1cdf5768a6e9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f8a3a780819b4414b8389dc43199fa1f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0e7a6c2ebf9db8441bd96814af5f06dc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.794
   m_Pitch: 1
@@ -44446,8 +44448,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.057049, y: -3.3931499, z: 0}
-    m_Extent: {x: 23.36475, y: 18.45105, z: 0}
+    m_Center: {x: -13.056801, y: -3.3935003, z: 0}
+    m_Extent: {x: 23.3643, y: 18.451302, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -44899,6 +44901,7 @@ MonoBehaviour:
   lineasDialogoObjeto:
   - Tengo algunos libros antiguos.
   - Ahora no me apetece leer.
+  - "Dec\xEDan que leer es para d\xE9biles."
   tiempoEntreLetras: 0.05
 --- !u!61 &1435931103
 BoxCollider2D:
@@ -46559,7 +46562,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.67
+  orthographic size: 2.6999998
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -46583,7 +46586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557001661}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.000000015718449, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.140206, y: 14.360137, z: -10.053371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62601,7 +62604,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5038322
+      m_AnimationSpeed: 0.500133
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -62611,7 +62614,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.6819215
+      m_AnimationSpeed: 0.7158729
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -62621,7 +62624,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.9319057
+      m_AnimationSpeed: 0.5489159
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -62631,7 +62634,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.51884043
+      m_AnimationSpeed: 0.53401303
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
