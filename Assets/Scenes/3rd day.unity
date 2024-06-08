@@ -17462,6 +17462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604537025}
   - component: {fileID: 604537024}
+  - component: {fileID: 604537026}
   m_Layer: 0
   m_Name: Marca Opcion Interaccion
   m_TagString: Untagged
@@ -17510,7 +17511,7 @@ SpriteRenderer:
   m_SortingLayerID: 326461719
   m_SortingLayer: 8
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1238960070, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed7bb5b3d74fe694499ad6d36fba6c4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17536,6 +17537,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 778403844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &604537026
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604537023}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5d7edabd40258c40b88469016cf537c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &610791433
 GameObject:
   m_ObjectHideFlags: 0
@@ -17859,7 +17881,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 14
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -17869,7 +17891,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 4
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -17879,7 +17901,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -17988,8 +18010,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 282411082, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1054506839, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
   - m_RefCount: 1
@@ -17997,11 +18019,11 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 2104396020, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: 282411082, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 1992996405, guid: eaa51233e08495b4b8ea5e74fe248354, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2038008865, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 315865478, guid: 54fcd8d5c6c94924a95a392714592300, type: 3}
   - m_RefCount: 1
@@ -28884,8 +28906,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00019979477, y: -0.000600338, z: 0}
-    m_Extent: {x: 9.269501, y: 9.2694, z: 0}
+    m_Center: {x: -0.00024986267, y: 0.00029993057, z: 0}
+    m_Extent: {x: 9.27005, y: 9.2693, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38561,8 +38583,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0000500679, y: -0.00075006485, z: 0}
-    m_Extent: {x: 9.269051, y: 9.2689495, z: 0}
+    m_Center: {x: -0.00044965744, y: 0.0005002022, z: 0}
+    m_Extent: {x: 9.2689495, y: 9.2701, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43593,8 +43615,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.057201, y: -3.3934999, z: 0}
-    m_Extent: {x: 23.3633, y: 18.451, z: 0}
+    m_Center: {x: -13.05695, y: -3.3927503, z: 0}
+    m_Extent: {x: 23.36425, y: 18.45045, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -61002,7 +61024,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.52300656
+      m_AnimationSpeed: 0.6445073
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -61012,7 +61034,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.7955388
+      m_AnimationSpeed: 0.8892994
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -61022,7 +61044,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.67936075
+      m_AnimationSpeed: 0.7578026
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -61032,7 +61054,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5014285
+      m_AnimationSpeed: 0.7267989
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

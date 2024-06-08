@@ -17592,6 +17592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604537025}
   - component: {fileID: 604537024}
+  - component: {fileID: 604537026}
   m_Layer: 0
   m_Name: Marca Opcion Interaccion
   m_TagString: Untagged
@@ -17640,7 +17641,7 @@ SpriteRenderer:
   m_SortingLayerID: 326461719
   m_SortingLayer: 8
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1238960070, guid: 31918b4e8f48697489eff56d5076d8b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed7bb5b3d74fe694499ad6d36fba6c4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17666,6 +17667,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 778403844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &604537026
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604537023}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5d7edabd40258c40b88469016cf537c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &610791433
 GameObject:
   m_ObjectHideFlags: 0
@@ -29074,8 +29096,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00029993057, y: -0.0001001358, z: 0}
-    m_Extent: {x: 9.2694, y: 9.2698, z: 0}
+    m_Center: {x: 0.000049591064, y: -0.000600338, z: 0}
+    m_Extent: {x: 9.27005, y: 9.2693, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39107,8 +39129,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0001502037, y: 0.000099658966, z: 0}
-    m_Extent: {x: 9.2689495, y: 9.2694, z: 0}
+    m_Center: {x: 0.0005002022, y: -0.00034999847, z: 0}
+    m_Extent: {x: 9.270201, y: 9.27005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -44363,8 +44385,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -13.056901, y: -3.3937502, z: 0}
-    m_Extent: {x: 23.363602, y: 18.45065, z: 0}
+    m_Center: {x: -13.05675, y: -3.3934002, z: 0}
+    m_Extent: {x: 23.36385, y: 18.4503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -61946,7 +61968,7 @@ Tilemap:
       - {fileID: -123300149, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -125656867, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 533980072, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5728008
+      m_AnimationSpeed: 0.97064734
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 17, z: 0}
@@ -61956,7 +61978,7 @@ Tilemap:
       - {fileID: 1825444987, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -549838162, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: -776877522, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5317458
+      m_AnimationSpeed: 0.9380269
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: 18, z: 0}
@@ -61966,7 +61988,7 @@ Tilemap:
       - {fileID: -1368163239, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1546737829, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1527522785, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.5031429
+      m_AnimationSpeed: 0.6919898
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: 18, z: 0}
@@ -61976,7 +61998,7 @@ Tilemap:
       - {fileID: 1899401270, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1662757135, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
       - {fileID: 1554429589, guid: cda3e6429d4f5884084008c3f755b1cf, type: 3}
-      m_AnimationSpeed: 0.98004687
+      m_AnimationSpeed: 0.84829956
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
