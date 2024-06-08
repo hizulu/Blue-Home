@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: "Assets/Scenes/Men\xFAs.unity"
     guid: 10222a44953f04d4080280e8c6002a22
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 07fa90568fcff7944be146c124b8f62d
+  - enabled: 1
     path: Assets/Scenes/1st day.unity
     guid: 998fe6dbcf2cfb447a83343547ca5326
   - enabled: 1

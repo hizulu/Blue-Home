@@ -22,7 +22,7 @@ public class Pecera : MonoBehaviour, IInteractuable
         {
             textoMision.SetActive(false);
             ImagenInventario.SetActive(false);
-            GameManager.instance.CargarNivel(2);
+            GameManager.instance.CargarNivel(3);
         }
     }
 }
