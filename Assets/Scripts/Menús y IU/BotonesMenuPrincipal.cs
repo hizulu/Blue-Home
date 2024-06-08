@@ -9,6 +9,8 @@ public class BotonesMenuPrincipal : MonoBehaviour
     [SerializeField] Button loadGameButton;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         newGameButton.onClick.AddListener(GameManager.instance.CrearNuevaPartida);
         loadGameButton.onClick.AddListener(GameManager.instance.CargarEscena);
     }
