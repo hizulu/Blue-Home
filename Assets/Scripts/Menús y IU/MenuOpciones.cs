@@ -22,7 +22,7 @@ public class MenuOpciones : MonoBehaviour
     const string VOLUMEN_RUIDO = "Ruido";
 
     private string filePath;
-    //desactiva el objeto al inicio
+    private const string MODO_VENTANA_PREF_KEY = "modoVentana";
 
     private void Start()
     {
@@ -30,49 +30,56 @@ public class MenuOpciones : MonoBehaviour
         transform.parent.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
+
     private void Awake()
     {
         // Ruta de guardado
         filePath = Application.persistentDataPath + "/datos.json";
     }
+
     public void MostrarMenuOpciones()
     {
-        transform.parent.gameObject.SetActive(true); // Activa el GameObject padre en la jerarquia
+        transform.parent.gameObject.SetActive(true); // Activa el GameObject padre en la jerarquía
         gameObject.SetActive(true);
     }
-    //Volumenes de los audios del juego
+
+    // Volumenes de los audios del juego
     public void ActualizarVolumenGeneral(float value)
     {
         mixer.SetFloat(VOLUMEN_GENERAL, value);
     }
+
     public void ActualizarVolumenMusica(float value)
     {
         mixer.SetFloat(VOLUMEN_MUSICA, value);
     }
+
     public void ActualizarVolumenRuido(float value)
     {
         mixer.SetFloat(VOLUMEN_RUIDO, value);
     }
+
     public void ActualizarBrillo(float value)
     {
-        luz.intensity = value;//Cambia la intensidad de la luz global usando el slider
-    }
-    public void ActualizarModoVentana(bool value)
-    {
-        Screen.fullScreen = value;
+        luz.intensity = value; // Cambia la intensidad de la luz global usando el slider
     }
 
-    public void GuardarOpciones()
+    public void ActualizarModoVentana(bool modoVentanaActivo)
     {
-        //guardamos los datos
-        Debug.Log("Guardando opciones");
+        Screen.fullScreen = modoVentanaActivo;
+        GuardarOpciones(modoVentanaActivo);
+    }
+
+    private void GuardarOpciones(bool modoVentanaActivo)
+    {
+        // Guardamos todas las opciones
         OpcionesGuardadas opcionesGuardadas = new OpcionesGuardadas
         {
             volumenGeneral = volumenGeneralSlider.value,
             volumenMusica = volumenMusicaSlider.value,
             volumenRuido = volumenRuidoSlider.value,
             brillo = brilloSlider.value,
-            modoVentana = modoVentanaToggle.isOn
+            modoVentana = modoVentanaActivo
         };
 
         // Convierte el objeto OpcionesGuardadas a JSON
@@ -80,27 +87,32 @@ public class MenuOpciones : MonoBehaviour
 
         // Escribe el JSON en el archivo de guardado
         File.WriteAllText(filePath, dataAsJson);
+
+        // Guardar el estado del modo ventana
+        PlayerPrefs.SetInt(MODO_VENTANA_PREF_KEY, modoVentanaActivo ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
-    public void CargarOpciones()
+    private void CargarOpciones()
     {
-        Debug.Log("Cargando opciones");
-        // Comprueba si existe un archivo de guardado
+        // Cargamos todas las opciones
         if (File.Exists(filePath))
         {
-            Debug.Log("Existe el archivo");
             string dataAsJson = File.ReadAllText(filePath);
             OpcionesGuardadas opcionesGuardadas = JsonUtility.FromJson<OpcionesGuardadas>(dataAsJson);
-            Debug.Log(opcionesGuardadas.brillo);
 
-            // Asigna los valores guardados a los sliders y el toggle
+            // Asignamos los valores guardados a los sliders y el toggle
             volumenGeneralSlider.value = opcionesGuardadas.volumenGeneral;
             volumenMusicaSlider.value = opcionesGuardadas.volumenMusica;
             volumenRuidoSlider.value = opcionesGuardadas.volumenRuido;
             brilloSlider.value = opcionesGuardadas.brillo;
             modoVentanaToggle.isOn = opcionesGuardadas.modoVentana;
+
+            // Aplicamos el modo ventana
+            Screen.fullScreen = opcionesGuardadas.modoVentana;
         }
     }
+
     public void Volver()
     {
         // Cargar la escena anterior

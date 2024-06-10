@@ -15,12 +15,19 @@ public class PuertaScript : MonoBehaviour, IInteractuable
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        puerta.SetActive(false);
+        // si hay puerta
+        if (puerta != null && puerta.activeSelf)
+        {
+            puerta.SetActive(false);
+        }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-        puerta.SetActive(true);
+        // esto deberia evitar errores
+        if (puerta != null && !puerta.activeSelf)
+        {
+            puerta.SetActive(true);
+        }
     }
 }   
-

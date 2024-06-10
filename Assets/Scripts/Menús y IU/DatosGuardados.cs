@@ -20,6 +20,9 @@ public class DatosGuardados : MonoBehaviour
 
     private string filePath;
     public static DatosGuardados instance { get; private set; }
+
+    private const string MODO_VENTANA_PREF_KEY = "DatosGuardados.modoVentana";
+
     private void Awake()
     {
         if (instance == null)
@@ -34,11 +37,13 @@ public class DatosGuardados : MonoBehaviour
         // Define la ruta del archivo de guardado
         filePath = Application.persistentDataPath + "/datos.json";
     }
+
     void Start()
     {
         // Carga las opciones guardadas
         CargarOpciones();
     }
+
     public void CargarOpciones()
     {
         // Comprueba si existe un archivo de guardado
@@ -63,7 +68,10 @@ public class DatosGuardados : MonoBehaviour
             brilloSlider.value = defaultBrillo;
             modoVentanaToggle.isOn = defaultModoVentana;
         }
+
+        AplicarModoVentana();
     }
+
     public void GuardarOpciones()
     {
         //guardamos los datos 
@@ -81,6 +89,26 @@ public class DatosGuardados : MonoBehaviour
 
         // Escribe el JSON en el archivo de guardado
         File.WriteAllText(filePath, dataAsJson);
+
+        // Guardar el estado del modo ventana
+        GuardarModoVentana(modoVentanaToggle.isOn);
+    }
+
+    private void GuardarModoVentana(bool modoVentana)
+    {
+        PlayerPrefs.SetInt(MODO_VENTANA_PREF_KEY, modoVentana ? 1 : 0);
+        //esque no se por que no se guarda bien jaja
+        PlayerPrefs.Save();
+    }
+
+    private void AplicarModoVentana()
+    {
+        if (PlayerPrefs.HasKey(MODO_VENTANA_PREF_KEY))
+        {
+            bool modoVentana = PlayerPrefs.GetInt(MODO_VENTANA_PREF_KEY) == 1;
+            modoVentanaToggle.isOn = modoVentana;
+            Screen.fullScreen = !modoVentana;
+        }
     }
 
     public void BorrarDatos()
@@ -93,7 +121,8 @@ public class DatosGuardados : MonoBehaviour
     }
 }
 
-[System.Serializable] public class OpcionesGuardadas
+[System.Serializable]
+public class OpcionesGuardadas
 {
     public float volumenGeneral;
     public float volumenMusica;
@@ -101,4 +130,3 @@ public class DatosGuardados : MonoBehaviour
     public float brillo;
     public bool modoVentana;
 }
-
