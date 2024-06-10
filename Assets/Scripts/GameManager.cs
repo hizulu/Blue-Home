@@ -97,5 +97,12 @@ public class GameManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(13);
 
         Debug.Log($"Escena {nivel} cargada con exito.");
+
+        //para evitar que el juego se congele, quizas funcione
+        if (Time.timeScale == 0f)
+        {
+            yield return new WaitForSeconds(1); // Esperar 1 segundos antes de despausar
+            Time.timeScale = 1f;
+        }
     }
 }

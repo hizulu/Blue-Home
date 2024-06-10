@@ -22,4 +22,6 @@ public class VariablesEstaticas
     public static bool recogidolv4 = false;
     public static bool completadolvl4 = false;
 
+    public static bool modoVentana = false;
+
 }
