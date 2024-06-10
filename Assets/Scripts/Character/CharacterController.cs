@@ -35,12 +35,17 @@ public class CharacterController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                foreach (var interactuable in objetosInteractuables)
+                if (objetosInteractuables.Count > 0)
                 {
+                    //uno aleatorio de todos los objetos que estan en rango
+                    int indiceAleatorio = Random.Range(0, objetosInteractuables.Count);
+                    var interactuableSeleccionado = objetosInteractuables[indiceAleatorio];
+
+                    // Desactivar la marca de opción de interacción y llamar al método Interactuar
                     marcaOpcionInteraccion.SetActive(false);
-                    interactuable.Interactuar();
+                    interactuableSeleccionado.Interactuar();
                 }
-                foreach(var objeto in objetosADesactivar)
+                foreach (var objeto in objetosADesactivar)
                 {
                     objeto.SetActive(false);
                 }

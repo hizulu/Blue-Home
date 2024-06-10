@@ -103,6 +103,7 @@ public class Telefono : MonoBehaviour, IInteractuable
         Time.timeScale = 1f;
         imagenesDialogoObjeto[0].gameObject.SetActive(true);
         imagenIntermitente.gameObject.SetActive(false); // Desactivar la imagen intermitente al finalizar el di logo   
+        gameObject.SetActive(false);
     }
 
     private IEnumerator MostrarLineasDialogo()
