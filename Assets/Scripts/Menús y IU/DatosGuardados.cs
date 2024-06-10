@@ -36,12 +36,13 @@ public class DatosGuardados : MonoBehaviour
 
         // Define la ruta del archivo de guardado
         filePath = Application.persistentDataPath + "/datos.json";
+        CargarOpciones();
     }
 
     void Start()
     {
         // Carga las opciones guardadas
-        CargarOpciones();
+        AplicarModoVentana();
     }
 
     public void CargarOpciones()

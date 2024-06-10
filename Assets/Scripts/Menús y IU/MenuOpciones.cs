@@ -22,7 +22,7 @@ public class MenuOpciones : MonoBehaviour
     const string VOLUMEN_RUIDO = "Ruido";
 
     private string filePath;
-    private const string MODO_VENTANA_PREF_KEY = "modoVentana";
+    private const string MODO_VENTANA_PREF_KEY = "DatosGuardados.modoVentana"; // Usamos la misma clave que en DatosGuardados
 
     private void Start()
     {
@@ -88,7 +88,7 @@ public class MenuOpciones : MonoBehaviour
         // Escribe el JSON en el archivo de guardado
         File.WriteAllText(filePath, dataAsJson);
 
-        // Guardar el estado del modo ventana
+        // Guardar el estado del modo ventana en PlayerPrefs
         PlayerPrefs.SetInt(MODO_VENTANA_PREF_KEY, modoVentanaActivo ? 1 : 0);
         PlayerPrefs.Save();
     }
